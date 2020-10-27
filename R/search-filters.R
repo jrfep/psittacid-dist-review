@@ -23,6 +23,37 @@ data.dir <- sprintf("%s/%s", script.dir,"data")
 
 
 orig.search <- read_xlsx(sprintf("%s/%s",data.dir,"ConceptualFramework_20200903.xlsx"),sheet=3)
+
+
+  require("RPostgreSQL")
+  drv <- dbDriver("PostgreSQL") ## remember to update .pgpass file
+
+  con <- dbConnect(drv, dbname = "litrev",
+                   host = ifelse( system("hostname -s",intern=T)=="terra","localhost","terra.ad.unsw.edu.au"),
+                   port = 5432,
+                   user = "jferrer")
+
+qry <- "SELECT \"UT\",\"AU\",\"TI\",\"DI\" FROM psit.bibtex"
+res <- dbGetQuery(con,qry)
+
+res <- subset(res,!is.na(UT))
+orig.search$UT <- res$UT[match(orig.search$TI,res$TI)]
+table(is.na(orig.search$UT))
+
+orig.search$UT <- ifelse(is.na(orig.search$UT),res$UT[match(orig.search$DI,res$DI)],orig.search$UT)
+table(is.na(orig.search$UT))
+
+orig.search$UT <- ifelse(is.na(orig.search$UT),res$UT[match(tolower(orig.search$DI),tolower(res$DI))],orig.search$UT)
+table(is.na(orig.search$UT))
+
+orig.search$UT <- ifelse(is.na(orig.search$UT),res$UT[pmatch(substr(orig.search$TI,1,50),res$TI)],orig.search$UT)
+table(is.na(orig.search$UT))
+
+
+
+orig.search$TI[is.na(orig.search$UT)]
+
+
 load(rda.arch)
  subset(orig.search,DI %in% wildlifetrade.df$DI) %>% select(DI)
 
