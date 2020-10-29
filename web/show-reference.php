@@ -301,7 +301,7 @@ where ref_id ilike '%$refid%'";
  }
 
  while ($row = pg_fetch_assoc($result))  {
-   $countrylist .= "<li>".$row["Name"]." (".$row["Alpha_2"].") anotado por ".$row["reviewed_by"]."</li>";
+   $countrylist .= "<li>".$row["Name"]." (<a href='list-by-country.php?ISO2=".$row["Alpha_2"]."'>".$row["Alpha_2"]."</a>). ".$row["country_role"].", reviewed by ".$row["reviewed_by"]." [<a href='edit-country.php?refid=$refid&iso2=".$row["Alpha_2"]."'>EDIT</a>]</li>";
 }
 echo "<ol>$countrylist</ol>"
 

@@ -7,8 +7,7 @@ include("inc/hello.php");
 
 <?php
 $refid = $_REQUEST["refid"];
-$action = $_REQUEST["origaction"];
-$contrib = $_REQUEST["origcontribution"];
+$iso2 = $_REQUEST["iso2"];
 ?>
 
 
@@ -18,13 +17,13 @@ $contrib = $_REQUEST["origcontribution"];
 if (isset($_REQUEST["editinfo"])) {
 
 foreach ($_POST as $key => $value) {
-      if (in_array($key, array("contribution","action","reviewed_by","country_list","species_list","data_type"))) {
+      if (in_array($key, array("reviewed_by","country_role"))) {
          if ($value!="") {
             $columns[]= "$key='$value'";
          }
       }
    }
-  $qry = "UPDATE psit.annotate_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid' AND action='$action' AND contribution='$contrib'";
+  $qry = "UPDATE psit.country_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid' AND iso2='$iso2' ";
   $res = pg_query($dbconn, $qry);
    if ($res) {
      print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
@@ -39,7 +38,7 @@ foreach ($_POST as $key => $value) {
 
 <?php
 
-$qry = "select * from psit.annotate_ref where ref_id='$refid' and contribution='$contrib' and action='$action'";
+$qry = "select * from psit.country_ref where ref_id='$refid' and iso2='$iso2'";
 
 
  $result = pg_query($dbconn, $qry);
@@ -72,7 +71,8 @@ while ($row = pg_fetch_assoc($result)) {
 
 
 echo "
-<FORM ACTION='edit-annotation.php' METHOD='POST'>
+$qry
+<FORM ACTION='edit-country.php' METHOD='POST'>
 <input type='hidden' name='origaction' value='$action'>
 <input type='hidden' name='origcontribution' value='$contrib'>
 <TABLE>
