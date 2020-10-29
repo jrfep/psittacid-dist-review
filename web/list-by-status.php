@@ -1,9 +1,9 @@
 <?php
 include("inc/hello.php");
 ?>
+<h1>Revision bibliografica "Psittaciformes Illegal Trade"</h1>
 
-<h1>Revision bibliografica</h1>
-
+<A HREF='index.php'>HOME</A>
 
 <?php
 $kwd = $_REQUEST["filtro2"];
@@ -12,7 +12,8 @@ LEFT JOIN psit.annotate_ref a
   ON b.\"UT\"=a.ref_id
   LEFT JOIN psit.filtro2 f
 ON b.\"UT\"=f.ref_id
-WHERE status = '$kwd'";
+WHERE status = '$kwd'
+ORDER BY action DESC";
 
 
  $result = pg_query($dbconn, $qry);

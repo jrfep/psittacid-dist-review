@@ -22,6 +22,11 @@ con <- dbConnect(drv, dbname = "litrev",
 
 dbWriteTable(con,name=c("psit","countries"),ISOcodes::ISO_3166_1,overwrite=F)
 
+birdlife.list <- read_sheet("1PFiB9g9whPPlD-AZH-s0mvI_DQeUjoJSDt7qjqSPRMM",sheet="BirdLife list")
+dbWriteTable(con,name=c("psit","birdlife"),data.frame(birdlife.list),overwrite=F)
+
+
+
 action.tab <- read_sheet("1PFiB9g9whPPlD-AZH-s0mvI_DQeUjoJSDt7qjqSPRMM",sheet="Framework")
 
 for (j in 1:nrow(action.tab)) {
@@ -112,7 +117,7 @@ orig.search %>% filter(!is.na(UT) & status %in% c('rejected off topic illegal tr
 for (qry in qries$qry)
   dbSendQuery(con,qry)
 
-subset(orig.search,!is.na(UT) & !is.na(status)) %>% sprintf("INSERT INTO psit.filtro2(ref_id,status) VALUES('%s','%s')",`UT`,`status`) %>% print.AsIs()
+
 
 subset(orig.search) %>% filter(!actions_13 %in% c("na","NA",NA)) %>% select(trade_chain,actions_11,actions_12,actions_13) %>% unique -> actions.obs
   qries <- sprintf("INSERT INTO psit.actions(trade_chain,aims,action_type,action) values('%s','%s','%s','%s') ON CONFLICT DO NOTHING",
@@ -126,24 +131,58 @@ subset(orig.search) %>% filter(!actions_13 %in% c("na","NA",NA)) %>% select(trad
 
 
 
-tab1 <- subset(orig.search,!is.na(UT))[,c("UT","contribution","actions_13")]
-tab1$reviewed_by <- "asanchez"
-tab1$method <- "first round"
-
-tab1 <- subset(tab1,!( contribution %in% c("na","NA",NA)) & !(actions_13 %in% c("na","NA",NA)))
+orig.search %>% filter(!is.na(UT),!( contribution %in% c("na","NA",NA)), !(actions_13 %in% c("na","NA",NA))) %>% select(UT,contribution,actions_13,data_type,country) %>% mutate(dts=gsub(" :: ",",",data_type),ISO2 = ISO_3166_1$Alpha_2[match(country,tolower(ISO_3166_1$Name))]
+) %>% mutate(ISO2=ifelse(is.na(ISO2),gsub(" :: ",",",country),ISO2))-> tab1
 
 
-qries <- with(tab1,sprintf("INSERT INTO psit.annotate_ref(ref_id,contribution,action) VALUES('%s','%s','%s') ON CONFLICT DO NOTHING", UT, contribution, actions_13))
 
-for (qry in qries) {
+qries <- with(tab1,sprintf("INSERT INTO psit.annotate_ref(ref_id,contribution,action,data_type,country_list) VALUES('%s','%s','%s','{%s}','{%s}') ON CONFLICT DO NOTHING", UT, contribution, actions_13,dts,ISO2))
+for (qry in qries)
   dbSendQuery(con,qry)
-}
 
 
+  spp.list <- read_sheet("1PFiB9g9whPPlD-AZH-s0mvI_DQeUjoJSDt7qjqSPRMM",sheet="Species list")
+  spp.list$UT <- orig.search$UT[match(spp.list$TI,orig.search$TI)]
+
+  spp.list %>% filter(!is.na(UT),scientific_name %in% birdlife.list$scientific_name) -> tab1
 
 
-tab1 <- subset(orig.search,!is.na(UT) & !is.na(country) & country != "NA")[,c("UT","country")]
-tab1$reviewed_by <- "asanchez"
-tab1$ISO2 <- ISO_3166_1$Alpha_2[match(tab1$country,tolower(ISO_3166_1$Name))]
+  qries <- with(tab1,sprintf("INSERT INTO psit.species_ref(ref_id,scientific_name,individuals) VALUES('%s','%s',%s) ON CONFLICT DO NOTHING", UT, scientific_name,ifelse(is.na(individuals),'NULL',individuals)))
+  for (qry in qries)
+    dbSendQuery(con,qry)
+
+
+qries <- with(birdlife.list,sprintf("INSERT INTO psit.species_ref (ref_id,scientific_name,reviewed_by)
+SELECT \"UT\",'%s','Rsaurio' from psit.bibtex where \"TI\" ilike '%%%s%%' OR \"TI\" ilike '%%%s%%' ON CONFLICT DO NOTHING",scientific_name,scientific_name,gsub("'","%",english_name)))
+for (qry in qries)
+  dbSendQuery(con,qry)
+
+qries <- with(birdlife.list,sprintf("INSERT INTO psit.species_ref (ref_id,scientific_name,reviewed_by)
+SELECT \"UT\",'%s','Rsaurio' from psit.bibtex where \"AB\" ilike '%%%s%%' OR \"AB\" ilike '%%%s%%' ON CONFLICT DO NOTHING",scientific_name,scientific_name,gsub("'","%",english_name)))
+for (qry in qries)
+  dbSendQuery(con,qry)
+
+qries <- with(birdlife.list,sprintf("INSERT INTO psit.species_ref (ref_id,scientific_name,reviewed_by)
+SELECT \"UT\",'%s','Rsaurio' from psit.bibtex where \"DE\" ilike '%%%s%%' OR \"DE\" ilike '%%%s%%' ON CONFLICT DO NOTHING",scientific_name,scientific_name,gsub("'","%",english_name)))
+for (qry in qries)
+  dbSendQuery(con,qry)
+
+
+qries <- with(ISO_3166_1,sprintf("INSERT INTO psit.country_ref (ref_id,iso2,reviewed_by)
+SELECT \"UT\",'%1$s','Rsaurio' from psit.bibtex where \"TI\" ilike '%%%2$s%%' OR \"AB\" ilike '%%%2$s%%'OR \"AB\" ilike '%%%2$s%%' ON CONFLICT DO NOTHING",Alpha_2,gsub("'","%",Name)))
+for (qry in qries)
+  dbSendQuery(con,qry)
+
+  qries <- with(subset(ISO_3166_1,!is.na(Common_name)),sprintf("INSERT INTO psit.country_ref (ref_id,iso2,reviewed_by)
+  SELECT \"UT\",'%1$s','Rsaurio' from psit.bibtex where \"TI\" ilike '%%%2$s%%' OR \"AB\" ilike '%%%2$s%%'OR \"AB\" ilike '%%%2$s%%' ON CONFLICT DO NOTHING",Alpha_2,gsub("'","%",Common_name)))
+  for (qry in qries)
+    dbSendQuery(con,qry)
+
+  qries <- with(subset(ISO_3166_1,!is.na(Official_name)),sprintf("INSERT INTO psit.country_ref (ref_id,iso2,reviewed_by)
+  SELECT \"UT\",'%1$s','Rsaurio' from psit.bibtex where \"TI\" ilike '%%%2$s%%' OR \"AB\" ilike '%%%2$s%%'OR \"AB\" ilike '%%%2$s%%' ON CONFLICT DO NOTHING",Alpha_2,gsub("'","%",Official_name)))
+
+for (qry in qries)
+  dbSendQuery(con,qry)
+
 
 dbDisconnect(con)

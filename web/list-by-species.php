@@ -7,13 +7,15 @@ include("inc/hello.php");
 
 
 <?php
-$kwd = $_REQUEST["DE"];
+$kwd = $_REQUEST["spp"];
 $qry = "select \"TI\",\"DE\",\"UT\",status,action from psit.bibtex b
 LEFT JOIN psit.annotate_ref a
   ON b.\"UT\"=a.ref_id
   LEFT JOIN psit.filtro2 f
   ON b.\"UT\"=f.ref_id
-WHERE \"DE\" ilike '%$kwd%'";
+  LEFT JOIN psit.species_ref s
+  ON b.\"UT\"=s.ref_id
+WHERE scientific_name='$kwd' ";
 
 
  $result = pg_query($dbconn, $qry);

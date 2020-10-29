@@ -7,13 +7,14 @@ include("inc/hello.php");
 
 
 <?php
-$kwd = $_REQUEST["DE"];
+$kwd1 = $_REQUEST["action"];
+$kwd2 = $_REQUEST["contribution"];
 $qry = "select \"TI\",\"DE\",\"UT\",status,action from psit.bibtex b
 LEFT JOIN psit.annotate_ref a
   ON b.\"UT\"=a.ref_id
   LEFT JOIN psit.filtro2 f
   ON b.\"UT\"=f.ref_id
-WHERE \"DE\" ilike '%$kwd%'";
+WHERE action='$kwd1' AND contribution='$kwd2'";
 
 
  $result = pg_query($dbconn, $qry);
