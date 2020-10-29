@@ -104,7 +104,8 @@ where \"UT\" ilike '%$refid%'";
  while ($row = pg_fetch_assoc($result))  {
 
 if ($row["status"]!='') {
-  echo "<h3>Filtro 2</h3><p> ".$row["status"]."</p>";
+  echo "<h3>Filtro 2</h3>
+    <div color='#AAAADD'><p> ".$row["status"]."</p></div>";
 
   if ($row["status"]=='included in review') {
     if ($row["action"]!='') {
@@ -188,6 +189,7 @@ if ($row["status"]!='') {
     $opts .= "<option value='$val'>$val</option>";
   }
   echo "<h3>Filtro 2</h3>
+  <div color='#DDAAAA'>
 No evaluado.
   <FORM ACTION='show-reference.php' METHOD='POST'>
   Aplicar filtro 2 <br/>
@@ -199,7 +201,8 @@ Revisado por <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
 Project <input type='text' name='project' value='Illegal Wildlife Trade'></input>
 
 <INPUT TYPE='submit' NAME='filtrar'/>
-  </FORM>";
+  </FORM>
+  </div>";
 
 }
 
