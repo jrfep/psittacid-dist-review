@@ -105,7 +105,7 @@ where \"UT\" ilike '%$refid%'";
 
 if ($row["status"]!='') {
   echo "<h3>Filtro 2</h3>
-    <div color='#AAAADD'><p> ".$row["status"]."</p></div>";
+    <div style='background-color: #AAAADD; width:300px;'><p> ".$row["status"]."</p></div>";
 
   if ($row["status"]=='included in review') {
     if ($row["action"]!='') {
@@ -189,16 +189,28 @@ if ($row["status"]!='') {
     $opts .= "<option value='$val'>$val</option>";
   }
   echo "<h3>Filtro 2</h3>
-  <div color='#DDAAAA'>
-No evaluado.
+  <div style='background-color: #DDAAAA; width:600px;'>
   <FORM ACTION='show-reference.php' METHOD='POST'>
-  Aplicar filtro 2 <br/>
-  <input type='hidden' name='UT' value='".$refid."'></input>
-<select name='status'>
-$opts
-</select></br>
-Revisado por <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
-Project <input type='text' name='project' value='Illegal Wildlife Trade'></input>
+    <input type='hidden' name='UT' value='".$refid."'></input>
+<table>
+  <tr><td>
+    Aplicar filtro 2
+  </td><td>
+  <select name='status'>
+  $opts
+  </select>
+  </td></tr>
+  <tr><td>
+Revisado por
+  </td><td>
+<input type='text' name='reviewed_by' value='Ada Sanchez'></input><br/>
+  </td></tr>
+  <tr><td>
+Project
+  </td><td>
+ <input type='text' name='project' value='Illegal Wildlife Trade'></input>
+  </td></tr>
+  </table>
 
 <INPUT TYPE='submit' NAME='filtrar'/>
   </FORM>
