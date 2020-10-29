@@ -87,12 +87,10 @@ where \"UT\" ilike '%$refid%'";
 ?>
 
 <?php
-$qry = "select \"TI\",\"DE\",\"AB\",\"DI\",contribution,action,status,data_type,country_list,f.reviewed_by as rev1 from psit.bibtex b
-LEFT JOIN psit.annotate_ref a
-  ON b.\"UT\"=a.ref_id
-  LEFT JOIN psit.filtro2 f
-  ON b.\"UT\"=f.ref_id
-where \"UT\" ilike '%$refid%'";
+$qry = "select \"TI\",\"DE\",\"AB\",\"DI\", contribution, action, status, data_type, country_list, species_list, project, f.reviewed_by as rev1, a.reviewed_by as rev2 FROM psit.bibtex b
+LEFT JOIN  psit.annotate_ref a ON b.\"UT\"=a.ref_id
+  LEFT JOIN psit.filtro2 f ON b.\"UT\"=f.ref_id
+WHERE \"UT\" ilike '%$refid%'";
 
 
  $result = pg_query($dbconn, $qry);
@@ -105,18 +103,24 @@ where \"UT\" ilike '%$refid%'";
 
 if ($row["status"]!='') {
   echo "<h3>Filtro 2</h3>
-    <div style='background-color: #AAAADD; width:300px;'><p> ".$row["status"]."</p></div>";
+    <div style='background-color: #AAAADD; width:300px;'><p> Classified as <b>".$row["status"]."</b> by ".$row["rev1"]."</p></div>";
 
   if ($row["status"]=='included in review') {
     if ($row["action"]!='') {
         echo "  <h3>Annotation</h3>
+
+        <div style='background-color: #AAAADD; width:800px;'>
         <TABLE>
         <tr><th> Data type</th><td>".$row["data_type"]."</td></tr>
         <tr><th> Action</th><td>".$row["action"]."</td></tr>
         <tr><th> Contribution</th><td>".$row["contribution"]."</td></tr>
-        <tr><th> Country list</th><td>".$row["country_list"]."</td></tr>
-        <tr><th> Reviewed by</th><td>".$row["rev1"]."</td></tr>
-        </TABLE>";
+        <tr><th> Comments to country list</th><td>".$row["country_list"]."</td></tr>
+        <tr><th> Comments to species list</th><td>".$row["species_list"]."</td></tr>
+        <tr><th> Reviewed by</th><td>".$row["rev2"]."</td></tr>
+        <tr><th> Project</th><td>".$row["project"]."</td></tr>
+        </TABLE>
+<a href='edit-annotation.php?refid=$refid&origcontribution=".$row["contribution"]."&origaction=".$row["action"]."'>EDIT this entry</a>
+        </div>";
 
       } else {
 
@@ -127,7 +131,7 @@ if ($row["status"]!='') {
         }
 
 
-        $opttypes = array('interview','literature review','oficial report', 'field survey', 'cites', 'seizure', 'internet');
+        $opttypes = array('interview','literature review','official report', 'field survey', 'cites', 'seizure', 'internet');
 
 
         foreach(array_values($opttypes) as $val) {
@@ -160,6 +164,7 @@ if ($row["status"]!='') {
               }
 
         echo "
+        <h3>Annotation</h3>
         <div style='background-color: #DDAAAA; width:800px;'>
         <FORM ACTION='show-reference.php' METHOD='POST'>
         Anotar referencia <br/>
@@ -183,13 +188,16 @@ Action
         </select>
         </td></tr>
 
-            <tr><td>
-Country (select multiple)
-            </td><td>
-            <select name='country_list[]' multiple>
-            $opt4s
-            </select>
-            </td></tr>
+        <tr><td>
+      Country comments <br/> use comma (',') for multiple entries
+        </td><td>
+         <input type='text' name='country_list'></input>
+        </td></tr>
+        <tr><td>
+      Species comments <br/> use comma (',') for multiple entries
+        </td><td>
+         <input type='text' name='species_list'></input>
+        </td></tr>
 
           <tr><td>
           Data type (select multiple)
@@ -202,6 +210,11 @@ Country (select multiple)
 Revisado por
           </td><td>
  <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
+           </td></tr>
+           <tr><td>
+         Project
+           </td><td>
+          <input type='text' name='project' value='Illegal Wildlife Trade'></input>
            </td></tr>
           </table>
 
@@ -291,6 +304,15 @@ where ref_id ilike '%$refid%'";
    $countrylist .= "<li>".$row["Name"]." (".$row["Alpha_2"].") anotado por ".$row["reviewed_by"]."</li>";
 }
 echo "<ol>$countrylist</ol>"
+
+// <tr><td>
+// Country (select multiple)
+// </td><td>
+// <select name='country_list[]' multiple>
+// $opt4s
+// </select>
+// </td></tr>
+
 ?>
 
 <?php
