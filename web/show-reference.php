@@ -23,10 +23,10 @@ foreach ($_POST as $key => $value) {
   $qry = "INSERT INTO psit.filtro2 (ref_id,".implode($columns,", ").",reviewed_date) values ('".$refid."',".implode($values,", ").",CURRENT_TIMESTAMP(0)) ON CONFLICT DO NOTHING ";
   $res = pg_query($dbconn, $qry);
    if ($res) {
-      print "<BR/>POST data is successfully logged<BR/>$qry\n";
-   } else {
-      print "<BR/>User must have sent wrong inputs<BR/>$qry\n";
-   }
+     print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
+  } else {
+     print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
+    }
   #echo $qry;
 }
 
