@@ -13,7 +13,7 @@ $refid = $_REQUEST["UT"];
 if (isset($_REQUEST["filtrar"])) {
 
 foreach ($_POST as $key => $value) {
-      if (in_array($key, array("status","reviewed_by"))) {
+      if (in_array($key, array("status","project","reviewed_by"))) {
          if ($value!="") {
             $columns[]= $key;
             $values[] = "'$value'";
@@ -179,6 +179,7 @@ if ($row["status"]!='') {
 $opts
 </select></br>
 Revisado por <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
+Project <input type='text' name='project' value='Illegal Wildlife Trade'></input>
 
 <INPUT TYPE='submit' NAME='filtrar'/>
   </FORM>";
