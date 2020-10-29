@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS psit.annotate_ref (
   ref_id varchar(255),
   contribution contribution_type,
   action varchar(100),
-  data_type varchar(255),
+  data_type text[],
   country_list text[],
   species_list text[],
   reviewed_by varchar(100) DEFAULT 'Ada Sanchez',
@@ -29,6 +29,33 @@ CREATE TABLE IF NOT EXISTS psit.annotate_ref (
 );
 ALTER TABLE psit.annotate_ref  ADD CONSTRAINT annotate_ref_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE psit.annotate_ref  ADD CONSTRAINT annotate_ref_action_fkey FOREIGN KEY(action) REFERENCES psit.actions(action) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- ALTER TABLE psit.annotate_ref ADD COLUMN data_type2 text[];
+-- update psit.annotate_ref set data_type=REPLACE(data_type,'{','');
+-- update psit.annotate_ref set data_type=REPLACE(data_type,'}','');
+--
+-- update psit.annotate_ref set data_type2[1]=data_type
+-- where data_type not like '%,%';
+--
+-- update psit.annotate_ref set data_type2[1]='interview'
+-- where data_type like 'interview,%';
+-- update psit.annotate_ref set data_type2[1]='official report'
+-- where data_type like 'oficial report,%';
+--
+-- update psit.annotate_ref set data_type2[2]='cites'
+-- where data_type like '%,cites%';
+-- update psit.annotate_ref set data_type2[3]='cites'
+-- where data_type like '%,%,cites%';
+--
+-- update psit.annotate_ref set data_type2[2]='review literature'
+-- where data_type like '%,review literature%';
+-- update psit.annotate_ref set data_type2[2]='field survey'
+-- where data_type like '%,field survey%';
+-- select data_type,data_type2 from psit.annotate_ref where data_type like '%,%';
+--
+-- ALTER TABLE psit.annotate_ref DROP COLUMN data_type;
+-- ALTER TABLE psit.annotate_ref RENAME COLUMN data_type2 TO data_type;
+
 
 
 CREATE TABLE IF NOT EXISTS psit.filtro1 (

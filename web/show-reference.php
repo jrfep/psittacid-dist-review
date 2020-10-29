@@ -159,27 +159,54 @@ if ($row["status"]!='') {
              #        echo "Tenemos ".$row["count"]." referencias en base de datos";
               }
 
-        echo "<FORM ACTION='show-reference.php' METHOD='POST'>
+        echo "
+        <div style='background-color: #DDAAAA; width:800px;'>
+        <FORM ACTION='show-reference.php' METHOD='POST'>
         Anotar referencia <br/>
         <input type='hidden' name='UT' value='".$refid."'></input>
-        Contribution: <select name='contribution'>
-        $opt2s
-        </select><br/>
-        Action:
+
+
+        <table>
+        <tr><td>
+        Contribution
+
+        </td><td>
+        <select name='contribution'>
+               $opt2s
+               </select>
+        </td></tr>
+        <tr><td>
+Action
+        </td><td>
         <select name='action'>
         $opt3s
-        </select><br/>
-        <select name='country_list[]' multiple>
-        $opt4s
-        </select><br/>
-        Data type
-        <select name='data_type[]' multiple>
-        $opt5s
-        </select><br/>
-        Revisado por <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
+        </select>
+        </td></tr>
+
+            <tr><td>
+Country (select multiple)
+            </td><td>
+            <select name='country_list[]' multiple>
+            $opt4s
+            </select>
+            </td></tr>
+
+          <tr><td>
+          Data type (select multiple)
+          </td><td>
+          <select name='data_type[]' multiple>
+          $opt5s
+          </select>
+          </td></tr>
+          <tr><td>
+Revisado por
+          </td><td>
+ <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
+           </td></tr>
+          </table>
 
         <INPUT TYPE='submit' NAME='anotar'/>
-        </FORM>";
+        </FORM></div>";
       }
 
   }
