@@ -62,7 +62,31 @@ foreach ($_POST as $key => $value) {
 ?>
 
 <?php
+$qry = "select \"TI\",\"DE\",\"AB\",\"DI\" from psit.bibtex b
+where \"UT\" ilike '%$refid%'";
 
+
+ $result = pg_query($dbconn, $qry);
+ if (!$result) {
+   echo "An error occurred.\n";
+   exit;
+ }
+
+ while ($row = pg_fetch_assoc($result))  {
+   $kwds = explode(";",$row["DE"]);
+   foreach($kwds as $v) {
+          $URLS.="<a href='list-by-kwd.php?DE=$v'>$v</a> / ";
+        }
+             echo "<p><b>".$row["TI"]."</b>
+             <br/> keywords ".$URLS."<br/>
+             <br/> abstract ".$row["AB"]."<br/>
+             <br/>  DOI:<a target='_blank' href='http://dx.doi.org/".$row["DI"]."'>".$row["DI"]."</a></p>
+             ";
+
+}
+?>
+
+<?php
 $qry = "select \"TI\",\"DE\",\"AB\",\"DI\",contribution,action,status,data_type,country_list,f.reviewed_by as rev1 from psit.bibtex b
 LEFT JOIN psit.annotate_ref a
   ON b.\"UT\"=a.ref_id
@@ -79,15 +103,6 @@ where \"UT\" ilike '%$refid%'";
 
  while ($row = pg_fetch_assoc($result))  {
 
-$kwds = explode(";",$row["DE"]);
-foreach($kwds as $v) {
-       $URLS.="<a href='list-by-kwd.php?DE=$v'>$v</a> / ";
-     }
-          echo "<p><b>".$row["TI"]."</b>
-          <br/> keywords ".$URLS."<br/>
-          <br/> abstract ".$row["AB"]."<br/>
-          <br/>  DOI:<a target='_blank' href='http://dx.doi.org/".$row["DI"]."'>".$row["DI"]."</a></p>
-          ";
 if ($row["status"]!='') {
   echo "<h3>Filtro 2</h3><p> ".$row["status"]."</p>";
 
@@ -172,7 +187,9 @@ if ($row["status"]!='') {
   foreach(array_values($optfiltro) as $val) {
     $opts .= "<option value='$val'>$val</option>";
   }
-  echo "<FORM ACTION='show-reference.php' METHOD='POST'>
+  echo "<h3>Filtro 2</h3>
+No evaluado.
+  <FORM ACTION='show-reference.php' METHOD='POST'>
   Aplicar filtro 2 <br/>
   <input type='hidden' name='UT' value='".$refid."'></input>
 <select name='status'>
