@@ -101,3 +101,7 @@ CREATE TABLE IF NOT EXISTS psit.country_ref (
 );
 ALTER TABLE psit.country_ref  ADD CONSTRAINT country_ref_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE psit.country_ref  ADD CONSTRAINT country_ref_spp_fkey FOREIGN KEY(ISO2) REFERENCES psit.countries("Alpha_2") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE psit.country_ref  ADD COLUMN country_role varchar(100) DEFAULT 'In text';
+
+
+with tab1 AS (select unnest(country_list) as cc,ref_id,reviewed_by from psit.annotate_ref) INSERT INTO psit.country_ref (ref_id,iso2,reviewed_by,country_role,reviewed_date) (SELECT distinct ref_id,cc,reviewed_by,'Study location',CURRENT_TIMESTAMP(0) FROM tab1 where cc NOT IN ('various','global','quitar argentina')) ON CONFLICT ON CONSTRAINt country_ref_pkey DO UPDATE SET reviewed_by=EXCLUDED.reviewed_by, country_role=EXCLUDED.country_role, reviewed_date=EXCLUDED.reviewed_date;
