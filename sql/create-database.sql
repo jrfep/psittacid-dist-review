@@ -57,17 +57,27 @@ ALTER TABLE psit.annotate_ref  ADD CONSTRAINT annotate_ref_action_fkey FOREIGN K
 -- ALTER TABLE psit.annotate_ref RENAME COLUMN data_type2 TO data_type;
 
 
+--
+-- CREATE TABLE IF NOT EXISTS psit.filtro1 (
+--   keyword varchar(255),
+--   status varchar(10),
+--   reviewed_by varchar(100) DEFAULT 'Ada Sanchez',
+--   reviewed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--   PRIMARY KEY (keyword)
+-- );
+
 
 CREATE TABLE IF NOT EXISTS psit.filtro1 (
-  keyword varchar(255),
-  status varchar(10),
-  reviewed_by varchar(100) DEFAULT 'Ada Sanchez',
+  ref_id varchar(255),
+  title text[],
+  abstract text[],
+  keyword text[],
+  project varchar(30) DEFAULT 'Illegal Wildlife Trade',
+  reviewed_by varchar(100) DEFAULT 'Rsaurio',
   reviewed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (keyword)
+  PRIMARY KEY (project,ref_id)
 );
-
-
-
+ALTER TABLE psit.filtro1  ADD CONSTRAINT filtro1_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
 
 CREATE TYPE razones_rechazo AS ENUM ('rejected off topic illegal trade' , 'rejected off topic parrots' , 'rejected illegal trade circunstancial' , 'rejected opinion','rejected overview','included in review','not available');
 

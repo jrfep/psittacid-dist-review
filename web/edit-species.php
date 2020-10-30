@@ -7,7 +7,7 @@ include("inc/hello.php");
 
 <?php
 $refid = $_REQUEST["refid"];
-$iso2 = $_REQUEST["iso2"];
+$spp = $_REQUEST["spp"];
 ?>
 
 
@@ -17,13 +17,13 @@ $iso2 = $_REQUEST["iso2"];
 if (isset($_REQUEST["editinfo"])) {
 
 foreach ($_POST as $key => $value) {
-      if (in_array($key, array("reviewed_by","country_role"))) {
+      if (in_array($key, array("reviewed_by","individuals"))) {
          if ($value!="") {
             $columns[]= "$key='$value'";
          }
       }
    }
-  $qry = "UPDATE psit.country_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid' AND iso2='$iso2' ";
+  $qry = "UPDATE psit.species_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid' AND sscientific_name='$spp' ";
   $res = pg_query($dbconn, $qry);
    if ($res) {
      print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
@@ -38,7 +38,7 @@ foreach ($_POST as $key => $value) {
 
 <?php
 
-$qry = "select * from psit.country_ref where ref_id='$refid' and iso2='$iso2'";
+$qry = "select * from psit.species_ref where ref_id='$refid' and scientific_name='$spp'";
 
 
  $result = pg_query($dbconn, $qry);
@@ -52,14 +52,9 @@ while ($row = pg_fetch_assoc($result)) {
    $cells .= "<tr bgcolor='#B5D6B6'>
    <th>$name</TH>";
    switch($name) {
-     case "country_role":
-     $element="<input type='text' list='sugerencias' name='$name' value='$value'/>
-<datalist id='sugerencias'>
-  <option>In text</option>
-  <option>Study location</option>
-  <option>False positive</option>
-  <option>Error</option>
-</datalist>";
+     case "scientific_name":
+     $element="<input type='hidden' name='spp' value='$spp'></input>
+     <input type='text' name='$name' value='$value'></input>";
      break;
      case "reviewed_date":
      $element=$value;
@@ -81,9 +76,7 @@ while ($row = pg_fetch_assoc($result)) {
 
 echo "
 $qry
-<FORM ACTION='edit-country.php' METHOD='POST'>
-<input type='hidden' name='origaction' value='$action'>
-<input type='hidden' name='origcontribution' value='$contrib'>
+<FORM ACTION='edit-species.php' METHOD='POST'>
 <TABLE>
 
 $cells

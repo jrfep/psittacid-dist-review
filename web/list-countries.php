@@ -7,7 +7,7 @@ include("inc/hello.php");
 
 
 <?php
-$qry = "select \"Alpha_2\",\"Name\",count(distinct ref_id) from psit.countries l left join psit.country_ref r ON l.\"Alpha_2\"=iso2 group by \"Alpha_2\",\"Name\" order by count DESC";
+$qry = "select \"Alpha_2\",\"Name\",count(distinct ref_id) from psit.countries l left join psit.country_ref r ON l.\"Alpha_2\"=iso2 WHERE country_role NOT IN ('False positive','Error') group by \"Alpha_2\",\"Name\" order by count DESC";
 
 
  $result = pg_query($dbconn, $qry);

@@ -9,6 +9,7 @@ include("inc/hello.php");
 <?php
 
 $refid = $_REQUEST["UT"];
+$project = $_REQUEST["project"];
 #print_r($_REQUEST);
 if (isset($_REQUEST["filtrar"])) {
 
@@ -75,7 +76,7 @@ where \"UT\" ilike '%$refid%'";
  while ($row = pg_fetch_assoc($result))  {
    $kwds = explode(";",$row["DE"]);
    foreach($kwds as $v) {
-          $URLS.="<a href='list-by-kwd.php?DE=$v'>$v</a> / ";
+          $URLS.="<a href='list-by-DE.php?DE=$v'>$v</a> / ";
         }
              echo "<p><b>".$row["TI"]."</b>
              <br/> keywords ".$URLS."<br/>
@@ -83,6 +84,40 @@ where \"UT\" ilike '%$refid%'";
              <br/>  DOI:<a target='_blank' href='http://dx.doi.org/".$row["DI"]."'>".$row["DI"]."</a></p>
              ";
 
+}
+?>
+
+<?php
+$qry = "select \"TI\",\"DE\",\"AB\",\"DI\", abstract,title,keyword,f.reviewed_by,project as rev1 FROM psit.bibtex b
+  LEFT JOIN psit.filtro1 f ON b.\"UT\"=f.ref_id
+WHERE \"UT\" = '$refid' ";
+
+
+ $result = pg_query($dbconn, $qry);
+ if (!$result) {
+   echo "An error occurred. $qry\n";
+   exit;
+ }
+
+ while ($row = pg_fetch_assoc($result))  {
+
+if ($row["rev1"]!='') {
+  if ($row["title"]!="")
+    $lis .= "<li>Title: ".$row["title"]."</li>";
+    if ($row["abstract"]!="")
+    $lis .=     "<li>Abstract: ".$row["abstract"]."</li>";
+    if ($row["keyword"]!="")
+    $lis .=   "<li>Keywords: ".$row["keyword"]."</li>";
+
+  echo "<h3>Filtro 1</h3>
+    <div style='background-color: #AAAADD; width:600px;'><p> Included in filter 1 for project ".$row["project"]." by ".$row["rev1"]." with following search terms:
+    <ul>$lis</ul>
+    </p></div>";
+  } else {
+    echo "<h3>Filtro 1</h3>
+      <div style='background-color: #DDAAAA; width:600px;'><p> Not included in filter 1 .
+      </p></div>";
+  }
 }
 ?>
 
@@ -209,13 +244,24 @@ Action
           <tr><td>
 Revisado por
           </td><td>
- <input type='text' name='reviewed_by' value='Ada Sanchez'></input>
+ <input type='text' list='reviewers' name='reviewed_by'></input>
+<datalist id='reviewers'>
+<option>Ada Sanchez</option>
+<option>JRFP</option>
+<option>Anonymous</option>
+<option>Other...</option>
+</datalist>
            </td></tr>
            <tr><td>
          Project
            </td><td>
-          <input type='text' name='project' value='Illegal Wildlife Trade'></input>
-           </td></tr>
+           <input type='text' list='projects' name='project' value='Illegal Wildlife Trade'></input>
+           <datalist id='projects'>
+           <option>Illegal Wildlife Trade</option>
+           <option>Species Distribution Models</option>
+           <option>Other...</option>
+           </datalist>
+              </td></tr>
           </table>
 
         <INPUT TYPE='submit' NAME='anotar'/>
@@ -243,12 +289,25 @@ Revisado por
   <tr><td>
 Revisado por
   </td><td>
-<input type='text' name='reviewed_by' value='Ada Sanchez'></input><br/>
+<input type='text' list='reviewers' name='reviewed_by'></input>
+<datalist id='reviewers'>
+<option>Ada Sanchez</option>
+<option>JRFP</option>
+<option>Anonymous</option>
+<option>Other...</option>
+</datalist>
+
   </td></tr>
   <tr><td>
 Project
   </td><td>
- <input type='text' name='project' value='Illegal Wildlife Trade'></input>
+ <input type='text' list='projects' name='project' value='Illegal Wildlife Trade'></input>
+ <datalist id='projects'>
+ <option>Illegal Wildlife Trade</option>
+ <option>Species Distribution Models</option>
+ <option>Other...</option>
+ </datalist>
+
   </td></tr>
   </table>
 
@@ -279,7 +338,7 @@ where ref_id ilike '%$refid%'";
  }
 
  while ($row = pg_fetch_assoc($result))  {
-   $spplist .= "<li>".$row["scientific_name"]." (".$row["english_name"].") anotado por ".$row["reviewed_by"]."</li>";
+   $spplist .= "<li>".$row["scientific_name"]." (".$row["english_name"].") anotado por ".$row["reviewed_by"]." [<a href='edit-species.php?refid=$refid&spp=".$row["scientific_name"]."'>EDIT</a>]</li>";
 }
 echo "<ol>$spplist</ol>"
 ?>

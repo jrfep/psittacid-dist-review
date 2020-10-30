@@ -4,60 +4,47 @@ include("inc/hello.php");
 
 <h1>Revision bibliografica "Psittaciformes Illegal Trade"</h1>
 <?php
-##$qry = "select \"TI\",\"AB\" from psit.bibtex where \"AB\" ilike '%nest poach%' limit 2";
-$qry = "select count(*) from psit.bibtex ";
+$project='Illegal Wildlife Trade';
 
- $result = pg_query($dbconn, $qry);
- if (!$result) {
-   echo "An error occurred.\n";
-   exit;
- }
+  $qry1 = "select count(distinct b.\"UT\") as referencias FROM psit.bibtex b";
+  $qry2 ="select count(distinct f1.ref_id) as filtro1 FROM psit.filtro1 f1 WHERE project='$project'";
+  $qry3 ="select count(distinct f2.ref_id) as filtro2 FROM psit.filtro2 f2 WHERE project='$project'";
+  $qry4 ="select count(distinct a.ref_id) as anotadas FROM psit.annotate_ref a";
+  $res1 = pg_query($dbconn, $qry1); if (!$res1) { echo "An error occurred.\n"; exit;}
+  $res2 = pg_query($dbconn, $qry2); if (!$res2) { echo "An error occurred.\n"; exit;}
+  $res3 = pg_query($dbconn, $qry3); if (!$res3) { echo "An error occurred.\n"; exit;}
+  $res4 = pg_query($dbconn, $qry4); if (!$res4) { echo "An error occurred.\n"; exit;}
 
- while ($row = pg_fetch_assoc($result)) {
-  #        echo "<p><b>".$row["TI"]."</b>: ".$row["AB"]."</p>";
+  $row1 = pg_fetch_assoc($res1);
+  $row2 = pg_fetch_assoc($res2);
+  $row3 = pg_fetch_assoc($res3);
+  $row4 = pg_fetch_assoc($res4);
 
-          echo "<p>Tenemos ".$row["count"]." referencias en base de datos</p>";
-   }
-
-      $qry = "select count(distinct ref_id) from psit.filtro2 ";
-
-       $result = pg_query($dbconn, $qry);
-       if (!$result) {
-         echo "An error occurred.\n";
-         exit;
-       }
-
-       while ($row = pg_fetch_assoc($result)) {
-        #        echo "<p><b>".$row["TI"]."</b>: ".$row["AB"]."</p>";
-
-                echo "<p>De las cuales ".$row["count"]." fueron revisadas</p>";
-         }
+    echo "<p>Tenemos ".$row1["referencias"]." referencias en base de datos </p>";
+    echo "<p> ".$row2["filtro1"]." seleccionadas por el Filtro 1 </p>";
+    echo "<p> ".$row3["filtro2"]." seleccionadas por el Filtro 2 </p>";
+    echo "<p> y ".$row4["anotadas"]." con datos de trafico anotados </p>";
 
 
-            $qry = "select count(distinct ref_id) from psit.annotate_ref ";
-
-             $result = pg_query($dbconn, $qry);
-             if (!$result) {
-               echo "An error occurred.\n";
-               exit;
-             }
-
-             while ($row = pg_fetch_assoc($result)) {
-              #        echo "<p><b>".$row["TI"]."</b>: ".$row["AB"]."</p>";
-
-                      echo "<p>Y ".$row["count"]." han sido incluidas y anotadas</p>";
-               }
 
 ?>
 
 <h2>Filtro 1</h2>
 <?php
-$qry = "select keyword,count(distinct \"UT\") as nref,count(f2.status) as nfiltered from psit.filtro1 f1
-LEFT JOIN psit.bibtex b ON b.\"DE\" LIKE '%' || f1.keyword || '%'
-LEFT JOIN psit.filtro2 f2 ON b.\"UT\"=f2.ref_id
-  where f1.status='YES'
-  GROUP BY keyword
-  ORDER BY nref DESC ,nfiltered";
+
+$qry = "WITH tab1 AS (
+  SELECT unnest(title) AS kwd, count(distinct f1.ref_id) AS titulo_f1, count(distinct f2.ref_id) AS titulo_f2 FROM psit.filtro1 f1 LEFT JOIN psit.filtro2 f2 ON f1.ref_id=f2.ref_id WHERE f1.project='$project'  GROUP BY kwd
+),
+tab2 AS (
+  SELECT unnest(keyword) AS kwd, count(distinct f1.ref_id) AS keyword_f1, count(distinct f2.ref_id) AS keyword_f2 FROM psit.filtro1 f1 LEFT JOIN psit.filtro2 f2 ON f1.ref_id=f2.ref_id WHERE f1.project='$project'  GROUP BY kwd
+),
+tab3 AS (
+    SELECT unnest(abstract) AS kwd, count(distinct f1.ref_id) AS abstract_f1, count(distinct f2.ref_id) AS abstract_f2 FROM psit.filtro1 f1 LEFT JOIN psit.filtro2 f2  ON f1.ref_id=f2.ref_id WHERE f1.project='$project'  GROUP BY kwd
+  )
+SELECT kwd,titulo_f1,titulo_f2,abstract_f1,abstract_f2,keyword_f1,keyword_f2
+FROM tab1
+FULL JOIN tab2 USING(kwd)
+FULL JOIN tab3 USING(kwd)";
 
 
  $result = pg_query($dbconn, $qry);
@@ -67,16 +54,33 @@ LEFT JOIN psit.filtro2 f2 ON b.\"UT\"=f2.ref_id
  }
 
  while ($row = pg_fetch_assoc($result)) {
-          $li .= "<li><a href='list-by-kwd.php?DE=$row[keyword]'>$row[keyword]</a>: $row[nref] references, $row[nfiltered] reviewed</li>";
+    $clr = array('#FF9999','#FF9999','#FF9999');
+   if ($row["titulo_f2"]==$row['titulo_f1']) { $clr[0] = '#99FF99';}
+   if ($row['keyword_f2']==$row['keyword_f1']) { $clr[1] = '#99FF99';}
+   if ($row["abstract_f2"]==$row['abstract_f1']) { $clr[2] = '#99FF99';}
+         $li .= "<tr>
+          <th><a href='list-by-kwd.php?DE=$row[kwd]&project=$project'>$row[kwd]</a></th>
+          <td style='background-color: $clr[0]'>$row[titulo_f2]/$row[titulo_f1]</td>
+          <td style='background-color: $clr[1]'>$row[keyword_f2]/$row[keyword_f1]</td>
+          <td style='background-color: $clr[2]'>$row[abstract_f2]/$row[abstract_f1]</td>
+          </tr>";
 
    }
-echo "<ol>$li</ol>"
+echo "<table>
+<tr>
+<th>Search terms</th>
+<td>Title</td>
+<td>Keyword</td>
+<td>Abstract</td>
+</tr>
+$li
+</table>"
 ?>
 
 <h2>Filtro 2</h2>
 <?php
 
-$qry = "select status,count(*) from psit.filtro2 group by status ";
+$qry = "select status,count(*) from psit.filtro2 WHERE project='$project' group by status ";
 
  $result = pg_query($dbconn, $qry);
  if (!$result) {
@@ -88,64 +92,6 @@ $qry = "select status,count(*) from psit.filtro2 group by status ";
           $li2 .= "<li><a href='list-by-status.php?filtro2=$row[status]'>$row[status]</a>: $row[count] referencias</li>";
    }
 echo "<ol>$li2</ol>"
-?>
-
-<h2>Anotaciones</h2>
-
-<?php
-##$qry = "select \"TI\",\"AB\" from psit.bibtex where \"AB\" ilike '%nest poach%' limit 2";
-$qry = "select action,contribution,count(*) from psit.annotate_ref group by action,contribution ";
-
- $result = pg_query($dbconn, $qry);
- if (!$result) {
-   echo "An error occurred.\n";
-   exit;
- }
- $total = $actions = $contributions = array();
- while ($row = pg_fetch_assoc($result)) {
-  #        echo "<p><b>".$row["TI"]."</b>: ".$row["AB"]."</p>";
-  $total[$row["action"]][$row["contribution"]] += $row["count"];
-
-  array_push($actions,$row["action"]);
-  array_push($contributions,$row["contribution"]);
-   }
-   $actions = array_unique($actions);
-   $contributions = array_unique($contributions);
-
-     $tab .= "<tr><th>Actions</th>";
-   foreach($contributions as $cc) {
-       $tab .= "<th>".$cc."</th>";
-   }
-   $tab .="</tr>";
-
-   while(list($n,$aa) = each($actions)) {
-     $tab .= "<tr><th>".$aa."</th>";
-
-     foreach($contributions as $cc) {
-       $tab .= "<td align='center' bgcolor='#B7B6C5'><a href='list-by-annotation.php?action=$aa&contribution=$cc'>".$total[$aa][$cc]."</a></td>";
-     }
-     $tab .= "<tr>";
-
-   }
-   echo "<table>$tab</table>";
-
-?>
-
-By country
-<?php
-$prg = " WITH tab1 as ( select unnest(country_list) as cty FROM psit.annotate_ref) SELECT \"Name\",cty,count(*) from tab1 left join psit.countries ON cty=\"Alpha_2\" group by \"Name\",cty order by count DESC";
-
- $result = pg_query($dbconn, $prg);
- if (!$result) {
-   echo "An error occurred.\n";
-   exit;
- }
-
- while ($row = pg_fetch_assoc($result)) {
-          $li3 .= "<li><a href='list-by-country.php?ISO2=$row[cty]'>$row[Name] ($row[cty])</a>: $row[count] references</li>";
-
-   }
-echo "<ol>$li3</ol>"
 ?>
 
 <a href='list-countries.php'>All countries</a>

@@ -91,19 +91,18 @@ dbWriteTable(con,name=c("psit","bibtex"),data.frame(ISI.search.df),overwrite=T)
 qry <- 'ALTER TABLE  psit.bibtex ADD CONSTRAINT ref_id PRIMARY KEY ("UT")';
 dbSendQuery(con,qry)
 
+kwds <- unique(trim(unlist(strsplit(ISI.search.df$DE,";"))))
 
-kwds <- data.frame(keyword=unique(trim(unlist(strsplit(ISI.search.df$DE,";")))),
-  filtro1="NO",stringsAsFactors=F)
-
-kwds <- subset(kwds,!keyword %in% c("",NA))
-kwds[grep("POACH|EXTRACT|ILLEGAL|MARKET",kwds$keyword),"filtro1"] <- "YES"
-
-
-for (k in 1:nrow(kwds)) {
-  qry <- sprintf("INSERT INTO psit.filtro1 (keyword,status) VALUES (%s,'%s') ON CONFLICT DO NOTHING", dbQuoteString(con,kwds$keyword[k]), kwds$filtro1[k])
-#  dbSendQuery(con,qry)
+for (kwd in grep("POACH|EXTRACT|ILLEGAL|MARKET|PET",kwds,value=T)) {
+  qry <- sprintf("INSERT INTO psit.filtro1(ref_id,title) SELECT \"UT\",'{%1$s}' FROM psit.bibtex WHERE \"TI\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET title=array(select distinct unnest(psit.filtro1.title || EXCLUDED.title))",kwd)
+  dbSendQuery(con,qry)
+  qry <- sprintf("INSERT INTO psit.filtro1(ref_id,abstract) SELECT \"UT\",'{%1$s}' FROM psit.bibtex WHERE \"AB\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET abstract=array(select distinct unnest(psit.filtro1.abstract || EXCLUDED.abstract))",kwd)
+  dbSendQuery(con,qry)
+  qry <- sprintf("INSERT INTO psit.filtro1(ref_id,keyword) SELECT \"UT\",'{%1$s}' FROM psit.bibtex WHERE \"DE\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET keyword=array(select distinct unnest(psit.filtro1.keyword || EXCLUDED.keyword))",kwd)
+  dbSendQuery(con,qry)
 
 }
+
 
 
 orig.search <- read_sheet("1PFiB9g9whPPlD-AZH-s0mvI_DQeUjoJSDt7qjqSPRMM",sheet="Articles")
