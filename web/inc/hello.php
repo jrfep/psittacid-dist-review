@@ -21,5 +21,13 @@ $dbconn = pg_connect("host=terra.ad.unsw.edu.au dbname=litrev user=jferrer passw
    or die("Could not connect");
 
    ## print "Connected successfully<br/>";
+   $project='Illegal Wildlife Trade';
+   $head ="<h1>Revision bibliografica ''$project''</h1>
+   <A HREF='index.php'>HOME</A> /
+   <a href='list-countries.php'>Countries</a> /
+   <a href='list-species.php'>Species</a>";
+
 echo $head;
+
+
 ?>

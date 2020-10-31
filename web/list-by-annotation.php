@@ -1,10 +1,6 @@
 <?php
 include("inc/hello.php");
 ?>
-<h1>Revision bibliografica "Psittaciformes Illegal Trade"</h1>
-
-<A HREF='index.php'>HOME</A>
-
 
 <?php
 $kwd1 = $_REQUEST["action"];

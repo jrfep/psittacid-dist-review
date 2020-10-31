@@ -2,8 +2,6 @@
 include("inc/hello.php");
 ?>
 
-<h1>Revision bibliografica</h1>
-
 
 <?php
 $refid = $_REQUEST["refid"];

@@ -2,9 +2,6 @@
 include("inc/hello.php");
 ?>
 
-<h1>Revision bibliografica</h1>
-
-
 <h2>Anotaciones</h2>
 
 <?php

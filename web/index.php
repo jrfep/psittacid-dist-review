@@ -2,9 +2,7 @@
 include("inc/hello.php");
 ?>
 
-<h1>Revision bibliografica "Psittaciformes Illegal Trade"</h1>
 <?php
-$project='Illegal Wildlife Trade';
 
   $qry1 = "select count(distinct b.\"UT\") as referencias FROM psit.bibtex b";
   $qry2 ="select count(distinct f1.ref_id) as filtro1 FROM psit.filtro1 f1 WHERE project='$project'";
@@ -94,8 +92,6 @@ $qry = "select status,count(*) from psit.filtro2 WHERE project='$project' group 
 echo "<ol>$li2</ol>"
 ?>
 
-<a href='list-countries.php'>All countries</a>
-<a href='list-species.php'>All species</a>
 
 <?php
 include("inc/bye.php");
