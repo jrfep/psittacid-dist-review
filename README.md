@@ -24,6 +24,28 @@ pg_dump -d litrev   -n public -n psit > $(date +%Y%m%d)-litrev.sql
 sed -e s/jferrer/postgres/g $(date +%Y%m%d)-litrev.sql > export-litrev.sql
 psql -U postgres -h literature-review.c9ldkr8elxog.ap-southeast-2.rds.amazonaws.com -d litrev -v ON_ERROR_STOP=1 < export-litrev.sql
 
+```
+
+RDS configuration:
+Endpoint
+literature-review.c9ldkr8elxog.ap-southeast-2.rds.amazonaws.com
+
+Subnets
+subnet-6809f80e
+subnet-cbea0883
+subnet-863655de
+
+VPC security groups
+myVPC (sg-07baf88218ebe445f)
+( active )
+default (sg-0d76a279)
+( active )
+```sh
+```
+
+http://literaturereviewapp-env.eba-2bmsdtqx.ap-southeast-2.elasticbeanstalk.com
+
+```sh
 
 1:33pm
 Using elasticbeanstalk-ap-southeast-2-572174861211 as Amazon S3 storage bucket for environment data

@@ -335,7 +335,7 @@ where ref_id ilike '%$refid%'";
  }
 
  while ($row = pg_fetch_assoc($result))  {
-   $spplist .= "<li>".$row["scientific_name"]." (".$row["english_name"].") anotado por ".$row["reviewed_by"]." [<a href='edit-species.php?refid=$refid&spp=".$row["scientific_name"]."'>EDIT</a>]</li>";
+   $spplist .= "<li><i><a href='list-by-species.php?spp=".$row["scientific_name"]."'>".$row["scientific_name"]."</a></i> (".$row["english_name"].") anotado por ".$row["reviewed_by"]." [<a href='edit-species.php?refid=$refid&spp=".$row["scientific_name"]."'>EDIT</a>]</li>";
 }
 echo "<ol>$spplist</ol>"
 ?>
