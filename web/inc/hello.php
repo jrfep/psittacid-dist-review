@@ -17,7 +17,8 @@ function trimq($a) {
   return trim($a,'""');
 }
 
-$dbconn = pg_connect("host=terra.ad.unsw.edu.au dbname=litrev user=jferrer password=$clavepasajera options='--client_encoding=UTF8'")
+#$dbconn = pg_connect("host=terra.ad.unsw.edu.au dbname=litrev user=jferrer password=$clavepasajera options='--client_encoding=UTF8'")
+$dbconn = pg_connect("host=literature-review.c9ldkr8elxog.ap-southeast-2.rds.amazonaws.com dbname=litrev user=postgres password=$claveextranjera options='--client_encoding=UTF8'")
    or die("Could not connect");
 
    ## print "Connected successfully<br/>";
