@@ -30,5 +30,6 @@ $dbconn = pg_connect("host=literature-review.c9ldkr8elxog.ap-southeast-2.rds.ama
 
 echo $head;
 
+echo "GO TO: <a href='http://literaturereviewapp-env.eba-2bmsdtqx.ap-southeast-2.elasticbeanstalk.com/psit/index.php'>test website</a>";
 
 ?>
