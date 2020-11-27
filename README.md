@@ -26,6 +26,44 @@ psql -U postgres -h literature-review.c9ldkr8elxog.ap-southeast-2.rds.amazonaws.
 
 ```
 
+Move to another aws account
+```sh
+cd $WORKDIR
+
+s3://elasticbeanstalk-ap-southeast-2-572174861211/resources/templates/LiteratureReviewApp-env/
+
+psql -U postgres -h literature-review.cpq4sgesx7kb.ap-southeast-2.rds.amazonaws.com -d litrev
+
+```
+
+EB CLI Installer
+follow instructions in https://github.com/aws/aws-elastic-beanstalk-cli-setup
+```sh
+sudo apt-get install \
+    build-essential zlib1g-dev libssl-dev libncurses-dev \
+    libffi-dev libsqlite3-dev libreadline-dev libbz2-dev
+
+cd ~/bin/
+git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
+
+echo 'export PATH="/home/jferrer/.ebcli-virtual-env/executables:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
+ echo 'export PATH=/home/jferrer/.pyenv/versions/3.7.2/bin:$PATH' >> /home/jferrer/.bash_profile && source /home/jferrer/.bash_profile
+
+
+```
+
+how to migrate eb app: https://aws.amazon.com/premiumsupport/knowledge-center/elastic-beanstalk-migration-accounts/
+
+Initialization of eb directory
+
+```sh
+cd $WORKDIR
+eb init
+eb config get litrev-app-take-away
+
+```
+
 RDS configuration:
 Endpoint
 literature-review.c9ldkr8elxog.ap-southeast-2.rds.amazonaws.com
