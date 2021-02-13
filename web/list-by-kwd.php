@@ -12,21 +12,21 @@ if (isset($_REQUEST["delete"]) & $kwd != '' & $project != '') {
   foreach ($columns as $cc) {
     $qry = "update psit.filtro1 SET $cc=array_remove($cc,'$kwd') where $cc is not null AND project='$project'";
     ##echo "$qry<br/>";
-    $res = pg_query($dbconn, $qry);
-     if ($res) {
-       print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
-    } else {
-       print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
-     }
+    // $res = pg_query($dbconn, $qry);
+    //  if ($res) {
+    //    print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
+    // } else {
+    //    print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
+    //  }
   }
 
   $qry = "delete from psit.filtro1 where array_dims(title) is null and array_dims(abstract) is null and array_dims(keyword) is null and project='$project'";
-  $res = pg_query($dbconn, $qry);
-   if ($res) {
-     print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
-  } else {
-     print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
-   }
+  // $res = pg_query($dbconn, $qry);
+  //  if ($res) {
+  //    print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
+  // } else {
+  //    print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
+  //  }
 }
 
 $qry = "select \"TI\",\"DE\",\"UT\",status,action,contribution,abstract,keyword,title from psit.filtro1 f1
