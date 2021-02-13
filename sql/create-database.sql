@@ -79,7 +79,19 @@ CREATE TABLE IF NOT EXISTS psit.filtro1 (
 );
 ALTER TABLE psit.filtro1  ADD CONSTRAINT filtro1_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
 
-CREATE TYPE razones_rechazo AS ENUM ('rejected off topic illegal trade' , 'rejected off topic parrots' , 'rejected illegal trade circunstancial' , 'rejected opinion','rejected overview','included in review','not available');
+CREATE TYPE razones_rechazo AS ENUM (
+  'rejected off topic illegal trade' ,
+  'rejected off topic parrots' ,
+  'rejected illegal trade circunstancial' ,
+  'rejected opinion',
+  'rejected overview',
+  'included in review',
+  'not available');
+
+ALTER TYPE razones_rechazo ADD VALUE 'rejected off topic';
+ALTER TYPE razones_rechazo ADD VALUE 'rejected off topic (not related to project)';
+ALTER TYPE razones_rechazo ADD VALUE 'rejected off topic (not related to taxon)';
+ALTER TYPE razones_rechazo ADD VALUE 'rejected on topic but circunstancial';
 
 CREATE TABLE IF NOT EXISTS psit.filtro2 (
   ref_id varchar(255),

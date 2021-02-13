@@ -3,6 +3,8 @@ include("inc/hello.php");
 ?>
 
 <?php
+$li="";
+$li2="";
 
   $qry1 = "select count(distinct b.\"UT\") as referencias FROM psit.bibtex b";
   $qry2 ="select count(distinct f1.ref_id) as filtro1 FROM psit.filtro1 f1 WHERE project='$project'";
@@ -85,7 +87,6 @@ $qry = "select status,count(*) from psit.filtro2 WHERE project='$project' group 
    echo "An error occurred.\n";
    exit;
  }
-
  while ($row = pg_fetch_assoc($result)) {
           $li2 .= "<li><a href='list-by-status.php?filtro2=$row[status]'>$row[status]</a>: $row[count] referencias</li>";
    }

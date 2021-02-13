@@ -1,6 +1,5 @@
 <?php
 include("inc/hello.php");
-$project == 'Illegal Wildlife Trade'
 ?>
 
 <h1>Project <emph>Illegal Wildlife Trade</emph>: <a href='project-home.php?project=Illegal Wildlife Trade'>GO</a></h1>

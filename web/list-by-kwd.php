@@ -4,8 +4,8 @@ include("inc/hello.php");
 
 
 <?php
+$tab = "";
 $kwd = $_REQUEST["DE"];
-$project = $_REQUEST["project"];
 
 if (isset($_REQUEST["delete"]) & $kwd != '' & $project != '') {
   $columns = array('title','abstract','keyword');
@@ -29,14 +29,28 @@ if (isset($_REQUEST["delete"]) & $kwd != '' & $project != '') {
   //  }
 }
 
-$qry = "select \"TI\",\"DE\",\"UT\",status,action,contribution,abstract,keyword,title from psit.filtro1 f1
-LEFT JOIN psit.bibtex b
-ON b.\"UT\"=f1.ref_id
-LEFT JOIN psit.annotate_ref a
-  ON f1.ref_id=a.ref_id
-  LEFT JOIN psit.filtro2 f2
-  ON f1.ref_id=f2.ref_id
-WHERE '$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)  ";
+switch ($project) {
+  case "Illegal Wildlife Trade":
+  $qry = "select \"TI\",\"DE\",\"UT\",status,action,contribution,abstract,keyword,title from psit.filtro1 f1
+  LEFT JOIN psit.bibtex b
+  ON b.\"UT\"=f1.ref_id
+  LEFT JOIN psit.annotate_ref a
+    ON f1.ref_id=a.ref_id
+    LEFT JOIN psit.filtro2 f2
+    ON f1.ref_id=f2.ref_id
+  WHERE ('$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)) ";
+  break;
+  case "Species distribution models":
+  $qry = "select \"TI\",\"DE\",\"UT\",abstract,keyword,title from psit.filtro1 f1
+  LEFT JOIN psit.bibtex b
+  ON b.\"UT\"=f1.ref_id
+
+    LEFT JOIN psit.filtro2 f2
+    ON f1.ref_id=f2.ref_id
+  WHERE ('$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)) ";
+  break;
+
+}
 
 
  $result = pg_query($dbconn, $qry);
@@ -47,6 +61,9 @@ WHERE '$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)  ";
 
  while ($row = pg_fetch_assoc($result)) {
    $clr = '#99FFDD';
+
+   switch ($project) {
+     case "Illegal Wildlife Trade":
           $tab .= "
           <TR style='background-color:$clr'>
           <TH>".$row["TI"]."</TH>
@@ -55,6 +72,19 @@ WHERE '$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)  ";
           <TD>".$row["action"]."/".$row["contribution"]."</TD>
           <TD>  <a  href='show-reference.php?UT=".$row["UT"]."&project=$project'>Show</a></TD>
           </TR>";
+          break;
+          case "Species distribution models":
+          $tab .= "
+          <TR style='background-color:$clr'>
+          <TH>".$row["TI"]."</TH>
+          <TD style='font-size:10px'>::".$row["title"]."<br/>:: ".$row["abstract"]."<br/>:: ".$row["keyword"]."</TD>
+          <TD></TD>
+          <TD></TD>
+          <TD>  <a  href='show-reference.php?UT=".$row["UT"]."&project=$project'>Show</a></TD>
+          </TR>";
+          break;
+
+        }
 
   #        echo "Tenemos ".$row["count"]." referencias en base de datos";
    }

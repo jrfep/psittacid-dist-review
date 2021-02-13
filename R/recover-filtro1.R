@@ -70,12 +70,17 @@ con <- dbConnect(drv, dbname = "litrev",
 
  kwds <- unique(trim(unlist(strsplit(ISI.search.df$DE,";"))))
 
- for (kwd in grep("POACH|EXTRACT|ILLEGAL|MARKET|PET",kwds,value=T)) {
-   qry <- sprintf("INSERT INTO psit.filtro1(ref_id,title) SELECT \"UT\",'{%1$s}' FROM psit.bibtex WHERE \"TI\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET title=array(select distinct unnest(psit.filtro1.title || EXCLUDED.title))",kwd)
-  # dbSendQuery(con,qry)
-   qry <- sprintf("INSERT INTO psit.filtro1(ref_id,abstract) SELECT \"UT\",'{%1$s}' FROM psit.bibtex WHERE \"AB\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET abstract=array(select distinct unnest(psit.filtro1.abstract || EXCLUDED.abstract))",kwd)
+# grep("POACH|EXTRACT|ILLEGAL|MARKET|PET",kwds,value=T)
+ks <- grep("POACH|EXTRACT|ILLEGAL|MARKET|PET",kwds,value=T)
+project <- "Illegal Wildlife Trade"
+ks <- grep("DISTRIBUTION|ABUNDANCE|RANGE|NICHE|OCCURRENCE|PRESENCE|OCCUPANCY",kwds,value=T)
+project <- "Species distribution models"
+ for (kwd in ks) {
+   qry <- sprintf("INSERT INTO psit.filtro1(ref_id,project,title) SELECT \"UT\",'%2$s','{%1$s}' FROM psit.bibtex WHERE \"TI\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET title=array(select distinct unnest(psit.filtro1.title || EXCLUDED.title))",kwd,project)
    dbSendQuery(con,qry)
-   qry <- sprintf("INSERT INTO psit.filtro1(ref_id,keyword) SELECT \"UT\",'{%1$s}' FROM psit.bibtex WHERE \"DE\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET keyword=array(select distinct unnest(psit.filtro1.keyword || EXCLUDED.keyword))",kwd)
+   qry <- sprintf("INSERT INTO psit.filtro1(ref_id,project,abstract) SELECT \"UT\",'%2$s','{%1$s}' FROM psit.bibtex WHERE \"AB\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET abstract=array(select distinct unnest(psit.filtro1.abstract || EXCLUDED.abstract))",kwd,project)
+   dbSendQuery(con,qry)
+   qry <- sprintf("INSERT INTO psit.filtro1(ref_id,project,keyword) SELECT \"UT\",'%2$s','{%1$s}' FROM psit.bibtex WHERE \"DE\" like '%%%1$s%%' ON CONFLICT ON CONSTRAINT filtro1_pkey DO UPDATE SET keyword=array(select distinct unnest(psit.filtro1.keyword || EXCLUDED.keyword))",kwd,project)
    dbSendQuery(con,qry)
 
  }
