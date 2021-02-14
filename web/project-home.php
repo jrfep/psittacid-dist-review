@@ -9,7 +9,14 @@ $li2="";
   $qry1 = "select count(distinct b.\"UT\") as referencias FROM psit.bibtex b";
   $qry2 ="select count(distinct f1.ref_id) as filtro1 FROM psit.filtro1 f1 WHERE project='$project'";
   $qry3 ="select count(distinct f2.ref_id) as filtro2 FROM psit.filtro2 f2 WHERE project='$project'";
-  $qry4 ="select count(distinct a.ref_id) as anotadas FROM psit.annotate_ref a";
+  switch($project) {
+    case "Illegal Wildlife Trade":
+      $qry4 ="select count(distinct a.ref_id) as anotadas FROM psit.annotate_ref a";
+      break;
+    case "Species distribution models":
+      $qry4 ="select count(distinct a.ref_id) as anotadas FROM psit.distmodel_ref a";
+      break;
+  }
   $res1 = pg_query($dbconn, $qry1); if (!$res1) { echo "An error occurred.\n"; exit;}
   $res2 = pg_query($dbconn, $qry2); if (!$res2) { echo "An error occurred.\n"; exit;}
   $res3 = pg_query($dbconn, $qry3); if (!$res3) { echo "An error occurred.\n"; exit;}
@@ -23,7 +30,7 @@ $li2="";
     echo "<p>Tenemos ".$row1["referencias"]." referencias en base de datos </p>";
     echo "<p> ".$row2["filtro1"]." seleccionadas por el Filtro 1 </p>";
     echo "<p> ".$row3["filtro2"]." seleccionadas por el Filtro 2 </p>";
-    echo "<p> y ".$row4["anotadas"]." con datos de trafico anotados </p>";
+    echo "<p> y ".$row4["anotadas"]." con datos anotados </p>";
 
 
 

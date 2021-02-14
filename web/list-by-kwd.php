@@ -18,9 +18,11 @@ if (isset($_REQUEST["delete"]) & $kwd != '' & $project != '') {
     // } else {
     //    print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
     //  }
+    print_r($qry);
   }
 
   $qry = "delete from psit.filtro1 where array_dims(title) is null and array_dims(abstract) is null and array_dims(keyword) is null and project='$project'";
+  print_r($qry);
   // $res = pg_query($dbconn, $qry);
   //  if ($res) {
   //    print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
@@ -41,11 +43,14 @@ switch ($project) {
   WHERE ('$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)) ";
   break;
   case "Species distribution models":
-  $qry = "select \"TI\",\"DE\",\"UT\",abstract,keyword,title from psit.filtro1 f1
+  $qry = "WITH f1 as (SELECT * FROM psit.filtro1 WHERE project='$project'),
+  f2 as (SELECT * FROM psit.filtro2 WHERE project='$project')
+  select \"TI\",\"DE\",\"UT\",abstract,keyword,title,status,analysis_type from f1
   LEFT JOIN psit.bibtex b
   ON b.\"UT\"=f1.ref_id
-
-    LEFT JOIN psit.filtro2 f2
+    LEFT JOIN psit.distmodel_ref a
+    ON f1.ref_id=a.ref_id
+    LEFT JOIN f2
     ON f1.ref_id=f2.ref_id
   WHERE ('$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)) ";
   break;
@@ -78,8 +83,8 @@ switch ($project) {
           <TR style='background-color:$clr'>
           <TH>".$row["TI"]."</TH>
           <TD style='font-size:10px'>::".$row["title"]."<br/>:: ".$row["abstract"]."<br/>:: ".$row["keyword"]."</TD>
-          <TD></TD>
-          <TD></TD>
+          <TD>".$row["status"]."</TD>
+          <TD>".$row["analysis_type"]."</TD>
           <TD>  <a  href='show-reference.php?UT=".$row["UT"]."&project=$project'>Show</a></TD>
           </TR>";
           break;

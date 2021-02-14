@@ -29,7 +29,7 @@ while ($row = pg_fetch_assoc($result)) {
 #        echo "Tenemos ".$row["count"]." referencias en base de datos";
  }
 
-$form_annotation = "
+$form_filtro3 = "
 <h3>Annotation</h3>
 <div style='background-color: #DDAAAA; width:800px;'>
 <FORM ACTION='show-reference.php' METHOD='POST'>

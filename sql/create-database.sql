@@ -103,6 +103,11 @@ CREATE TABLE IF NOT EXISTS psit.filtro2 (
 ALTER TABLE psit.filtro2  ADD CONSTRAINT filtro2_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
  ALTER TABLE psit.filtro2 ADD COLUMN project varchar(30) DEFAULT 'Illegal Wildlife Trade';
 
+-- To recreate a primary key constraint, without blocking updates while the index is rebuilt:
+ CREATE UNIQUE INDEX CONCURRENTLY filtro2_id_temp_idx ON psit.filtro2 (ref_id,project);
+ ALTER TABLE psit.filtro2 DROP CONSTRAINT filtro2_pkey,
+     ADD CONSTRAINT filtro2_pkey PRIMARY KEY USING INDEX filtro2_id_temp_idx;
+
 CREATE TABLE IF NOT EXISTS psit.species_ref (
   ref_id varchar(255),
   scientific_name varchar(255),
@@ -127,3 +132,20 @@ ALTER TABLE psit.country_ref  ADD COLUMN country_role varchar(100) DEFAULT 'In t
 
 
 with tab1 AS (select unnest(country_list) as cc,ref_id,reviewed_by from psit.annotate_ref) INSERT INTO psit.country_ref (ref_id,iso2,reviewed_by,country_role,reviewed_date) (SELECT distinct ref_id,cc,reviewed_by,'Study location',CURRENT_TIMESTAMP(0) FROM tab1 where cc NOT IN ('various','global','quitar argentina')) ON CONFLICT ON CONSTRAINt country_ref_pkey DO UPDATE SET reviewed_by=EXCLUDED.reviewed_by, country_role=EXCLUDED.country_role, reviewed_date=EXCLUDED.reviewed_date;
+
+
+-- new project: species distribution modelling
+
+CREATE TABLE IF NOT EXISTS psit.distmodel_ref (
+  ref_id varchar(255),
+  analysis_type text[],
+  model_type text[],
+  data_source text[],
+  topics text[],
+  country_list text[],
+  species_list text[],
+  reviewed_by varchar(100) DEFAULT 'Ada Sanchez',
+  reviewed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (ref_id)
+);
+ALTER TABLE psit.distmodel_ref  ADD CONSTRAINT annotate_ref_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;

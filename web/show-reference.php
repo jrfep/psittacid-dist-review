@@ -22,7 +22,7 @@ foreach ($_POST as $key => $value) {
   $qry = "INSERT INTO psit.filtro2 (ref_id,".implode(", ",$columns).",reviewed_date) values ('".$refid."',".implode(", ",$values).",CURRENT_TIMESTAMP(0)) ON CONFLICT DO NOTHING ";
   $res = pg_query($dbconn, $qry);
    if ($res) {
-     print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
+     print "<BR/><font color='#DD8B8B'>POST data is successfully logged<BR/>$qry<BR/></font>\n";
   } else {
      print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
     }
@@ -51,12 +51,36 @@ foreach ($_POST as $key => $value) {
   $qry = "INSERT INTO psit.annotate_ref (ref_id,".implode($columns,", ").",reviewed_date) values ('".$refid."',".implode($values,", ").",CURRENT_TIMESTAMP(0)) ON CONFLICT DO NOTHING ";
   $res = pg_query($dbconn, $qry);
    if ($res) {
-      print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
+      print "<BR/><font color='#DD8B8B'>POST data is successfully logged: $qry</font><BR/>\n";
    } else {
       print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
    }
   #echo $qry;
 }
+##print_r($_REQUEST);
+
+if (isset($_REQUEST["Add_annotation"])) {
+
+foreach ($_POST as $key => $value) {
+  if (in_array($key, array("model_type", "topics", "data_source", "analysis_type", "species_list", "country_list","reviewed_by")) & $value!="") {
+      $columns[]= $key;
+      if (is_array($value)) {
+        $values[] = "'{".implode(',',$value)."}'";
+      } else {
+        $values[] = "'$value'";
+      }
+    }
+   }
+  $qry = "INSERT INTO psit.distmodel_ref (ref_id,".implode(", ",$columns).",reviewed_date) values ('".$refid."',".implode(", ",$values).",CURRENT_TIMESTAMP(0)) ON CONFLICT DO NOTHING ";
+  $res = pg_query($dbconn, $qry);
+   if ($res) {
+      print "<BR/><font color='#DD8B8B'>POST data is successfully logged: $qry</font><BR/>\n";
+   } else {
+      print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
+   }
+  ##echo $qry;
+}
+
 
 ?>
 
@@ -120,9 +144,59 @@ if ($row["rev1"]!='') {
 ?>
 
 <?php
+$status_filtro2 = 'missing';
+$optfiltro = array(
+  'rejected off topic' ,
+  'rejected off topic (not related to project)' ,
+  'rejected off topic (not related to taxon)' ,
+  'rejected illegal (circunstancial)' ,
+  'rejected opinion','rejected overview',
+  'included in review','not available');
+foreach(array_values($optfiltro) as $val) {
+  $opts .= "<option value='$val'>$val</option>";
+}
+$form_filtro2 = "<h3>Filtro 2</h3>
+<div style='background-color: #DDAAAA; width:600px;'>
+<FORM ACTION='show-reference.php' METHOD='POST'>
+  <input type='hidden' name='UT' value='".$refid."'></input>
+<table>
+<tr><td>
+  Aplicar filtro 2
+</td><td>
+<select name='status'>
+$opts
+</select>
+</td></tr>
+<tr><td>
+Revisado por
+</td><td>
+<input type='text' list='reviewers' name='reviewed_by'></input>
+<datalist id='reviewers'>
+<option>Ada Sanchez</option>
+<option>JRFP</option>
+<option>Anonymous</option>
+<option>Other...</option>
+</datalist>
 
-$qry = "select \"TI\",\"DE\",\"AB\",\"DI\", contribution, action, status, data_type, country_list, species_list, project, f.reviewed_by as rev1, a.reviewed_by as rev2 FROM psit.bibtex b
-LEFT JOIN  psit.annotate_ref a ON b.\"UT\"=a.ref_id
+</td></tr>
+<tr><td>
+Project
+</td><td>
+<input type='text' list='projects' name='project' value='$project'></input>
+<datalist id='projects'>
+<option>Illegal Wildlife Trade</option>
+<option>Species distribution models</option>
+<option>Other...</option>
+</datalist>
+
+</td></tr>
+</table>
+
+<INPUT TYPE='submit' NAME='filtrar'/>
+</FORM>
+</div>";
+
+$qry = "select status, reviewed_by as rev2, reviewed_date  FROM psit.bibtex b
   LEFT JOIN psit.filtro2 f ON b.\"UT\"=f.ref_id
 WHERE \"UT\" ilike '%$refid%' AND f.project='$project'";
 
@@ -135,104 +209,84 @@ WHERE \"UT\" ilike '%$refid%' AND f.project='$project'";
 
  while ($row = pg_fetch_assoc($result))  {
 
-if ($row["status"]!='') {
-  echo "<h3>Filtro 2</h3>
-    <div style='background-color: #AAAADD; width:300px;'><p> Classified as <b>".$row["status"]."</b> by ".$row["rev1"]."</p></div>";
+    if ($row["status"]!='') {
+      $form_filtro2 = "<h3>Filtro 2</h3>
+        <div style='background-color: #AAAADD; width:300px;'><p> Classified as <b>".$row["status"]."</b> by ".$row["rev2"]."</p></div>";
+        $status_filtro2 = $row["status"];
 
-  if ($row["status"]=='included in review') {
-    if ($row["action"]!='') {
-        echo "  <h3>Annotation</h3>
-
-        <div style='background-color: #AAAADD; width:800px;'>
-        <TABLE>
-        <tr><th> Data type</th><td>".$row["data_type"]."</td></tr>
-        <tr><th> Action</th><td>".$row["action"]."</td></tr>
-        <tr><th> Contribution</th><td>".$row["contribution"]."</td></tr>
-        <tr><th> Comments to country list</th><td>".$row["country_list"]."</td></tr>
-        <tr><th> Comments to species list</th><td>".$row["species_list"]."</td></tr>
-        <tr><th> Reviewed by</th><td>".$row["rev2"]."</td></tr>
-        <tr><th> Project</th><td>".$row["project"]."</td></tr>
-        </TABLE>
-<a href='edit-annotation.php?refid=$refid&origcontribution=".$row["contribution"]."&origaction=".$row["action"]."'>EDIT this entry</a>
-        </div>";
-
-      } else {
+    }
+}
+echo $form_filtro2;
+?>
 
 
+<?php
+$form_filtro3 = "";
 
-           $qry = "select \"Alpha_2\",\"Name\" from psit.countries order by \"Name\"";
-            $result = pg_query($dbconn, $qry);
-            if (!$result) {
-              echo "An error occurred.\n";
-              exit;
+if ($status_filtro2 == 'included in review') {
+  switch($project) {
+    case "Illegal Wildlife Trade":
+
+      include("inc/form-iwt.php");
+
+      $qry = "SELECT contribution, action, data_type, country_list, species_list, reviewed_by as rev2
+      FROM psit.bibtex b
+      LEFT JOIN  psit.annotate_ref a ON b.\"UT\"=a.ref_id
+      WHERE \"UT\" ilike '%$refid%' ";
+
+      $result = pg_query($dbconn, $qry);
+      if (!$result) { echo "An error occurred $qry.\n"; exit;}
+      while ($row = pg_fetch_assoc($result))  {
+              $form_filtro3 = "  <h3>Annotation</h3>
+
+              <div style='background-color: #AAAADD; width:800px;'>
+              <TABLE>
+              <tr><th> Data type</th><td>".$row["data_type"]."</td></tr>
+              <tr><th> Action</th><td>".$row["action"]."</td></tr>
+              <tr><th> Contribution</th><td>".$row["contribution"]."</td></tr>
+              <tr><th> Comments to country list</th><td>".$row["country_list"]."</td></tr>
+              <tr><th> Comments to species list</th><td>".$row["species_list"]."</td></tr>
+              <tr><th> Reviewed by</th><td>".$row["rev2"]."</td></tr>
+              </TABLE>
+      <a href='edit-annotation.php?refid=$refid&origcontribution=".$row["contribution"]."&origaction=".$row["action"]."'>EDIT this entry</a>
+              </div>";
+
+          }
+    break;
+    case "Species distribution models";
+    include("inc/form-sdm.php");
+
+    $qry = "SELECT analysis_type,model_type,data_source,topics, country_list, species_list, reviewed_by as rev2
+    FROM psit.distmodel_ref
+    WHERE ref_id ilike '%$refid%' ";
+
+    $result = pg_query($dbconn, $qry);
+    if (!$result) { echo "An error occurred $qry.\n"; exit;}
+    while ($row = pg_fetch_assoc($result))  {
+            $form_filtro3 = "  <h3>Annotation</h3>
+            <div style='background-color: #AAAADD; width:800px;'>
+            <TABLE>";
+            foreach($row as $key => $val) {
+              $vals = str_replace(array('{','}','"'),'',$val);
+              $form_filtro3 .= "<tr><th> $key</th><td>".str_replace(array(','),' // ',$vals)."</td></tr>";
             }
-            while ($row = pg_fetch_assoc($result)) {
-                     $opt4s.= "<option value='".$row["Alpha_2"]."'>".$row["Name"]." </option>";
+            $form_filtro3 .= "
 
-             #        echo "Tenemos ".$row["count"]." referencias en base de datos";
-              }
+            </TABLE>
+    <a href='edit-annotation.php?refid=$refid'>EDIT this entry</a>
+            </div>";
 
-      }
+        }
 
+    break;
   }
-} else {
-  $optfiltro = array(
-    'rejected off topic' ,
-    'rejected off topic (not related to project)' ,
-    'rejected off topic (not related to taxon)' ,
-    'rejected illegal (circunstancial)' ,
-    'rejected opinion','rejected overview',
-    'included in review','not available');
-  foreach(array_values($optfiltro) as $val) {
-    $opts .= "<option value='$val'>$val</option>";
-  }
-  echo "<h3>Filtro 2</h3>
-  <div style='background-color: #DDAAAA; width:600px;'>
-  <FORM ACTION='show-reference.php' METHOD='POST'>
-    <input type='hidden' name='UT' value='".$refid."'></input>
-<table>
-  <tr><td>
-    Aplicar filtro 2
-  </td><td>
-  <select name='status'>
-  $opts
-  </select>
-  </td></tr>
-  <tr><td>
-Revisado por
-  </td><td>
-<input type='text' list='reviewers' name='reviewed_by'></input>
-<datalist id='reviewers'>
-<option>Ada Sanchez</option>
-<option>JRFP</option>
-<option>Anonymous</option>
-<option>Other...</option>
-</datalist>
-
-  </td></tr>
-  <tr><td>
-Project
-  </td><td>
- <input type='text' list='projects' name='project' value='$project'></input>
- <datalist id='projects'>
- <option>Illegal Wildlife Trade</option>
- <option>Species distribution models</option>
- <option>Other...</option>
- </datalist>
-
-  </td></tr>
-  </table>
-
-<INPUT TYPE='submit' NAME='filtrar'/>
-  </FORM>
-  </div>";
 
 }
 
-  #        echo "Tenemos ".$row["count"]." referencias en base de datos";
-   }
+echo $form_filtro3;
+?>
 
-   ?>
+
 
 <h2>Lista de especies</h2>
 
