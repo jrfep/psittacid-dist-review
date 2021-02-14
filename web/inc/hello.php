@@ -18,7 +18,7 @@ function trimq($a) {
 }
 
 
-if (isset($claveaws)) {
+if (isset($claveaws2)) {
    $dbconn = pg_connect("host=$dbhost2 port=$dbport dbname=$dbname2 user=$username password=$claveaws2 options='--client_encoding=$charset'")
       or die("Could not connect to external server from localhost");
       $webhost="<h1>(TERRA)</h1>";
@@ -50,6 +50,19 @@ if (isset($_REQUEST["project"])) {
 
 
   echo $head;
+} else {
+   $project = "NOT SET";
+     ## print "Connected successfully<br/>";
+         $head ="<h1>No project selected</h1>
+         <A HREF='index.php'>All projects</A> /
+         <A HREF='project-home.php?project=Species distribution models'>SDMs</A> /
+         <A HREF='project-home.php?project=Illegal Wildlife Trade'>IWT</A> /
+         <a href='list-countries.php?project=$project'>Countries</a> /
+       <a href='list-species.php?project=$project'>Species</a>";
+
+
+  echo $head;
+
 }
 
 #echo "GO TO: <a href='http://lit-rev-app.eba-ibdrhxhz.ap-southeast-2.elasticbeanstalk.com/psit/index.php'>test website</a>";

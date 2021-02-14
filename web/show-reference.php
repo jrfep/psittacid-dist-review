@@ -67,7 +67,11 @@ foreach ($_POST as $key => $value) {
       if (is_array($value)) {
         $values[] = "'{".implode(',',$value)."}'";
       } else {
-        $values[] = "'$value'";
+         if ($key == "reviewed_by") {
+            $values[] = "'$value'";
+         } else {
+            $values[] = "'{".str_replace(array('{','}','"'),"",$value)."}'";
+         }
       }
     }
    }
@@ -273,7 +277,7 @@ if ($status_filtro2 == 'included in review') {
             $form_filtro3 .= "
 
             </TABLE>
-    <a href='edit-annotation.php?refid=$refid'>EDIT this entry</a>
+    <a href='edit-annotation.php?refid=$refid&project=$project'>EDIT this entry</a>
             </div>";
 
         }

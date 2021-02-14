@@ -14,13 +14,14 @@ $form_filtro3 = "
 <h3>Annotation</h3>
 <div style='background-color: #DDAAAA; width:800px;'>
 <FORM ACTION='show-reference.php' METHOD='POST'>
-Anotar referencia <br/> use comma (',') for multiple entries.
+Annotate reference: <br/>
+Use the format <emph>{value1,value2,...}</emph> for multiple values.
 
 <input type='hidden' name='UT' value='".$refid."'></input>
 <table>
-<tr><td>Analysis type</td><td><input type='text' name='analysis_type' size='50'></input></td><td style='font-size:10;'>$colopts[analysis_type]</td></tr>
-<tr><td>Model type</td><td><input type='text' name='model_type' size='50'></input></td><td style='font-size:10;'>$colopts[model_type]</td></tr>
-<tr><td>Data sources</td><td><input type='text' name='data_source' size='50'></input></td><td style='font-size:10;'>$colopts[data_source]</td></tr>
+<tr><td>Analysis type</td><td><input type='text' name='analysis_type' size='50' placeholder='{spatial prediction, hypothesis test,...}'></input></td><td style='font-size:10;'>$colopts[analysis_type]</td></tr>
+<tr><td>Model type</td><td><input type='text' name='model_type' size='50' placeholder='{maxent,GARP,MARK,...}'></input></td><td style='font-size:10;'>$colopts[model_type]</td></tr>
+<tr><td>Data sources</td><td><input type='text' name='data_source' size='50'placeholder='{field-work,natural history collections,...}' ></input></td><td style='font-size:10;'>$colopts[data_source]</td></tr>
 <tr><td>Topics</td><td><input type='text' name='topics' size='50'></input></td><td style='font-size:10;'>$colopts[topics]</td></tr>
 <tr><td>
 Country comments

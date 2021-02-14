@@ -15,16 +15,27 @@ $contrib = $_REQUEST["origcontribution"];
 if (isset($_REQUEST["editinfo"])) {
 
 foreach ($_POST as $key => $value) {
-      if (in_array($key, array("contribution","action","reviewed_by","country_list","species_list","data_type"))) {
+      if (in_array($key, array("contribution","action","reviewed_by","country_list","species_list","data_type","data_source","analysis_type","model_type","topics"))) {
          if ($value!="") {
             $columns[]= "$key='$value'";
          }
       }
    }
-  $qry = "UPDATE psit.annotate_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid' AND action='$action' AND contribution='$contrib'";
-  $res = pg_query($dbconn, $qry);
+
+   switch($project) {
+   case "Illegal Wildlife Trade":
+      $qry = "UPDATE psit.annotate_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid' AND action='$action' AND contribution='$contrib'";
+      break;
+   case "Species distribution models":
+      $qry = "UPDATE psit.distmodel_ref set ".implode($columns,", ").", reviewed_date=CURRENT_TIMESTAMP(0) WHERE ref_id='$refid'";
+      break;
+
+}
+
+
+   $res = pg_query($dbconn, $qry);
    if ($res) {
-     print "<BR/><font color='#DD8B8B'>POST data is successfully logged</font><BR/>\n";
+     print "<BR/><font color='#DD8B8B'>POST data is successfully logged: $qry</font><BR/>\n";
   } else {
      print "<BR/><font color='#DD8B8B'>User must have sent wrong inputs<BR/><BR/>$qry</font><BR/><BR/>\n";
    }
@@ -35,8 +46,15 @@ foreach ($_POST as $key => $value) {
 
 
 <?php
+switch($project) {
+   case "Illegal Wildlife Trade":
+   $qry = "select * from psit.annotate_ref where ref_id='$refid' and contribution='$contrib' and action='$action'";
+   break;
+   case "Species distribution models":
+   $qry = "select * from psit.distmodel_ref where ref_id='$refid'";
+   break;
 
-$qry = "select * from psit.annotate_ref where ref_id='$refid' and contribution='$contrib' and action='$action'";
+}
 
 
  $result = pg_query($dbconn, $qry);
@@ -55,10 +73,10 @@ while ($row = pg_fetch_assoc($result)) {
      break;
      case "ref_id":
      $element="<input type='hidden' name='refid' value='$refid'>
-     <a href='show-reference.php?UT=$refid'>$refid</a></input>";
+     <a href='show-reference.php?UT=$refid&project=$project'>$refid</a></input>";
      break;
      default:
-     $element="<input type='text' name='$name' value='$value'></input>";
+     $element="<input type='text' name='$name' value='$value' size='80'></input>";
 
    }
    $cells .= "<TD>$element</td>";
@@ -72,6 +90,7 @@ echo "
 <FORM ACTION='edit-annotation.php' METHOD='POST'>
 <input type='hidden' name='origaction' value='$action'>
 <input type='hidden' name='origcontribution' value='$contrib'>
+<input type='hidden' name='project' value='$project'>
 <TABLE>
 
 $cells
