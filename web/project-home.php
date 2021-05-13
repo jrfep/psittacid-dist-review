@@ -95,10 +95,17 @@ $qry = "select status,count(*) from psit.filtro2 WHERE project='$project' group 
    exit;
  }
  while ($row = pg_fetch_assoc($result)) {
+    if ($project == "Illegal Wildlife Trade") {
           $li2 .= "<li><a href='list-by-status.php?filtro2=$row[status]'>$row[status]</a>: $row[count] referencias</li>";
+   } else {
+          $li2 .= "<li>$row[status]: $row[count] referencias</li>";
+          $note = "<a href='proj-sdm/list-by-status.php'>Annotate selected references</a>";
    }
-echo "<ol>$li2</ol>"
+
+   }
+echo "<ol>$li2</ol> $note";
 ?>
+
 
 
 <?php
