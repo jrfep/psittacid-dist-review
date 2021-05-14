@@ -1,3 +1,4 @@
+# source proyectos/IVIC/psittacid-dist-review/load-env.sh
 #cd $WORKDIR
 # unzip $SCRIPTDIR/bibtex/WoS_psittacids_12095_20201023.zip
 
@@ -64,7 +65,7 @@ for (qry in qries)
 
 ISI.search.df %>% filter(!is.na(CR) & nchar(CR)>5) -> ISI.search.ss
 
-for (k in 1:nrow(ISI.search.ss)) {
+for (k in nrow(ISI.search.ss):1) {
   ISI.search.ss %>% slice(k) %>% pull(CR) -> slc
   ##strsplit(slc,";")
   str_split(slc,";",simplify=T) %>% str_split_fixed(" DOI ",n=2) -> cts
@@ -83,6 +84,12 @@ for (k in 1:nrow(ISI.search.ss)) {
     dbSendQuery(con,qry)
 
 }
+
+
+
+
+
+
 
 
    ISI.search.df <- ISI.search.df[!(duplicated(ISI.search.df$UT) | duplicated(ISI.search.df$TI)), ]

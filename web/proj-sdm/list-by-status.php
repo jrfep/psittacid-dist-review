@@ -3,8 +3,51 @@ include("../inc/hello.php");
 $project="Species distribution models";
 ?>
 
+<h2>Summary</h2>
 <?php
-$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",analysis_type,model_type
+$prg = "SELECT unnest(topics),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $topiclist .= "$row[unnest] ($row[count] )<br/>";}
+
+$prg = "SELECT unnest(general_application),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $genlist .= "$row[unnest] ($row[count] )<br/>";}
+
+
+$prg = "SELECT unnest(specific_issue),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $isslist .= "$row[unnest] ($row[count] )<br/>";}
+
+$prg = "SELECT unnest(model_type),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $modellist .= "$row[unnest] ($row[count] )<br/>";}
+
+$prg = "SELECT unnest(paradigm),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $modelpara .= "$row[unnest] ($row[count] )<br/>";}
+
+$prg = "SELECT unnest(species_range),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $rangelist .= "$row[unnest] ($row[count] )<br/>";}
+
+echo "
+<TABLE style='font-size:14'>
+<TR><TH>Topics</TH><TH>General application</TH><TH>specific_issue</TH><TH>Paradigm</TH><TH>Species range</TH><TH>Models</TH></TR>
+<TR style='vertical-align: top;' ><TD>$topiclist</TD><TD>$genlist</TD><TD>$isslist</TD><TD>$modelpara</TD><TD>$rangelist</TD><TD>$modellist</TD></TR>
+</TABLE>";
+?>
+
+<h2>Articles included in review</h2>
+
+<?php
+
+$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type
 FROM psit.bibtex b
 LEFT JOIN psit.distmodel_ref a
   ON b.\"UT\"=a.ref_id
@@ -22,7 +65,7 @@ ORDER BY model_type,analysis_type ";
  }
 
  while ($row = pg_fetch_assoc($result)) {
-          $tab .= "<TR bgcolor='#A4F3D8'><TD ><b>".$row["TI"]."</b></br>".$row["DE"]."</TD><TD>  <a  href='/litrev/web/show-reference.php?UT=".$row["UT"]."&project=$project'>Review</a> / <a target='_blank' href='http://doi.org/".$row["DI"]."'>DOI link</a></TD><TD >".$row["analysis_type"]."</TD><TD >".$row["model_type"]."</TD></TR>";
+          $tab .= "<TR bgcolor='#A4F3D8'><TD ><b>".$row["TI"]."</b></br>".$row["DE"]."</TD><TD>  <a  href='/litrev/web/show-reference.php?UT=".$row["UT"]."&project=$project'>Review</a> / <a target='_blank' href='http://doi.org/".$row["DI"]."'>DOI link</a></TD><TD >Topic:".$row["topics"]."</BR>analysis:".$row["analysis_type"]."</TD><TD >".$row["model_type"]."</TD></TR>";
 
   #        echo "Tenemos ".$row["count"]." referencias en base de datos";
    }

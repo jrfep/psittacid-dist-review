@@ -99,7 +99,7 @@ $qry = "select status,count(*) from psit.filtro2 WHERE project='$project' group 
           $li2 .= "<li><a href='list-by-status.php?filtro2=$row[status]'>$row[status]</a>: $row[count] referencias</li>";
    } else {
           $li2 .= "<li>$row[status]: $row[count] referencias</li>";
-          $note = "<a href='proj-sdm/list-by-status.php'>Annotate selected references</a>";
+          $note = "<a href='proj-sdm/list-by-status.php?project=Species distribution models'>Annotate selected references</a>";
    }
 
    }

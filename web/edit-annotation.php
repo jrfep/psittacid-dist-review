@@ -15,7 +15,7 @@ $contrib = $_REQUEST["origcontribution"];
 if (isset($_REQUEST["editinfo"])) {
 
 foreach ($_POST as $key => $value) {
-      if (in_array($key, array("contribution","action","reviewed_by","country_list","species_list","data_type","data_source","analysis_type","model_type","topics"))) {
+      if (in_array($key, array("contribution","action","reviewed_by","country_list","species_list","data_type","data_source","analysis_type","model_type","topics","paradigm","general_application","specific_issue","species_range"))) {
          if ($value!="") {
             $columns[]= "$key='$value'";
          }
@@ -51,7 +51,7 @@ switch($project) {
    $qry = "select * from psit.annotate_ref where ref_id='$refid' and contribution='$contrib' and action='$action'";
    break;
    case "Species distribution models":
-   $qry = "select * from psit.distmodel_ref where ref_id='$refid'";
+   $qry = "select ref_id,topics,general_application, specific_issue, paradigm, species_range, analysis_type, model_type, data_source, country_list, species_list, reviewed_by, reviewed_date from psit.distmodel_ref where ref_id='$refid'";
    break;
 
 }

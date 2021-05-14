@@ -62,7 +62,7 @@ foreach ($_POST as $key => $value) {
 if (isset($_REQUEST["Add_annotation"])) {
 
 foreach ($_POST as $key => $value) {
-  if (in_array($key, array("model_type", "topics", "data_source", "analysis_type", "species_list", "country_list","reviewed_by")) & $value!="") {
+  if (in_array($key, array("model_type", "topics", "data_source", "analysis_type", "species_list", "country_list","reviewed_by","general_application","specific_issue","paradigm","species_range")) & $value!="") {
       $columns[]= $key;
       if (is_array($value)) {
         $values[] = "'{".implode(',',$value)."}'";
@@ -260,7 +260,7 @@ if ($status_filtro2 == 'included in review') {
     case "Species distribution models";
     include("inc/form-sdm.php");
 
-    $qry = "SELECT analysis_type,model_type,data_source,topics, country_list, species_list, reviewed_by as rev2
+    $qry = "SELECT topics,general_application,specific_issue,paradigm,species_range, analysis_type,model_type,data_source, country_list, species_list, reviewed_by as rev2
     FROM psit.distmodel_ref
     WHERE ref_id ilike '%$refid%' ";
 
@@ -341,6 +341,28 @@ echo "<ol>$countrylist</ol>"
 // $opt4s
 // </select>
 // </td></tr>
+
+?>
+
+<h2>References</h2>
+
+<?php
+
+$qry = "select to_document,doi from psit.citation_rels b LEFT JOIN psit.added_refs r
+ON b.to_document=r.ref_code
+where relationship='UT cites SR' AND from_document ='$refid'";
+
+
+ $result = pg_query($dbconn, $qry);
+ if (!$result) {
+   echo "An error occurred. $qry\n";
+   exit;
+ }
+
+ while ($row = pg_fetch_assoc($result))  {
+   $reflist .= "<li>".$row["to_document"]." [DOI: <a href='http://doi.org/".$row["doi"]."' target=_blank>".$row["doi"]."</a>]</li>";
+}
+echo "<ol>$reflist</ol>"
 
 ?>
 

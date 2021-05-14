@@ -150,6 +150,13 @@ CREATE TABLE IF NOT EXISTS psit.distmodel_ref (
 );
 ALTER TABLE psit.distmodel_ref  ADD CONSTRAINT annotate_ref_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
 
+ALTER TABLE psit.distmodel_ref
+ADD COLUMN topic text[],
+ADD COLUMN general_application text[],
+ADD COLUMN specific_issue text[],
+ADD COLUMN paradigm text[],
+ADD COLUMN species_range text[];
+ALTER TABLE psit.distmodel_ref DROP COLUMN topic;
 
 CREATE TABLE IF NOT EXISTS psit.added_refs (
   ref_id varchar(255),

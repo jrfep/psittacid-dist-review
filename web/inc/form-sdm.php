@@ -1,6 +1,7 @@
 <?php
 $colopts = array();
-$columns = array('analysis_type','data_source','topics','model_type');
+$columns = array('topics', 'general_application', 'specific_issue', 'paradigm', 'species_range', 'analysis_type', 'data_source', 'model_type');
+
 foreach ($columns as $key) {
   $colopts[$key] = "";
   $qry = "select unnest($key),count(*) from psit.distmodel_ref group by unnest order by count";
@@ -19,10 +20,18 @@ Use the format <emph>{value1,value2,...}</emph> for multiple values.
 
 <input type='hidden' name='UT' value='".$refid."'></input>
 <table>
+<tr><td>Topics</td><td><input type='text' name='topics' size='50'></input></td><td style='font-size:10;'>$colopts[topics]</td></tr>
+
+<tr><td>General application</td><td><input type='text' name='general_application' size='50' placeholder='{...,...,...}'></input></td><td style='font-size:10;'>$colopts[general_application]</td></tr>
+<tr><td>Specific issue</td><td><input type='text' name='specific_issue' size='50' placeholder='{...,...,...}'></input></td><td style='font-size:10;'>$colopts[specific_issue]</td></tr>
+<tr><td>Paradigm</td><td><input type='text' name='paradigm' size='50' placeholder='{ENM,OM,RSF}'></input></td><td style='font-size:10;'>$colopts[paradigm]</td></tr>
+<tr><td>Species range</td><td><input type='text' name='species_range' size='50' placeholder='{...,...,...}'></input></td><td style='font-size:10;'>$colopts[species_range]</td></tr>
+
+
 <tr><td>Analysis type</td><td><input type='text' name='analysis_type' size='50' placeholder='{spatial prediction, hypothesis test,...}'></input></td><td style='font-size:10;'>$colopts[analysis_type]</td></tr>
 <tr><td>Model type</td><td><input type='text' name='model_type' size='50' placeholder='{maxent,GARP,MARK,...}'></input></td><td style='font-size:10;'>$colopts[model_type]</td></tr>
 <tr><td>Data sources</td><td><input type='text' name='data_source' size='50'placeholder='{field-work,natural history collections,...}' ></input></td><td style='font-size:10;'>$colopts[data_source]</td></tr>
-<tr><td>Topics</td><td><input type='text' name='topics' size='50'></input></td><td style='font-size:10;'>$colopts[topics]</td></tr>
+
 <tr><td>
 Country comments
 </td><td>
