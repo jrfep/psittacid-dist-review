@@ -10,6 +10,8 @@ library(googlesheets4)
 require(dplyr)
 require(rcrossref)
  require(magrittr)
+ require(stringr)
+
 
 require("RPostgreSQL")
 
@@ -27,30 +29,61 @@ con <- dbConnect(drv, dbname = "litrev",
 
 target.dir <- "WoS_psittacids_12095_20201023/"
 data.dir <- sprintf("%s/%s", work.dir,target.dir)
+data.dir <- sprintf("%s/bibtex", script.dir)
+
 cat(sprintf("Loop through bibtex files in directory %s\n",target.dir))
 
-   for (arch in dir(data.dir,pattern=".bib",full.names=T)) {
-     # read file and transform to data frame
+for (arch in list.files(data.dir,recursive=T,pattern=".bib",full.names=T)) {
+  # read file and transform to data frame
 
-     M0 <- convert2df(arch, dbsource = "isi", format = "bibtex")
-     # add a column with the topic (taken from file name)
-     M0$search.group <- gsub(".bib", "", basename(arch))
-     # bind data frames by rows
-     if (!exists("ISI.search.df")) {
-       ISI.search.df <- M0
-     } else {
-       cc1 <- colnames(ISI.search.df)
-       cc2 <- colnames(M0)
-       for (cc in cc1[!cc1 %in% cc2])
-         M0[,cc] <- NA
-       for (cc in cc2[!cc2 %in% cc1])
-         ISI.search.df[,cc] <- NA
+  M0 <- convert2df(arch, dbsource = "isi", format = "bibtex")
+  # add a column with the topic (taken from file name)
+  M0$search.group <- gsub(".bib", "", basename(arch))
+  # bind data frames by rows
+  if (!exists("ISI.search.df")) {
+   ISI.search.df <- M0
+  } else {
+   cc1 <- colnames(ISI.search.df)
+   cc2 <- colnames(M0)
+   for (cc in cc1[!cc1 %in% cc2])
+     M0[,cc] <- NA
+   for (cc in cc2[!cc2 %in% cc1])
+     ISI.search.df[,cc] <- NA
 
-       ISI.search.df <- rbind(ISI.search.df,M0)
-     }
-     # clean-up
-     rm(M0)
-   }
+   ISI.search.df <- rbind(ISI.search.df,M0)
+  }
+  # clean-up
+  rm(M0)
+}
+
+ISI.search.df %>% filter(!is.na(CR) & nchar(CR)>5) %>% transmute(qry=sprintf("INSERT INTO psit.bibtex (\"UT\",\"CR\") values('%s','%s') ON CONFLICT (\"UT\") DO UPDATE SET \"CR\"=EXCLUDED.\"CR\"",UT,gsub("'","''",CR))) %>% pull(qry) -> qries
+for (qry in qries)
+  dbSendQuery(con,qry)
+
+
+
+ISI.search.df %>% filter(!is.na(CR) & nchar(CR)>5) -> ISI.search.ss
+
+for (k in 1:nrow(ISI.search.ss)) {
+  ISI.search.ss %>% slice(k) %>% pull(CR) -> slc
+  ##strsplit(slc,";")
+  str_split(slc,";",simplify=T) %>% str_split_fixed(" DOI ",n=2) -> cts
+
+  colnames(cts) <- c("key","doi")
+  cts <- data.frame(cts,stringsAsFactors=F)
+  ISI.search.ss %>% slice(k) %>% pull(UT) -> cts$UT
+  cts %<>% transmute(from=UT,ref_key=str_trim(key),doi) %>% mutate(qry=sprintf("INSERT INTO psit.added_refs (ref_code,doi) VALUES ('%s','%s') ON CONFLICT DO NOTHING",gsub("'","''",ref_key),doi))
+
+  for (qry in cts$qry)
+    dbSendQuery(con,qry)
+
+  cts %<>%  mutate(qry=sprintf("INSERT INTO psit.citation_rels VALUES ('%s','UT cites SR','%s') ON CONFLICT DO NOTHING",from,gsub("'","''",ref_key)))
+
+  for (qry in cts$qry)
+    dbSendQuery(con,qry)
+
+}
+
 
    ISI.search.df <- ISI.search.df[!(duplicated(ISI.search.df$UT) | duplicated(ISI.search.df$TI)), ]
 

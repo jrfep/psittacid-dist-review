@@ -149,3 +149,23 @@ CREATE TABLE IF NOT EXISTS psit.distmodel_ref (
   PRIMARY KEY (ref_id)
 );
 ALTER TABLE psit.distmodel_ref  ADD CONSTRAINT annotate_ref_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+CREATE TABLE IF NOT EXISTS psit.added_refs (
+  ref_id varchar(255),
+  ref_code text,
+  doi text,
+  ref_cite text,
+  PRIMARY KEY (ref_code)
+);
+ALTER TABLE psit.added_refs  ADD CONSTRAINT added_ref_code_fkey FOREIGN KEY(ref_id) REFERENCES psit.bibtex("UT") ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+CREATE TABLE IF NOT EXISTS psit.citation_rels (
+  from_document text,
+  relationship text,
+  to_document text,
+  UNIQUE (from_document,relationship,to_document)
+);
