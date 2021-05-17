@@ -69,11 +69,11 @@ function stripvals($x) {
   $z = str_replace(array(','),' // ',$y);
   return $z;
 };
-
+$k = 1 ;
  while ($row = pg_fetch_assoc($result)) {
 
-
-          $tab .= "<TR bgcolor='#A4F3D8'><TD ><b>".$row["TI"]."</b></br>".$row["DE"]."</TD><TD>  <a  href='/litrev/web/show-reference.php?UT=".$row["UT"]."&project=$project'>Review</a> / <a target='_blank' href='http://doi.org/".$row["DI"]."'>DOI link</a></TD><TD >Issue:".stripvals($row["specific_issue"])."</BR>Range:".$row["species_range"]."</TD><TD >Paradigm:".$row["paradigm"]."<BR/>Method/Model:".$row["model_type"]."</TD></TR>";
+   $k =+ 1;
+          $tab .= "<TR bgcolor='#A4F3D8'><TH>$k</TH><TD ><b>".$row["TI"]."</b></br>".$row["DE"]."</TD><TD>  <a  href='/litrev/web/show-reference.php?UT=".$row["UT"]."&project=$project'>Review</a> / <a target='_blank' href='http://doi.org/".$row["DI"]."'>DOI link</a></TD><TD >Issue: ".stripvals($row["specific_issue"])."</BR>Range: ".stripvals($row["species_range"])."</TD><TD >Paradigm: ".stripvals($row["paradigm"])."<BR/>Method/Model: ".stripvals($row["model_type"])."</TD></TR>";
 
   #        echo "Tenemos ".$row["count"]." referencias en base de datos";
    }
