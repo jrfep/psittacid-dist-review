@@ -47,7 +47,7 @@ echo "
 
 <?php
 
-$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type,specific_issue,species_range
+$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type,specific_issue,species_range,paradigm
 FROM psit.bibtex b
 LEFT JOIN psit.distmodel_ref a
   ON b.\"UT\"=a.ref_id
@@ -69,7 +69,7 @@ function stripvals($x) {
   $z = str_replace(array(','),' // ',$y);
   return $z;
 };
-$k = 1 ;
+$k = 0 ;
  while ($row = pg_fetch_assoc($result)) {
 
    $k += 1;
