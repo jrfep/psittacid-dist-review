@@ -13,7 +13,7 @@ $qry = "SELECT from_document,\"TI\",f1.reviewed_date rd1, f2.reviewed_date rd2, 
   LEFT JOIN psit.filtro2 f2 ON from_document=f2.ref_id
   LEFT JOIN psit.distmodel_ref f3 ON from_document=f3.ref_id
   WHERE to_document='$key' AND relationship='UT cites SR'
-  AND f1.project='$project' AND f2.project='$project' AND f3.project='$project'
+  AND f1.project='$project' AND f2.project='$project' 
 ";
 
 
