@@ -28,7 +28,7 @@ $qry = "SELECT from_document,\"TI\",f1.reviewed_date rd1, f2.reviewed_date rd2, 
           <TD>".$row["rd1"]."</TD>
           <TD>".$row["status"]." (".$row["rd2"].")</TD>
           <TD>".$row["rd3"]."</TD>
-          <TD><a href='show-reference.php_UT=".$row["from_document"]."&project=$project'>Show</a></TD></TR>";
+          <TD><a href='show-reference.php?UT=".$row["from_document"]."&project=$project'>Show</a></TD></TR>";
 
    }
    echo "<TABLE><TR><TH>Reference</TH><TH colspan='3'>Filters</TH></TR>$tab</TABLE>"
