@@ -47,7 +47,7 @@ echo "
 
 <?php
 
-$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type
+$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type,spespecific_issue,species_range
 FROM psit.bibtex b
 LEFT JOIN psit.distmodel_ref a
   ON b.\"UT\"=a.ref_id
