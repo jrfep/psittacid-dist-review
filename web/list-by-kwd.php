@@ -45,14 +45,15 @@ switch ($project) {
   case "Species distribution models":
   $qry = "WITH f1 as (SELECT * FROM psit.filtro1 WHERE project='$project'),
   f2 as (SELECT * FROM psit.filtro2 WHERE project='$project')
-  select \"TI\",\"DE\",\"UT\",abstract,keyword,title,status,analysis_type from f1
+  select \"TI\",\"DE\",\"UT\",abstract,keyword,title,status,model_type from f1
   LEFT JOIN psit.bibtex b
   ON b.\"UT\"=f1.ref_id
     LEFT JOIN psit.distmodel_ref a
     ON f1.ref_id=a.ref_id
     LEFT JOIN f2
     ON f1.ref_id=f2.ref_id
-  WHERE ('$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword)) ";
+  WHERE ('$kwd' = ANY(title) OR '$kwd' = ANY(abstract) OR '$kwd' = ANY(keyword))
+  ORDER BY status DESC";
   break;
 
 }

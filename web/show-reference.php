@@ -360,7 +360,7 @@ where relationship='UT cites SR' AND from_document ='$refid'";
  }
 
  while ($row = pg_fetch_assoc($result))  {
-   $reflist .= "<li>".$row["to_document"]." [DOI: <a href='http://doi.org/".$row["doi"]."' target=_blank>".$row["doi"]."</a>]</li>";
+   $reflist .= "<li>".$row["to_document"]." [DOI: <a href='http://doi.org/".$row["doi"]."' target=_blank>".$row["doi"]."</a>] [<a href='list-citations.php?key=".$row["to_document"]."&project=$project'> OVERVIEW OF CITATIONS </a>]</li>";
 }
 echo "<ol>$reflist</ol>"
 
