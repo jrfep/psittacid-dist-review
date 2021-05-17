@@ -64,7 +64,7 @@ ORDER BY model_type,analysis_type ";
    exit;
  }
 
-function stripvals(x) {
+function stripvals($x) {
   $y = str_replace(array('{','}','"'),'',$x);
   $z = str_replace(array(','),' // ',$y);
   return $z;
