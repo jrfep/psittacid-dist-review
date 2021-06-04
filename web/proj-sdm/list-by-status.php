@@ -36,10 +36,15 @@ $result = pg_query($dbconn, $prg);
 if (!$result) {echo "An error occurred. $prg\n";exit;}
 while ($row = pg_fetch_assoc($result)) { $rangelist .= "$row[unnest] ($row[count])<br/>";}
 
+$prg = "SELECT unnest(data_source),count(*) FROM  psit.distmodel_ref  GROUP BY unnest ORDER BY count DESC";
+$result = pg_query($dbconn, $prg);
+if (!$result) {echo "An error occurred. $prg\n";exit;}
+while ($row = pg_fetch_assoc($result)) { $datasource .= "$row[unnest] ($row[count])<br/>";}
+
 echo "
 <TABLE style='font-size:14'>
-<TR><TH>Issues</TH><TH>Paradigm</TH><TH>Species range</TH><TH>Models</TH></TR>
-<TR style='vertical-align: top;' ><TD>$isslist</TD><TD>$modelpara</TD><TD>$rangelist</TD><TD>$modellist</TD></TR>
+<TR><TH>Issues</TH><TH>Paradigm</TH><TH>Species range</TH><TH>Models</TH><TH>Data source</TH></TR>
+<TR style='vertical-align: top;' ><TD>$isslist</TD><TD>$modelpara</TD><TD>$rangelist</TD><TD>$modellist</TD><TD>$datasource</TD></TR>
 </TABLE>";
 ?>
 
@@ -47,7 +52,7 @@ echo "
 
 <?php
 
-$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type,specific_issue,species_range,paradigm
+$qry = "SELECT \"TI\",\"DE\",\"UT\",\"DI\",topics,analysis_type,model_type,specific_issue,species_range,paradigm,data_source
 FROM psit.bibtex b
 LEFT JOIN psit.distmodel_ref a
   ON b.\"UT\"=a.ref_id
@@ -73,11 +78,11 @@ $k = 0 ;
  while ($row = pg_fetch_assoc($result)) {
 
    $k += 1;
-          $tab .= "<TR bgcolor='#A4F3D8'><TH>$k</TH><TD ><b>".$row["TI"]."</b></br>".$row["DE"]."</TD><TD>  <a  href='/litrev/web/show-reference.php?UT=".$row["UT"]."&project=$project'>Review</a> / <a target='_blank' href='http://doi.org/".$row["DI"]."'>DOI link</a></TD><TD >Issue: ".stripvals($row["specific_issue"])."</BR>Range: ".stripvals($row["species_range"])."</TD><TD >Paradigm: ".stripvals($row["paradigm"])."<BR/>Method/Model: ".stripvals($row["model_type"])."</TD></TR>";
+          $tab .= "<TR bgcolor='#A4F3D8'><TH>$k</TH><TD ><b>".$row["TI"]."</b></br>".$row["DE"]."</TD><TD>  <a  href='/litrev/web/show-reference.php?UT=".$row["UT"]."&project=$project'>Review</a> / <a target='_blank' href='http://doi.org/".$row["DI"]."'>DOI link</a></TD><TD >Issue: ".stripvals($row["specific_issue"])."</BR>Range: ".stripvals($row["species_range"])."</TD><TD >Paradigm: ".stripvals($row["paradigm"])."<BR/>Method/Model: ".stripvals($row["model_type"])."</TD><TD > ".stripvals($row["data_source"])."</TD></TR>";
 
   #        echo "Tenemos ".$row["count"]." referencias en base de datos";
    }
-   echo "<TABLE><TR><TD></TD><TH width='45%'>TI</TH><TD></TD><TH width='25%'>Analysis</TH><TH width='25%'>Models</TH></TR>$tab</TABLE>"
+   echo "<TABLE><TR><TD></TD><TH width='40%'>TI</TH><TD></TD><TH width='20%'>Analysis</TH><TH width='20%'>Models</TH><TH width='20%'>Data</TH></TR>$tab</TABLE>"
 ?>
 
 <?php
