@@ -1,0 +1,49 @@
+"","topics","general_application","specific_issue","n_pub"
+"1","Behavior","Habitat use related to behaviour types","Occurrence of behaviour types",1
+"2","Behavior","Temporal distribution patterns","Movement related to environmental factors",1
+"3","Biodiversity","Ecological communities","Beta diversity",1
+"4","Biodiversity","Ecological communities","Richness and alpha-diversity",2
+"5","Conservation","Assessment of distribution","potential distribution",1
+"6","Conservation","Climate change","Change in distribution driven by climate change",5
+"7","Conservation","Climate change","Combined effects of climate and habitat changes",1
+"8","Conservation","Climate change","Evaluating or forecasting the effect of environmental changes",1
+"9","Conservation","Co-occurence of parrot species","Variables affecting distribution",1
+"10","Conservation","Conservation issues","Coverage by Protected Areas",1
+"11","Conservation","Relation with environmental variables","Coverage by Protected Areas",1
+"12","Conservation","Spatial prediction","Change in distribution driven by habitat loss",1
+"13","Conservation","Spatial prediction","Effect of conservation actions",2
+"14","Conservation","Spatial prediction","Identification of priority areas for conservation",1
+"15","Conservation","Spatial prediction","Resource distribution",2
+"16","Conservation","Threats monitoring","Change in distribution driven by habitat loss",5
+"17","Conservation","Threats monitoring","Effect of conservation actions",1
+"18","Conservation","Threats monitoring","Fragmentation effect",2
+"19","Conservation","Threats monitoring","Input for population models / population viability analysis",1
+"20","Conservation","Threats monitoring","Threat distribution",2
+"21","Conservation","Threats monitoring","Threat effect on distribution/occupancy",1
+"22","Ecology","Biodiversity","Co-occurrence of interacting species",1
+"23","Ecology","Climate change","Change in distribution driven by climate change",1
+"24","Ecology","Macroecology","Abundance-occupancy relationship",1
+"25","Ecology","Macroecology","Effect of biotic interactions on distribution",1
+"26","Ecology","Macroecology","Global distribution patterns of diet type",1
+"27","Ecology","Macroecology","Latitudinal gradient in biodiversity",1
+"28","Ecology","Predictions of invasion risk","Establishment of non-native specie",2
+"29","Ecology","Predictions of invasion risk","establishment of non-native species",1
+"30","Ecology","Relation with environmental variables","Determining areas for survey",2
+"31","Ecology","Relation with environmental variables","Identifying breeding habitat",5
+"32","Ecology","Relation with environmental variables","Identifying potential habitat",1
+"33","Ecology","Relation with environmental variables","Interannual variability in distribution",2
+"34","Ecology","Relation with environmental variables","Model comparisons",1
+"35","Ecology","Relation with environmental variables","Variables affecting distribution",8
+"36","Ecology","Seasonality/Migratory movements","Change in distribution driven by habitat loss",1
+"37","Ecology","Threats monitoring","potential distribution",1
+"38","evolution","Biogeographic patterns","Change in historical distribution",2
+"39","Evolution","Biogeographic patterns","Understanding distribution of extincted species",1
+"40","Invasion ecology","Invasion effect","Impacts on native species",2
+"41","Invasion ecology","Predictions of invasion risk","Establishment of non-native specie",3
+"42","Invasion ecology","Predictions of invasion risk","Limitations into invasion risk",1
+"43","Invasion ecology","Predictions of invasion risk","niche shift",3
+"44","Invasion ecology","Predictions of invasion risk","Potential range of invasive species",5
+"45","Invasion ecology","Relation with environmental variables","Variables affecting distribution",1
+"46","Methodological issues","Improving estimation","Factors affecting distribution estimation",1
+"47","Methodological issues","Improving estimation","Variables affecting distribution",1
+"48","Methodological issues","Survey methodology biases","Evaluating citizen science data",1
