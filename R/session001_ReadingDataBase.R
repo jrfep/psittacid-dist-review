@@ -73,8 +73,6 @@ str(species_ref) #4494 obs. of  5 variables
 #Country list
 str(country_ref) #5313 obs. of  5 variables
 str(my_bibtex) #160  69
-# Rename column where names is "UT"
-names(my_bibtex)[names(my_bibtex) == "UT"] <- "ref_id"
 
 #SUPPORTING FILES
 str(birdlife_list)#419   4

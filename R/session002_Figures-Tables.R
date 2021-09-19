@@ -8,7 +8,13 @@ library(data.table)
 library(rpostgis)
 library(splitstackshape)
 
-distmodel_ref <- read.csv("input/distmodel_ref.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
+tables <- c("distmodel_ref", "species_ref", "country_ref", "my_bibtex", "birdlife_list", "iso_countries")
+for (tt in tables) {
+  if (!exists(tt)) {
+    incsv <- sprintf("input/%s.csv",tt)
+    assign(tt,read.csv(incsv,sep=",",header=T, dec=".", stringsAsFactors=F))
+  }
+}
 
 
 ## limpiar variables:
@@ -47,7 +53,7 @@ distmodel_ref %>% select(paradigm, paradigm_type) %>% table(useNA="always")
 
 # Figure 1
 
-distmodel_ref %>% filter(!is.na(paradigm)) %>% left_join(my.bibtex,by="ref_id") %>%
+distmodel_ref %>% filter(!is.na(paradigm)) %>% left_join(my_bibtex,by=c("ref_id"="UT")) %>%
   transmute(ref_id,year=PY,paradigm_type)  -> publication_year_table
 
 #By paradigm
@@ -90,7 +96,6 @@ ggplot(aes(x = general_application, y=n_pub, fill = topics)) +
 
 
 ## Figure 2
-iso_countries<- read.csv("iso_countries.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
 
 ## filtrar falsos positivos de "Macao, MAC"
 country_ref %>% filter(iso2 !="MO") %>% left_join(iso_countries,by="iso2") %>% select(ref_id,iso2,region) -> table_country_ref
@@ -178,5 +183,5 @@ supl.mat1%>%
 
   write.csv(table_1, file.path(path, "table_1.csv"))
 
-  
-slc <-   my_bibtex %>% slice(grep("FERRER",AU)) %>% pull(ref_id)
+# slc <-   my_bibtex %>% slice(grep("FERRER",AU)) %>% pull(UT)
+
