@@ -1,4 +1,3 @@
-setwd("~/Documentos/Publicaciones/Ferrer-Paris_Sanchez-Mercado_ReviewParrotDistribution/input") 
 library(bibliometrix) #the library for bibliometrics
 library(dplyr) #for data munging
 library(tidytext)
@@ -8,64 +7,79 @@ library(rpostgis)
 library(splitstackshape)
 
 ###
-#INSIDE THE DATA BASE
+# Update tables from DATA BASE
 ####
-# loads the PostgreSQL driver
-drv <- dbDriver("PostgreSQL")
-# creates a connection to the postgres database
-# note that "con" will be used later in each connection to the database
-con <- dbConnect(drv, dbname = "litrev",
-                   host = "literature-review.cpq4sgesx7kb.ap-southeast-2.rds.amazonaws.com", port = 5432,
-                   user = "postgres")
-#To see the tables in the database  
-dbGetQuery(con,
-           "SELECT table_name FROM information_schema.tables
-                     WHERE table_schema='psit'")
 
-#Create object with each table
-distmodel_ref <- dbGetQuery(con, "SELECT * FROM psit. distmodel_ref")
-write.csv(distmodel_ref, "distmodel_ref.csv")
+# source this code to read database credential from file $HOME/.database.ini
+source("env/database-credentials.R")
 
-distmodel_ref <- read.csv("distmodel_ref.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
+## if we have database credential we can update all objects:
+if (dbinfo["host"] != "") {
+  # loads the PostgreSQL driver
+  drv <- dbDriver("PostgreSQL")
+  # creates a connection to the postgres database
+  # note that "con" will be used later in each connection to the database
+  con <- dbConnect(drv, dbname = dbinfo["database"],
+                     host = dbinfo["host"], port = dbinfo["port"],
+                     user = dbinfo["user"])
+
+  #To see the tables in the database
+  dbGetQuery(con,
+             "SELECT table_name FROM information_schema.tables
+                       WHERE table_schema='psit'")
+
+  #Query names of the columns in the table bibtex
+  dbGetQuery(con, "SELECT column_name
+   FROM information_schema.columns
+  WHERE table_schema = 'psit'
+    AND table_name   = 'bibtex'")
+
+  #Create objects with all information from these tables in the database
+
+  tables <- c("distmodel_ref","species_ref","country_ref","bibtex")
+
+  for (tt in tables) {
+    if (tt %in% "bibtex") {
+      # UT column name needs to be surrounded in quotes:
+      qry2 <- "SELECT * FROM psit.bibtex WHERE \"UT\" IN
+      (SELECT ref_id FROM psit.distmodel_ref)"
+      outcsv <- sprintf("input/my_%s.csv",tt)
+    } else {
+      qry <- sprintf("SELECT * FROM psit.%s",tt)
+      outcsv <- sprintf("input/%s.csv",tt)
+    }
+
+    qryTable <- dbGetQuery(con, qry)
+    write.csv(qryTable, outcsv)
+    assign(tt,qryTable)
+  }
+  dbDisconnect(con)
+}
+
+###
+# Read tables from input folder
+####
+## if there is no database connection, we will read the csv files in output folder:
+
+tables <- c("distmodel_ref", "species_ref", "country_ref", "my_bibtex", "birdlife_list", "iso_countries")
+for (tt in tables) {
+  if (!exists(tt)) {
+    incsv <- sprintf("input/%s.csv",tt)
+    assign(tt,read.csv(incsv,sep=",",header=T, dec=".", stringsAsFactors=F))
+  }
+}
 str(distmodel_ref) # 160 obs. of  14 variables
-
-#Specie list
-species_ref <- dbGetQuery(con, "SELECT * FROM psit. species_ref")
-write.csv(species_ref, "species_ref.csv")
-species_ref <- read.csv("species_ref.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
 str(species_ref) #4494 obs. of  5 variables
-
 #Country list
-country_ref <- dbGetQuery(con, "SELECT * FROM psit. country_ref")
-write.csv(country_ref, "country_ref.csv")
-country_ref <- read.csv("country_ref.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
 str(country_ref) #5313 obs. of  5 variables
-
-#See the names of the columns in the table bibtex
-dbGetQuery(con, "SELECT column_name
-  FROM information_schema.columns
- WHERE table_schema = 'psit'
-   AND table_name   = 'bibtex'")
-
-# As annotate_ref$ref_id is a character, you'll have to surround this in quotes:
-qry2 <- "SELECT * FROM psit.bibtex WHERE \"UT\" IN 
-(SELECT ref_id FROM psit.distmodel_ref)"
-my.bibtex <- dbGetQuery(con, qry2)
-
-write.csv(my.bibtex, "my.bibtex.csv")
-my.bibtex <- read.csv("my.bibtex.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
-str(my.bibtex) #160  69
+str(my_bibtex) #160  69
 # Rename column where names is "UT"
-names(my.bibtex)[names(my.bibtex) == "UT"] <- "ref_id"
+names(my_bibtex)[names(my_bibtex) == "UT"] <- "ref_id"
 
-#LOAD SUPPORTING FILES
-
-my.iucn<- read.csv("birdlife_list.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
-str(my.iucn)#419   4
-aggregate(my.iucn$scientific_name, list(my.iucn$family), length)
-
+#SUPPORTING FILES
+str(birdlife_list)#419   4
+aggregate(birdlife_list$scientific_name, list(birdlife_list$family), length)
 #country and regions list
-iso_countries<- read.csv("iso_countries.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
 str(iso_countries)
 
 #END
