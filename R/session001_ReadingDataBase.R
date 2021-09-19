@@ -41,7 +41,7 @@ if (dbinfo["host"] != "") {
   for (tt in tables) {
     if (tt %in% "bibtex") {
       # UT column name needs to be surrounded in quotes:
-      qry2 <- "SELECT * FROM psit.bibtex WHERE \"UT\" IN
+      qry <- "SELECT * FROM psit.bibtex WHERE \"UT\" IN
       (SELECT ref_id FROM psit.distmodel_ref)"
       outcsv <- sprintf("input/my_%s.csv",tt)
     } else {
@@ -68,7 +68,7 @@ for (tt in tables) {
     assign(tt,read.csv(incsv,sep=",",header=T, dec=".", stringsAsFactors=F))
   }
 }
-str(distmodel_ref) # 160 obs. of  14 variables
+str(distmodel_ref) # 160 obs. of  13 variables
 str(species_ref) #4494 obs. of  5 variables
 #Country list
 str(country_ref) #5313 obs. of  5 variables

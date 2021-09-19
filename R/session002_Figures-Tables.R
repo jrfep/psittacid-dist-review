@@ -1,14 +1,14 @@
 require(magrittr)
 library(dplyr) #for data munging
 require(ggplot2) #visualization
-library("RColorBrewer")
+library(RColorBrewer)
 library(tidytext)
 library(tidyr)
 library(data.table)
 library(rpostgis)
 library(splitstackshape)
 
-distmodel_ref <- read.csv("distmodel_ref.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
+distmodel_ref <- read.csv("input/distmodel_ref.csv",sep=",",header=T, dec=".", stringsAsFactors=F)
 
 
 ## limpiar variables:
@@ -116,9 +116,9 @@ mutate(general_application=case_when(
 
 long_app_country %<>%
   mutate(general_application = factor(general_application, levels=c("Conservation issues","Climate change","Threats monitoring", "Spatial prediction",
-                                                                  "Macroecology","Assessment of distribution","Co-occurence of parrot species",
-                                                                  "Temporal distribution patterns","Habitat use related to behaviour types", "Ecological communities","Relation with environmental variables",
-                                                                  "Biogeographic patterns", "Invasion effect","Predictions of invasion risk", "Improving estimation")))
+    "Macroecology","Assessment of distribution","Co-occurence of parrot species",
+    "Temporal distribution patterns","Habitat use related to behaviour types", "Ecological communities","Relation with environmental variables",
+    "Biogeographic patterns", "Invasion effect","Predictions of invasion risk", "Improving estimation")))
 
 #Just check variables with NAs
 long_app_country %>% filter(is.na(general_application)) %>% pull(ref_id)
@@ -177,3 +177,6 @@ supl.mat1%>%
   summarise(n_pub = n_distinct(ref_id)) -> table_1
 
   write.csv(table_1, file.path(path, "table_1.csv"))
+
+  
+slc <-   my_bibtex %>% slice(grep("FERRER",AU)) %>% pull(ref_id)
