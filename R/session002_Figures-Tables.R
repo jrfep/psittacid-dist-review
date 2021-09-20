@@ -197,30 +197,19 @@ long_spp_list <-  cSplit(table_species_ref, c("topics","general_application", "s
 
 long_spp_list %>% filter(!is.na(general_application), !is.na(topics), !is.na(species_range)) %>%
     inner_join(Index_of_CITES_Species,by=c("scientific_name"="scientific.AF8.name")) %>%
-    transmute(ref_id,topics, scientific_name, general_application, species_range, Genus) -> table_app_spp
+    transmute(ref_id,topics, scientific_name, general_application, species_range, Genus) %>%
+    mutate(general_application = factor(general_application, levels=c("Threats monitoring","Climate change", "Spatial prediction", "Assessment of distribution", "Conservation issues","Co-occurence of parrot species",
+                                                                  "Relation with environmental variables","Macroecology",
+                                                                  "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types", 
+                                                                  "Biogeographic patterns", "Predictions of invasion risk","Invasion effect", "Improving estimation"))) -> table_app_spp
 
-table_app_spp %>%
+  table_app_spp %>%
   group_by(Genus, general_application, species_range) %>%
   summarise(total=n_distinct(ref_id)) %>%
-  ggplot(aes(x= general_application, y= Genus, size= log(total), color= species_range)) +
+  ggplot(aes(x= general_application, y= Genus, size= total, color= species_range)) +
   geom_point(alpha=0.5) +
-  scale_size(range = c(1, 10), name="Number of species")+
+    scale_radius(range = c(2, 10),name="Number of documents") +
   theme_bw()+
   theme(axis.text.x = element_text(angle=45, size=9, hjust = 1))
-
-  
-  
-#  ggplot(aes(fill= species_range, y=total, x=general_application)) +
- # geom_bar(stat="identity", position=position_stack(reverse = TRUE))+
-  #facet_grid(Genus ~ general_application) +
-  #labs(x = "General applications", y = "Number of publications")+
-  #theme(
-   # legend.position="none",
-    #axis.text.x = element_blank(),
-    #panel.spacing = unit(0.2, "lines"),
-    #strip.text.x = element_text(size = 8, angle = 45, vjust =0, hjust = 0),
-    #strip.background = element_blank(),
-    #plot.margin = unit(c(1,6,1,6), "cm"))# top, right, bottom, left
-
 
   
