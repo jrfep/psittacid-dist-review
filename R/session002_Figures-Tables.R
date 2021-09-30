@@ -64,6 +64,11 @@ publication_year_table %>%
   summarise(n_pub = n_distinct(ref_id)) %>%
   mutate(csum = cumsum(n_pub)) -> py_table
 
+py_table %>%
+  group_by(paradigm_type) %>%
+  summarise(mean = mean(n_pub))
+    
+
 clrs <- brewer.pal(4,"Dark2")
 names(clrs) <- c("OM","RSF","other","NM")
   ggplot(py_table) +
@@ -98,7 +103,7 @@ ggplot(aes(x = general_application, y=n_pub, fill = topics)) +
   theme(axis.text.x=element_text(angle=45, size=12, hjust=1))
 
 
-## Figure 3
+              ## Figure 3
 
 ## filtrar falsos positivos de "Macao, MAC"
 country_ref %>% filter(iso2 !="MO") %>% left_join(iso_countries,by="iso2") %>% select(ref_id,iso2,region) -> table_country_ref
@@ -168,13 +173,13 @@ long_app_country %>%
 
 #Table 1
 distmodel_ref %>% filter(!is.na(paradigm)) %>%
-  transmute(ref_id,topics,general_application, specific_issue)-> my.table
+  transmute(ref_id,topics,general_application, specific_issue, paradigm_type)-> my.table
 
 ## make long with cSplit
 long_table_1 <-  cSplit(my.table, c("topics","general_application", "specific_issue"), ",", "long")
 
 long_table_1 %>% filter(!is.na(topics), !is.na(general_application)) %>%
-  transmute(ref_id,topics,general_application, specific_issue) ->supl.mat1
+  transmute(ref_id,topics,general_application, specific_issue, paradigm_type) -> supl.mat1
 
 path <- "R/output"
 write.csv(supl.mat1, file.path(path, "supl.mat1.csv"))
