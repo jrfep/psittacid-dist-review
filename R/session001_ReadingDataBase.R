@@ -53,6 +53,19 @@ if (dbinfo["host"] != "") {
     write.csv(qryTable, outcsv)
     assign(tt,qryTable)
   }
+  
+  # additional query: total number of publications per year
+  outcsv <- sprintf("input/all_refs.csv")
+  qry <- "WITH bt AS (SELECT \"UT\" as ref_id,\"PY\" as year FROM psit.bibtex),
+  f1 AS (SELECT ref_id,reviewed_by FROM psit.filtro1 WHERE project='Species distribution models'),
+  f2 AS (SELECT ref_id,status FROM psit.filtro2 WHERE project='Species distribution models')
+  SELECT year,ref_id,reviewed_by,status from bt
+  LEFT JOIN f1 USING (ref_id)
+  LEFT JOIN f2 USING (ref_id)"
+  all_refs <- dbGetQuery(con, qry)
+  write.csv(all_refs, outcsv)
+  
+  
   dbDisconnect(con)
 }
 

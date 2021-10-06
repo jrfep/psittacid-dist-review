@@ -11,15 +11,15 @@
 "10","ISI000330162100016",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}","{""museum collections"",""field work""}","{Conservation,Ecology}",NA,NA,"JRFP",2021-05-14 10:27:57,"{""Assessment of distribution""}","{""potential distribution"",""assessment of threats""}","{NM}","{Native}"
 "11","ISI000324930600021",NA,"{Distance}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-09-15 04:40:58,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{OM}","{Native}"
 "12","ISI000353007200004",NA,"{""Multi-State Occupancy Model (MS-OM)""}","{""accoustic monitoring""}","{Ecology,Conservation}",NA,NA,"JRFP",2021-05-14 03:44:26,NA,NA,"{RSF,OM}","{Native}"
-"13","ISI000336874100016","{""spatial prediction"",""measure of change""}","{""Single Season Occupancy Model (SS-OM)"",""Maximum likelihood distribution model (MaxLike)""}","{""museum collections"",literature,""field work""}","{Ecology}",NA,"{""Amazona mercenarius""}","JRFP",2021-05-14 03:45:51,NA,"{""change in distribution""}",NA,"{Native}"
-"14","ISI000247322000010","{""spatial prediction"",""measure of change""}","{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}","{""museum collections""}","{evolution}",NA,NA,"JRFP",2021-05-14 09:56:15,"{""Biogeographic patterns""}","{""Change in historical distribution""}","{NM}","{Native}"
-"15","ISI000364228500003",NA,"{""Ensemble model""}",NA,"{Ecology}",NA,NA,"ASM",2021-05-14 09:42:00,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{NM}","{Native}"
-"16","ISI000310846800006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-14 11:21:57,NA,NA,NA,NA
-"17","ISI000274354200016",NA,"{""Ensemble model""}",NA,"{Conservation,Ecology}",NA,NA,"JRFP",2021-05-14 10:53:36,"{""Relation with environmental variables"",""Seasonality/Migratory movements"",""Coverage in protected areas""}","{""Coverage by Protected Areas"",""Change in distribution driven by habitat loss"",""Change in distribution driven by climate change"",""Seasonal distribution patterns"",""Migration patterns""}","{NM}","{Native}"
-"18","ISI000307128800003",NA,"{""Jaccard index"",""Detectability test""}","{""field work""}","{Biodiversity}",NA,NA,"JRFP",2021-09-15 04:46:44,"{""Ecological communities""}","{""Richness and alpha-diversity""}","{(OM)}","{Native}"
-"19","ISI000323930500024",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-14 11:33:15,NA,NA,NA,NA
-"20","ISI000482449400006",NA,"{""Maximum Entropy (MaxEnt)"",""General Linear Model (GLM)""}",NA,"{Ecology}",NA,NA,"JRFP",2021-09-15 04:36:21,"{""Relation with environmental variables""}","{""Determining areas for survey""}","{RSF,NM}","{Native}"
-"21","ISI000452732100007",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-09-15 04:43:03,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
+"13","ISI000247322000010","{""spatial prediction"",""measure of change""}","{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}","{""museum collections""}","{evolution}",NA,NA,"JRFP",2021-05-14 09:56:15,"{""Biogeographic patterns""}","{""Change in historical distribution""}","{NM}","{Native}"
+"14","ISI000364228500003",NA,"{""Ensemble model""}",NA,"{Ecology}",NA,NA,"ASM",2021-05-14 09:42:00,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{NM}","{Native}"
+"15","ISI000310846800006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-14 11:21:57,NA,NA,NA,NA
+"16","ISI000274354200016",NA,"{""Ensemble model""}",NA,"{Conservation,Ecology}",NA,NA,"JRFP",2021-05-14 10:53:36,"{""Relation with environmental variables"",""Seasonality/Migratory movements"",""Coverage in protected areas""}","{""Coverage by Protected Areas"",""Change in distribution driven by habitat loss"",""Change in distribution driven by climate change"",""Seasonal distribution patterns"",""Migration patterns""}","{NM}","{Native}"
+"17","ISI000307128800003",NA,"{""Jaccard index"",""Detectability test""}","{""field work""}","{Biodiversity}",NA,NA,"JRFP",2021-09-15 04:46:44,"{""Ecological communities""}","{""Richness and alpha-diversity""}","{(OM)}","{Native}"
+"18","ISI000323930500024",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-14 11:33:15,NA,NA,NA,NA
+"19","ISI000482449400006",NA,"{""Maximum Entropy (MaxEnt)"",""General Linear Model (GLM)""}",NA,"{Ecology}",NA,NA,"JRFP",2021-09-15 04:36:21,"{""Relation with environmental variables""}","{""Determining areas for survey""}","{RSF,NM}","{Native}"
+"20","ISI000452732100007",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-09-15 04:43:03,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
+"21","ISI000336874100016","{""spatial prediction"",""measure of change""}","{""Single Season Occupancy Model (SS-OM)"",""Maximum likelihood distribution model (MaxLike)""}","{""museum collections"",literature,""field work""}","{Conservation}",NA,"{""Amazona mercenarius""}","JRFP",2021-09-19 07:32:18,"{""Spatial prediction""}","{""Change in distribution driven by habitat loss""}","{NM,OM}","{Native}"
 "22","ISI000263128000003",NA,"{ENFA}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-05-17 01:03:50,"{""Predictions of invasion risk""}","{""Potential range of invasive species""}","{NM}","{Non-native}"
 "23","ISI000412620100029",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Behavior}","{Mexico}",NA,"Ada Sanchez",2021-05-17 01:07:45,"{""Temporal distribution patterns""}","{""Movement related to environmental factors""}","{NM}","{Native}"
 "24","ISI000409319400006",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}","{Australia}",NA,"Ada Sanchez",2021-05-17 01:26:08,"{""Relation with environmental variables""}","{""Identifying breeding habitat"",""Interannual variability in distribution""}","{NM}","{Native}"
@@ -28,9 +28,9 @@
 "27","ISI000279100600004",NA,"{none}",NA,"{Behavior}",NA,NA,"Ada Sanchez",2021-05-17 01:39:00,"{""Temporal distribution patterns""}","{""Movement related to environmental factors""}",NA,NA
 "28","ISI000182064500010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 01:41:41,NA,NA,NA,NA
 "29","ISI000339831300013",NA,"{""connectivity analysis""}",NA,"{Ecology}","{Australia}",NA,"Ada Sanchez",2021-05-17 01:48:18,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
-"30","ISI000453889700008",NA,"{""Generalized Additive Models (GAM)""}",NA,"{Ecology}","{Australia}",NA,"Ada Sanchez",2021-05-17 01:55:15,"{Macroecology}","{""Abundance-occupancy relationship""}","{NM}","{Native}"
-"31","ISI000166877800007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 01:58:50,NA,NA,NA,NA
-"32","ISI000256951200008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 03:57:20,NA,NA,NA,NA
+"30","ISI000166877800007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 01:58:50,NA,NA,NA,NA
+"31","ISI000256951200008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 03:57:20,NA,NA,NA,NA
+"32","ISI000453889700008",NA,"{""Zero Inflated Binomial - Generalized Additive Models (ZIB-GAM)""}",NA,"{Ecology}","{Australia}",NA,"JRFP",2021-09-29 23:50:49,"{Macroecology}","{""Abundance-occupancy relationship""}","{OM}","{Native}"
 "33","ISI000235885500008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 04:02:19,NA,NA,NA,NA
 "34","ISI000253983000009",NA,"{""Generalized Linear Models (GLM)""}",NA,"{Ecology}","{Australia}",NA,"Ada Sanchez",2021-05-17 04:07:23,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{RSF}","{Native}"
 "35","ISI000231194500012",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 04:09:50,NA,NA,NA,NA
@@ -69,93 +69,94 @@
 "68","ISI000254633700007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 22:52:17,NA,NA,NA,NA
 "69","ISI000328804300017",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-17 23:00:02,"{""Climate change""}","{""Evaluating or forecasting the effect of environmental changes""}","{NM}","{Native}"
 "70","ISI000417917800008",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,"{""Psittacus erithacus"",""Psittacula krameri"",""Psittacara mitratus"",""Psittacara frontatus"",""Poicephalus senegalus"",""Amazona amazonica"",""Amazona ochrocephala"",""Ara ararauna"",""Ara chloropterus"",""Cyanoliseus patagonus"",""Myiopsitta monachus"",""Poicephalus gulielmi""}","Ada Sanchez",2021-05-17 23:06:53,"{""Spatial prediction""}","{""Effect of conservation actions""}","{NM}","{Non-native}"
-"71","ISI000338623400001",NA,"{""theoretical Weibull probability distribution""}",NA,"{Conservation}",NA,"{""Calyptorhynchus latirostris""}","Ada Sanchez",2021-05-17 23:16:37,"{""Spatial prediction""}","{""Resource distribution""}","{NM}","{Native}"
-"72","ISI000333011700003",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{""Invasion ecology""}",NA,"{""Psittacula krameri"",""Myiopsitta monachus""}","Ada Sanchez",2021-05-17 23:22:56,"{""Predictions of invasion risk""}","{""niche shift""}","{NM}","{Non-native}"
-"73","ISI000370066200022",NA,"{""Ensemble model""}",NA,"{""Invasion ecology""}","{Global}",NA,"Ada Sanchez",2021-05-17 23:28:57,"{""Predictions of invasion risk""}","{""niche shift""}","{NM}","{Non-native}"
-"74","ISI000186599300011",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 23:36:57,NA,NA,NA,NA
-"75","ISI000306208300011",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 23:37:48,NA,NA,NA,NA
-"76","ISI000282115100011",NA,"{""kernel methods""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-17 23:47:32,"{""Relation with environmental variables""}","{""Interannual variability in distribution""}","{RSF}","{Native}"
-"77","ISI000418999900019",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-17 23:58:19,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
-"78","ISI000343865300008",NA,"{""Bioclimatic enveloped""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-18 00:02:09,"{""Threats monitoring""}","{""Threat distribution""}","{NM}","{Native}"
-"79","ISI000312089400007",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,"{""Pyrrhura picta"",""Pyrrhura melanura"",""Pyrrhura calliptera""}","Ada Sanchez",2021-05-18 00:08:51,"{""Spatial prediction""}","{""Identification of priority areas for conservation""}","{NM}","{Native}"
-"80","ISI000306477000005",NA,"{""General Linear Model (GLM)"",""Ensemble Models""}",NA,"{Conservation}",NA,NA,"JRFP",2021-09-15 04:57:19,"{""Threats monitoring""}","{""Input for population models / population viability analysis"",""Simulating effects of threats/actions""}","{NM}","{Native}"
-"81","ISI000284038500028",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-18 00:13:00,"{""Threats monitoring""}","{""Change in distribution driven by habitat loss""}","{NM}","{Native}"
-"82","ISI000556843900031",NA,"{""N-mixture models""}",NA,"{""Methodological issues""}",NA,NA,"Ada Sanchez",2021-05-18 00:23:46,"{""Improving estimation""}","{""Factors affecting distribution estimation""}","{OM}","{Native}"
-"83","ISI000426506100003",NA,"{""dynamic occupancy models""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-18 00:29:24,"{""Climate change""}","{""Change in distribution driven by climate change""}","{OM}","{Native}"
-"84","ISI000418999900010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-18 00:34:54,NA,NA,NA,NA
-"85","ISI000248965200012",NA,"{""Mixed procedure of SAS""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-05-18 00:43:50,"{""Predictions of invasion risk""}","{""Limitations into invasion risk""}","{RSF}","{Non-native}"
-"86","ISIA1997XW04000005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 03:24:18,NA,NA,NA,NA
-"87","ISI000415740100006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 03:29:05,NA,NA,NA,NA
-"88","ISI000383607200012",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 04:12:01,NA,NA,NA,NA
-"89","ISI000246671800002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 04:13:03,NA,NA,NA,NA
-"90","ISI000256158100014",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-20 04:19:19,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
-"91","ISI000337723100003",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 04:23:14,NA,NA,NA,NA
-"92","ISI000292478300006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-21 03:31:40,NA,NA,NA,NA
-"93","ISI000561132900001",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{evolution}",NA,NA,"Ada Sanchez",2021-05-21 03:59:44,"{""Biogeographic patterns""}","{""Change in historical distribution""}","{NM}","{Native}"
-"94","ISI000245693700008",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-21 04:03:31,"{""Climate change""}","{""Change in distribution driven by climate change""}","{NM}","{Native}"
-"95","ISI000398599800006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-21 04:08:14,NA,NA,NA,NA
-"96","AY0000000000000022",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-21 05:34:16,"{""Spatial prediction"",""Threats monitoring""}","{""Change in distribution driven by habitat loss"",""Coverage by Protected Areas""}","{NM}","{Native}"
-"97","ISI000399810100018",NA,"{""General Linear Model (GLM)""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-05-27 06:48:46,"{""Predictions of invasion risk""}","{""Potential range of invasive species""}","{NM}","{Non-native}"
-"98","ISI000505627800002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:16:04,NA,NA,NA,NA
-"99","ISI000330907800009",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-27 08:21:02,"{Macroecology}","{""Effect of biotic interactions on distribution""}","{NM}","{Native}"
-"100","ISI000423412500076",NA,"{""Generalized Linear Models (GLM)""}",NA,"{Conservation}","{Ecuador}",NA,"Ada Sanchez",2021-05-27 08:25:28,"{""Climate change""}","{""Change in distribution driven by climate change""}",NA,NA
-"101","ISI000248669100044",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:26:38,NA,NA,NA,NA
-"102","ISI000305115600001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:27:31,NA,NA,NA,NA
-"103","ISI000263245200003",NA,"{""Generalized Linear Models (GLM)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-27 08:34:02,"{Macroecology}","{""Global distribution patterns of diet type""}","{NM}","{Native}"
-"104","ISI000501192700003",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-27 08:36:52,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
-"105","ISIA1997WP12200005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:49:47,NA,NA,NA,NA
-"106","ISI000268744900007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 00:24:29,NA,NA,NA,NA
-"107","ISI000343187200020",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-28 00:30:52,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{NM}","{Native}"
-"108","ISI000232500900001",NA,"{""Bioclimatic enveloped""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-28 00:43:25,"{""Relation with environmental variables""}","{""Identifying potential habitat""}","{NM}","{Native}"
-"109","ISI000208195300005",NA,"{""Monte Carlo simulation method""}",NA,"{Ecology}","{""Puerto Rico""}",NA,"Ada Sanchez",2021-05-28 00:51:23,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{RSF}","{Native}"
-"110","ISI000349509400010",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,"{""Amazona farinosa"",""Amazona oratrix"",""Pyrilia haematotis"",""Pionus senilis"",""Amazona autumnalis"",""Amazona albifrons"",""Amazona xantholora"",""Eupsittula nana""}","Ada Sanchez",2021-05-28 00:58:28,"{""Threats monitoring""}","{""Fragmentation effect""}","{NM}","{Native}"
-"111","ISI000168812900006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 00:59:53,NA,NA,NA,NA
-"112","ISI000250297300006",NA,"{""General Linear Model (GLM)"",""Maximum Entropy (MaxEnt)""}",NA,"{Ecology,""Methodological issues""}",NA,NA,"Ada Sanchez",2021-05-28 01:04:00,"{""Relation with environmental variables"",""Improving estimation""}","{""Model comparisons"",""Variables affecting distribution""}","{NM}","{Native}"
-"113","ISI000434053500010",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation}","{Australia}",NA,"Ada Sanchez",2021-05-28 01:15:26,"{""Threats monitoring""}","{""Threat distribution""}","{OM}","{Native}"
-"114","ISI000535629300001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 01:21:14,NA,NA,NA,NA
-"115","ISIA1996VW08500002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 01:29:16,NA,NA,NA,NA
-"116","ISI000209469200006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 01:30:44,NA,NA,NA,NA
-"117","ISI000383607200013",NA,"{""Zero Inflated Binomial - Generalized Additive Models (ZIB-GAM)""}",NA,"{""Methodological issues""}","{Australia}","{""Calyptorhynchus latirostris""}","Ada Sanchez",2021-05-28 01:38:54,"{""Survey methodology biases""}","{""Evaluating citizen science data""}","{NM}","{Native}"
-"118","ISI000408449700003",NA,"{""multi-season occupancy models""}",NA,"{Conservation}",NA,"{""Poicephalus robustus""}","Ada Sanchez",2021-05-28 01:48:36,"{""Threats monitoring""}","{""Change in distribution driven by habitat loss""}","{OM}","{Native}"
-"119","ISI000344423000014",NA,"{none}",NA,NA,"{Argentina}",NA,"Ada Sanchez",2021-05-31 06:13:24,NA,NA,NA,NA
-"120","ISI000257049500001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-31 06:18:11,NA,NA,NA,NA
-"121","ISI000304290600007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-31 06:20:28,NA,NA,NA,NA
-"122","ISI000239112400007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-31 06:21:34,NA,NA,NA,NA
-"123","ISI000430667700002",NA,"{""Ensemble model""}",NA,"{""Invasion ecology""}","{France}",NA,"Ada Sanchez",2021-05-31 06:28:47,"{""Predictions of invasion risk""}","{""niche shift""}","{NM}","{Non-native}"
-"124","ISI000089667700003",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:33:52,NA,NA,NA,NA
-"125","ISI000406323100041",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Evolution}","{USA}",NA,"Ada Sanchez",2021-06-01 00:43:15,"{""Biogeographic patterns""}","{""Understanding distribution of extincted species""}","{NM}","{Native}"
-"126","ISI000354289100008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:44:35,NA,NA,NA,NA
-"127","ISI000347644000010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:46:07,NA,NA,NA,NA
-"128","ISI000448409000025",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:47:52,NA,NA,NA,NA
-"129","ISI000501640800008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:49:18,NA,NA,NA,NA
-"130","ISI000357622700011",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation}","{Bolivia}",NA,"Ada Sanchez",2021-06-01 00:55:40,"{""Threats monitoring""}","{""Fragmentation effect""}","{OM}",NA
-"131","ISI000277168000006",NA,"{""Random Forest (RF)""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-06-01 01:00:20,"{""Invasion effect""}","{""Impacts on native species""}","{NM}","{Non-native}"
-"132","ISI000393199400011",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-06-01 02:23:17,"{""Threats monitoring""}","{""Threat effect on distribution/occupancy""}","{OM}","{Native}"
-"133","ISI000387783000007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:24:31,NA,NA,NA,NA
-"134","ISI000188970200010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:25:40,NA,NA,NA,NA
-"135","ISI000171692900002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:27:05,NA,NA,NA,NA
-"136","ISI000242900700002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:28:03,NA,NA,NA,NA
-"137","ISI000572153000001",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation,""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-06-01 05:43:55,"{""Spatial prediction"",""Predictions of invasion risk""}","{""Effect of conservation actions"",""Establishment of non-native specie""}","{OM}","{Non-native}"
-"138","ISI000169271500009",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:46:41,NA,NA,NA,NA
-"139","ISI000337723100002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:50:08,NA,NA,NA,NA
-"140","ISI000499848200003",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:51:36,NA,NA,NA,NA
-"141","ISI000345191600005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:54:47,NA,NA,NA,NA
-"142","ISI000247396100001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:56:54,NA,NA,NA,NA
-"143","ISI000230055800005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:00:58,NA,NA,NA,NA
-"144","ISI000439400500017",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:02:39,NA,NA,NA,NA
-"145","ISI000305941300013",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:03:32,NA,NA,NA,NA
-"146","ISI000346425400014",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:04:06,NA,NA,NA,NA
-"147","ISI000374258900003",NA,"{""General Linear Model (GLM)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-06-01 06:08:23,"{""Threats monitoring""}","{""Effect of conservation actions""}","{RSF}","{Native}"
-"148","ISI000169881400012",NA,"{""Bioclimatic enveloped""}",NA,"{Ecology,Biodiversity}","{Global}",NA,"Ada Sanchez",2021-06-01 06:31:18,"{Macroecology,""Ecological communities""}","{""Latitudinal gradient in biodiversity"",""Beta diversity""}","{NM}","{Native}"
-"149","ISI000407080100003",NA,"{""spatial point pattern""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-06-01 06:47:27,"{""Spatial prediction""}","{""Resource distribution""}","{NM}","{Native}"
-"150","ISI000235693400012",NA,"{""Bayesian logistic regressions""}","{""Birds Australia"",""Bird surveys"",""Field data (evaluation)""}","{Ecology}",NA,NA,"JRFP",2021-06-04 04:29:04,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{RSF}","{Native}"
-"151","ISI000340223500011",NA,"{""Zero Inflated Binomial - Generalized Additive Models (ZIB-GAM)"",""Generalized Additive Models (GAM)"",""Generalized Linear Models (GLM)""}","{""field survey"",""repeated visits""}",NA,NA,NA,"JRFP",2021-06-04 04:36:10,NA,"{""Variables affecting distribution"",""Interannual variability in distribution""}","{OM}","{Native}"
-"152","ISI000367399900019",NA,"{""Single Season Occupancy Model (SS-OM)""}","{""field survey"",""repeated visits""}","{Ecology,Conservation}",NA,NA,"Ada Sanchez",2021-06-04 04:37:25,"{Biodiversity,""Co-occurence of parrot species"",""Spatial prediction"",""Relation with environmental variables""}","{""Co-occurrence of interacting species"",""Variables affecting distribution"",""Identification of priority areas for conservation""}","{OM}","{Native}"
-"153","ISI000413319000011",NA,"{""spatial point pattern""}","{""field survey"",""single visit"",""playback census""}","{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-06-04 04:51:22,"{""Invasion effect""}","{""Impacts on native species""}","{geostatistics}","{Non-native}"
-"154","ISI000208353800001",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,NA,"JRFP",2021-09-15 04:38:51,"{""Threats monitoring""}","{""Change in distribution driven by habitat loss""}","{NM}","{Native}"
-"155","ISI000448856300001",NA,"{""Maximum Entropy (MaxEnt)""}","{eBird}","{""Invasion ecology""}",NA,NA,"JRFP",2021-09-15 04:44:12,"{""Predictions of invasion risk""}","{""Potential range of invasive species""}","{NM}","{Non-native}"
-"156","ISI000562466300006",NA,"{""Single Season Occupancy Model (SS-OM)""}","{""field work""}","{Ecology}",NA,NA,"JRFP",2021-09-15 04:48:29,"{""Relation with environmental variables""}","{""Determining areas for survey""}","{(OM)}","{Native}"
-"157","ISI000517406000001",NA,"{""Ensemble model""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-09-15 05:12:00,"{""Predictions of invasion risk"",""Invasion effect""}","{""Potential range of invasive species"",""Impacts on native species"",""Conflicts with human activities""}","{NM}","{Non-native}"
-"158","ISI000518402000001","{""hypothesis test"",""spatial prediction""}","{""General Linear Model (GLM)"",""Maximum Entropy (MaxEnt)"",""Gradient Boosting Machine (GBM)"",""Random Forest (RF)""}","{""literature records"",""bird observation websites"",Naturalist,eBird,""Christmas Bird Count"",""Social Networks"",Facebook,Twitter,""image-hosting websites"",Flickr,YouTube}","{""Invasion ecology"",Evolution}","{""Native and non-native range""}","{""Agapornis canus"",""Agapornis fischeri"",""Agapornis taranta"",etc.}","JRFP",2021-09-17 05:01:58,"{""Predictions of invasion risk""}","{""Establishment of non-native species"",""niche shift"",""trade patterns""}","{NM}","{Native,Non-native}"
-"159","ISI000384873700024",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology,Conservation}",NA,NA,"JRFP",2021-09-17 05:12:50,"{""Threats monitoring"",""Conservation issues"",""Relation with environmental variables""}","{""Identifying potential habitat"",""Coverage by Protected Areas"",""Change in distribution driven by habitat loss""}","{NM}","{Native}"
-"160","ISI000501640800006",NA,"{""Ensemble model""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-09-17 09:44:01,"{""Climate change""}","{""Change in distribution driven by climate change""}","{NM}","{Native}"
+"71","ISI000333011700003",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{""Invasion ecology""}",NA,"{""Psittacula krameri"",""Myiopsitta monachus""}","Ada Sanchez",2021-05-17 23:22:56,"{""Predictions of invasion risk""}","{""niche shift""}","{NM}","{Non-native}"
+"72","ISI000370066200022",NA,"{""Ensemble model""}",NA,"{""Invasion ecology""}","{Global}",NA,"Ada Sanchez",2021-05-17 23:28:57,"{""Predictions of invasion risk""}","{""niche shift""}","{NM}","{Non-native}"
+"73","ISI000186599300011",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 23:36:57,NA,NA,NA,NA
+"74","ISI000306208300011",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-17 23:37:48,NA,NA,NA,NA
+"75","ISI000282115100011",NA,"{""kernel methods""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-17 23:47:32,"{""Relation with environmental variables""}","{""Interannual variability in distribution""}","{RSF}","{Native}"
+"76","ISI000418999900019",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-17 23:58:19,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
+"77","ISI000343865300008",NA,"{""Bioclimatic enveloped""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-18 00:02:09,"{""Threats monitoring""}","{""Threat distribution""}","{NM}","{Native}"
+"78","ISI000312089400007",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,"{""Pyrrhura picta"",""Pyrrhura melanura"",""Pyrrhura calliptera""}","Ada Sanchez",2021-05-18 00:08:51,"{""Spatial prediction""}","{""Identification of priority areas for conservation""}","{NM}","{Native}"
+"79","ISI000306477000005",NA,"{""General Linear Model (GLM)"",""Ensemble Models""}",NA,"{Conservation}",NA,NA,"JRFP",2021-09-15 04:57:19,"{""Threats monitoring""}","{""Input for population models / population viability analysis"",""Simulating effects of threats/actions""}","{NM}","{Native}"
+"80","ISI000284038500028",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-18 00:13:00,"{""Threats monitoring""}","{""Change in distribution driven by habitat loss""}","{NM}","{Native}"
+"81","ISI000556843900031",NA,"{""N-mixture models""}",NA,"{""Methodological issues""}",NA,NA,"Ada Sanchez",2021-05-18 00:23:46,"{""Improving estimation""}","{""Factors affecting distribution estimation""}","{OM}","{Native}"
+"82","ISI000426506100003",NA,"{""dynamic occupancy models""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-18 00:29:24,"{""Climate change""}","{""Change in distribution driven by climate change""}","{OM}","{Native}"
+"83","ISI000418999900010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-18 00:34:54,NA,NA,NA,NA
+"84","ISI000248965200012",NA,"{""Mixed procedure of SAS""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-05-18 00:43:50,"{""Predictions of invasion risk""}","{""Limitations into invasion risk""}","{RSF}","{Non-native}"
+"85","ISIA1997XW04000005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 03:24:18,NA,NA,NA,NA
+"86","ISI000415740100006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 03:29:05,NA,NA,NA,NA
+"87","ISI000383607200012",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 04:12:01,NA,NA,NA,NA
+"88","ISI000246671800002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 04:13:03,NA,NA,NA,NA
+"89","ISI000256158100014",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-20 04:19:19,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
+"90","ISI000337723100003",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-20 04:23:14,NA,NA,NA,NA
+"91","ISI000292478300006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-21 03:31:40,NA,NA,NA,NA
+"92","ISI000561132900001",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{evolution}",NA,NA,"Ada Sanchez",2021-05-21 03:59:44,"{""Biogeographic patterns""}","{""Change in historical distribution""}","{NM}","{Native}"
+"93","ISI000245693700008",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-21 04:03:31,"{""Climate change""}","{""Change in distribution driven by climate change""}","{NM}","{Native}"
+"94","ISI000398599800006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-21 04:08:14,NA,NA,NA,NA
+"95","AY0000000000000022",NA,"{""GENETIC ALGORITHM FOR RULE-SET PREDICTION (GARP)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-05-21 05:34:16,"{""Spatial prediction"",""Threats monitoring""}","{""Change in distribution driven by habitat loss"",""Coverage by Protected Areas""}","{NM}","{Native}"
+"96","ISI000399810100018",NA,"{""General Linear Model (GLM)""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-05-27 06:48:46,"{""Predictions of invasion risk""}","{""Potential range of invasive species""}","{NM}","{Non-native}"
+"97","ISI000505627800002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:16:04,NA,NA,NA,NA
+"98","ISI000330907800009",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-27 08:21:02,"{Macroecology}","{""Effect of biotic interactions on distribution""}","{NM}","{Native}"
+"99","ISI000423412500076",NA,"{""Generalized Linear Models (GLM)""}",NA,"{Conservation}","{Ecuador}",NA,"Ada Sanchez",2021-05-27 08:25:28,"{""Climate change""}","{""Change in distribution driven by climate change""}",NA,NA
+"100","ISI000248669100044",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:26:38,NA,NA,NA,NA
+"101","ISI000305115600001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:27:31,NA,NA,NA,NA
+"102","ISI000263245200003",NA,"{""Generalized Linear Models (GLM)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-27 08:34:02,"{Macroecology}","{""Global distribution patterns of diet type""}","{NM}","{Native}"
+"103","ISI000501192700003",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-27 08:36:52,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{NM}","{Native}"
+"104","ISIA1997WP12200005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-27 08:49:47,NA,NA,NA,NA
+"105","ISI000268744900007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 00:24:29,NA,NA,NA,NA
+"106","ISI000343187200020",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-28 00:30:52,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{NM}","{Native}"
+"107","ISI000232500900001",NA,"{""Bioclimatic enveloped""}",NA,"{Ecology}",NA,NA,"Ada Sanchez",2021-05-28 00:43:25,"{""Relation with environmental variables""}","{""Identifying potential habitat""}","{NM}","{Native}"
+"108","ISI000208195300005",NA,"{""Monte Carlo simulation method""}",NA,"{Ecology}","{""Puerto Rico""}",NA,"Ada Sanchez",2021-05-28 00:51:23,"{""Relation with environmental variables""}","{""Identifying breeding habitat""}","{RSF}","{Native}"
+"109","ISI000349509400010",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,"{""Amazona farinosa"",""Amazona oratrix"",""Pyrilia haematotis"",""Pionus senilis"",""Amazona autumnalis"",""Amazona albifrons"",""Amazona xantholora"",""Eupsittula nana""}","Ada Sanchez",2021-05-28 00:58:28,"{""Threats monitoring""}","{""Fragmentation effect""}","{NM}","{Native}"
+"110","ISI000168812900006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 00:59:53,NA,NA,NA,NA
+"111","ISI000250297300006",NA,"{""General Linear Model (GLM)"",""Maximum Entropy (MaxEnt)""}",NA,"{Ecology,""Methodological issues""}",NA,NA,"Ada Sanchez",2021-05-28 01:04:00,"{""Relation with environmental variables"",""Improving estimation""}","{""Model comparisons"",""Variables affecting distribution""}","{NM}","{Native}"
+"112","ISI000434053500010",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation}","{Australia}",NA,"Ada Sanchez",2021-05-28 01:15:26,"{""Threats monitoring""}","{""Threat distribution""}","{OM}","{Native}"
+"113","ISI000535629300001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 01:21:14,NA,NA,NA,NA
+"114","ISIA1996VW08500002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 01:29:16,NA,NA,NA,NA
+"115","ISI000209469200006",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-28 01:30:44,NA,NA,NA,NA
+"116","ISI000408449700003",NA,"{""multi-season occupancy models""}",NA,"{Conservation}",NA,"{""Poicephalus robustus""}","Ada Sanchez",2021-05-28 01:48:36,"{""Threats monitoring""}","{""Change in distribution driven by habitat loss""}","{OM}","{Native}"
+"117","ISI000344423000014",NA,"{none}",NA,NA,"{Argentina}",NA,"Ada Sanchez",2021-05-31 06:13:24,NA,NA,NA,NA
+"118","ISI000257049500001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-31 06:18:11,NA,NA,NA,NA
+"119","ISI000304290600007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-31 06:20:28,NA,NA,NA,NA
+"120","ISI000239112400007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-05-31 06:21:34,NA,NA,NA,NA
+"121","ISI000430667700002",NA,"{""Ensemble model""}",NA,"{""Invasion ecology""}","{France}",NA,"Ada Sanchez",2021-05-31 06:28:47,"{""Predictions of invasion risk""}","{""niche shift""}","{NM}","{Non-native}"
+"122","ISI000089667700003",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:33:52,NA,NA,NA,NA
+"123","ISI000406323100041",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Evolution}","{USA}",NA,"Ada Sanchez",2021-06-01 00:43:15,"{""Biogeographic patterns""}","{""Understanding distribution of extincted species""}","{NM}","{Native}"
+"124","ISI000354289100008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:44:35,NA,NA,NA,NA
+"125","ISI000347644000010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:46:07,NA,NA,NA,NA
+"126","ISI000448409000025",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:47:52,NA,NA,NA,NA
+"127","ISI000501640800008",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 00:49:18,NA,NA,NA,NA
+"128","ISI000357622700011",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation}","{Bolivia}",NA,"Ada Sanchez",2021-06-01 00:55:40,"{""Threats monitoring""}","{""Fragmentation effect""}","{OM}",NA
+"129","ISI000277168000006",NA,"{""Random Forest (RF)""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-06-01 01:00:20,"{""Invasion effect""}","{""Impacts on native species""}","{NM}","{Non-native}"
+"130","ISI000393199400011",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-06-01 02:23:17,"{""Threats monitoring""}","{""Threat effect on distribution/occupancy""}","{OM}","{Native}"
+"131","ISI000387783000007",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:24:31,NA,NA,NA,NA
+"132","ISI000188970200010",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:25:40,NA,NA,NA,NA
+"133","ISI000171692900002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:27:05,NA,NA,NA,NA
+"134","ISI000242900700002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 02:28:03,NA,NA,NA,NA
+"135","ISI000572153000001",NA,"{""Single Season Occupancy Model (SS-OM)""}",NA,"{Conservation,""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-06-01 05:43:55,"{""Spatial prediction"",""Predictions of invasion risk""}","{""Effect of conservation actions"",""Establishment of non-native specie""}","{OM}","{Non-native}"
+"136","ISI000169271500009",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:46:41,NA,NA,NA,NA
+"137","ISI000337723100002",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:50:08,NA,NA,NA,NA
+"138","ISI000499848200003",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:51:36,NA,NA,NA,NA
+"139","ISI000345191600005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:54:47,NA,NA,NA,NA
+"140","ISI000247396100001",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 05:56:54,NA,NA,NA,NA
+"141","ISI000230055800005",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:00:58,NA,NA,NA,NA
+"142","ISI000439400500017",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:02:39,NA,NA,NA,NA
+"143","ISI000305941300013",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:03:32,NA,NA,NA,NA
+"144","ISI000346425400014",NA,"{none}",NA,NA,NA,NA,"Ada Sanchez",2021-06-01 06:04:06,NA,NA,NA,NA
+"145","ISI000374258900003",NA,"{""General Linear Model (GLM)""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-06-01 06:08:23,"{""Threats monitoring""}","{""Effect of conservation actions""}","{RSF}","{Native}"
+"146","ISI000169881400012",NA,"{""Bioclimatic enveloped""}",NA,"{Ecology,Biodiversity}","{Global}",NA,"Ada Sanchez",2021-06-01 06:31:18,"{Macroecology,""Ecological communities""}","{""Latitudinal gradient in biodiversity"",""Beta diversity""}","{NM}","{Native}"
+"147","ISI000383607200013",NA,"{""Zero Inflated Binomial - Generalized Additive Models (ZIB-GAM)""}","{""citizen science""}","{""Methodological issues""}","{Australia}","{""Calyptorhynchus latirostris""}","JRFP",2021-09-29 23:37:08,"{""Survey methodology biases""}","{""Evaluating citizen science data""}","{OM}","{Native}"
+"148","ISI000235693400012",NA,"{""Bayesian logistic regressions""}","{""Birds Australia"",""Bird surveys"",""Field data (evaluation)""}","{Ecology}",NA,NA,"JRFP",2021-06-04 04:29:04,"{""Relation with environmental variables""}","{""Variables affecting distribution""}","{RSF}","{Native}"
+"149","ISI000340223500011",NA,"{""Zero Inflated Binomial - Generalized Additive Models (ZIB-GAM)"",""Generalized Additive Models (GAM)"",""Generalized Linear Models (GLM)""}","{""field survey"",""repeated visits""}",NA,NA,NA,"JRFP",2021-06-04 04:36:10,NA,"{""Variables affecting distribution"",""Interannual variability in distribution""}","{OM}","{Native}"
+"150","ISI000367399900019",NA,"{""Single Season Occupancy Model (SS-OM)""}","{""field survey"",""repeated visits""}","{Ecology,Conservation}",NA,NA,"Ada Sanchez",2021-06-04 04:37:25,"{Biodiversity,""Co-occurence of parrot species"",""Spatial prediction"",""Relation with environmental variables""}","{""Co-occurrence of interacting species"",""Variables affecting distribution"",""Identification of priority areas for conservation""}","{OM}","{Native}"
+"151","ISI000413319000011",NA,"{""spatial point pattern""}","{""field survey"",""single visit"",""playback census""}","{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-06-04 04:51:22,"{""Invasion effect""}","{""Impacts on native species""}","{geostatistics}","{Non-native}"
+"152","ISI000208353800001",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Conservation}",NA,NA,"JRFP",2021-09-15 04:38:51,"{""Threats monitoring""}","{""Change in distribution driven by habitat loss""}","{NM}","{Native}"
+"153","ISI000448856300001",NA,"{""Maximum Entropy (MaxEnt)""}","{eBird}","{""Invasion ecology""}",NA,NA,"JRFP",2021-09-15 04:44:12,"{""Predictions of invasion risk""}","{""Potential range of invasive species""}","{NM}","{Non-native}"
+"154","ISI000562466300006",NA,"{""Single Season Occupancy Model (SS-OM)""}","{""field work""}","{Ecology}",NA,NA,"JRFP",2021-09-15 04:48:29,"{""Relation with environmental variables""}","{""Determining areas for survey""}","{(OM)}","{Native}"
+"155","ISI000517406000001",NA,"{""Ensemble model""}",NA,"{""Invasion ecology""}",NA,NA,"Ada Sanchez",2021-09-15 05:12:00,"{""Predictions of invasion risk"",""Invasion effect""}","{""Potential range of invasive species"",""Impacts on native species"",""Conflicts with human activities""}","{NM}","{Non-native}"
+"156","ISI000518402000001","{""hypothesis test"",""spatial prediction""}","{""General Linear Model (GLM)"",""Maximum Entropy (MaxEnt)"",""Gradient Boosting Machine (GBM)"",""Random Forest (RF)""}","{""literature records"",""bird observation websites"",Naturalist,eBird,""Christmas Bird Count"",""Social Networks"",Facebook,Twitter,""image-hosting websites"",Flickr,YouTube}","{""Invasion ecology"",Evolution}","{""Native and non-native range""}","{""Agapornis canus"",""Agapornis fischeri"",""Agapornis taranta"",etc.}","JRFP",2021-09-17 05:01:58,"{""Predictions of invasion risk""}","{""Establishment of non-native species"",""niche shift"",""trade patterns""}","{NM}","{Native,Non-native}"
+"157","ISI000384873700024",NA,"{""Maximum Entropy (MaxEnt)""}",NA,"{Ecology,Conservation}",NA,NA,"JRFP",2021-09-17 05:12:50,"{""Threats monitoring"",""Conservation issues"",""Relation with environmental variables""}","{""Identifying potential habitat"",""Coverage by Protected Areas"",""Change in distribution driven by habitat loss""}","{NM}","{Native}"
+"158","ISI000501640800006",NA,"{""Ensemble model""}",NA,"{Conservation}",NA,NA,"Ada Sanchez",2021-09-17 09:44:01,"{""Climate change""}","{""Change in distribution driven by climate change""}","{NM}","{Native}"
+"159","ISI000338623400001",NA,"{GAM,""theoretical Weibull probability distribution""}",NA,"{Conservation}",NA,"{""Calyptorhynchus latirostris""}","JRFP",2021-09-19 07:45:00,"{""Spatial prediction""}","{""Resource distribution""}","{RSF}","{Native}"
+"160","ISI000310586100012",NA,"{""Classification and regression trees (CART)"",""spatial point pattern""}","{""online public survey"",""field work""}","{""Invasion ecology""}",NA,NA,"JRFP",2021-09-19 07:57:29,NA,NA,"{RSF,geostatistics}","{Non-native}"
+"161","ISI000407080100003",NA,"{""distance sampling""}","{""field work""}","{Conservation}",NA,NA,"JRFP",2021-09-29 23:45:36,"{""Spatial prediction""}","{""Resource distribution""}","{OM}","{Native}"

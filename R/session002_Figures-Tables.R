@@ -4,11 +4,11 @@ require(ggplot2) #visualization
 library(RColorBrewer)
 library(tidytext)
 library(tidyr)
-library(data.table)
+##library(data.table)
 library(rpostgis)
 library(splitstackshape)
 
-tables <- c("distmodel_ref", "species_ref", "country_ref", "my_bibtex", "birdlife_list", "iso_countries", "Index_of_CITES_Species")
+tables <- c("all_refs","distmodel_ref", "species_ref", "country_ref", "my_bibtex", "birdlife_list", "iso_countries", "Index_of_CITES_Species")
 for (tt in tables) {
   if (!exists(tt)) {
     incsv <- sprintf("input/%s.csv",tt)
@@ -53,6 +53,7 @@ distmodel_ref %<>%
 distmodel_ref %>% select(paradigm, paradigm_type) %>% table(useNA="always")
 
 
+#HEAD
 # Figure 2
 
 distmodel_ref %>% filter(!is.na(paradigm)) %>% left_join(my_bibtex,by=c("ref_id"="UT")) %>%
@@ -101,7 +102,11 @@ ggplot(aes(x = general_application, y=n_pub, fill = topics)) +
   geom_bar(stat="identity") +
   scale_fill_manual(values=cbbPalette)+
   theme(axis.text.x=element_text(angle=45, size=12, hjust=1))
+=======
+>>>>>>> 3874ab80b00949a6bd22480771315dc36fe9a057
 
+  
+  
 
               ## Figure 3
 
