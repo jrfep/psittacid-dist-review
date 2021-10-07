@@ -87,6 +87,7 @@ long_my.app %>% filter(!is.na(general_application)  & !is.na(topics)) %>%
 #Figure 3
 ## table by region
 table_app_country %>%
+  filter(!is.na(general_application), !is.na(topics)) %>%
   group_by(region, general_application, species_range, topics) %>%
   summarise(total=n_distinct(ref_id)) %>%
  arrange(topics,total)-> fg3data
@@ -94,12 +95,10 @@ table_app_country %>%
 ordlevels <- fg3data %>% pull(general_application)
 
 fg3data %<>%
- filter(!is.na(general_application), !is.na(topics)) %>%
-  ungroup(general_application) %>%
   mutate(general_application = factor(general_application, levels=ordlevels))
 
   
-  ggplot(fg3data, aes(fill=species_range, y=total, x="")) +
+    ggplot(fg3data, aes(fill=species_range, y=total, x="")) +
   geom_bar(stat="identity", position=position_stack(reverse = TRUE))+
   facet_grid(region ~ general_application) +
   labs(x = "General applications", y = "Number of publications")+
