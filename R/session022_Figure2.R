@@ -74,7 +74,6 @@ long_my.app %<>%
 long_my.app %>% select(topics,general_application) %>% table(useNA="always")
 
 
-
 # Figure 2
 
 long_my.app %>% filter(!is.na(topics)) %>% left_join(my_bibtex,by=c("ref_id"="UT")) %>% transmute(ref_id,year=PY,topics) %>% filter(!is.na(year))  -> publication_year_table
