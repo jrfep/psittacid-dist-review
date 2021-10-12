@@ -22,7 +22,7 @@
    inkscape:export-ydpi="96"><metadata
      id="metadata2305"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
      id="defs2303"><clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath2327"><path
@@ -61,9 +61,9 @@
      inkscape:window-height="704"
      id="namedview2301"
      showgrid="false"
-     inkscape:zoom="0.48487323"
-     inkscape:cx="560.66663"
-     inkscape:cy="498.6756"
+     inkscape:zoom="0.6857143"
+     inkscape:cx="740.23806"
+     inkscape:cy="543.57455"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -92,7 +92,7 @@
        id="g2345" /><g
        id="g2357" /><g
        id="g2359"
-       transform="translate(-86.62058,29.389125)"><g
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><g
          id="g2361"
          clip-path="url(#clipPath2365)"><path
            d="M 33.48,95.82 H 415.36 V 589.96 H 33.48 Z"
@@ -496,7 +496,7 @@
        id="g2581" /><g
        id="g2583" /><g
        id="g2585"
-       transform="translate(-86.62058,29.389125)"><path
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><path
          d="M 33.48,95.82 V 589.96"
          style="fill:none;stroke:#000000;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2587"
@@ -504,49 +504,59 @@
        id="g2589" /><g
        id="g2591" /><g
        id="g2593"
-       transform="translate(-86.62058,29.389125)"><text
-         transform="matrix(1,0,0,-1,23.54,115.05)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2597"><tspan
-           x="0"
-           y="0"
-           id="tspan2595">0</tspan></text>
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><text
+   transform="matrix(1,0,0,-1,23.54,115.05)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2597"><tspan
+     x="0"
+     y="0"
+     id="tspan2595">0</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,18.54,224.61)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2601"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2599">20</tspan></text>
+   transform="matrix(1,0,0,-1,18.54,224.61)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2601"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2599">20</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,18.54,334.18)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2605"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2603">40</tspan></text>
+   transform="matrix(1,0,0,-1,18.54,334.18)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2605"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2603">40</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,18.54,443.75)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2609"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2607">60</tspan></text>
+   transform="matrix(1,0,0,-1,18.54,443.75)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2609"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2607">60</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,18.54,553.31)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2613"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2611">80</tspan></text>
+   transform="matrix(1,0,0,-1,18.54,553.31)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2613"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2611">80</tspan></text>
+
+
 </g><g
        id="g2615" /><g
        id="g2617"
-       transform="translate(-86.62058,29.389125)"><path
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><path
          d="m 30.74,118.28 h 2.74"
          style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2619"
@@ -574,7 +584,7 @@
        id="g2637" /><g
        id="g2639" /><g
        id="g2641"
-       transform="translate(-86.62058,29.389125)"><path
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><path
          d="M 33.48,95.82 H 415.36"
          style="fill:none;stroke:#000000;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2643"
@@ -582,7 +592,7 @@
        id="g2645" /><g
        id="g2647" /><g
        id="g2649"
-       transform="translate(-86.62058,29.389125)"><path
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><path
          d="m 60.66,93.08 v 2.74"
          style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2651"
@@ -601,38 +611,46 @@
          inkscape:connector-curvature="0" /></g><g
        id="g2659" /><g
        id="g2661"
-       transform="translate(-86.62058,29.389125)"><text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,47.88,65.92)"
-         style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2665"><tspan
-           x="0 6.6757102 13.35142 20.02713"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2663">2005</tspan></text>
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><text
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,47.88,65.92)"
+   style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2665"><tspan
+     x="0 6.6757102 13.35142 20.02713"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2663">2005</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,157.05,65.92)"
-         style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2669"><tspan
-           x="0 6.6757102 13.35142 20.02713"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2667">2010</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,157.05,65.92)"
+   style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2669"><tspan
+     x="0 6.6757102 13.35142 20.02713"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2667">2010</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,266.23,65.92)"
-         style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2673"><tspan
-           x="0 6.6757102 13.35142 20.02713"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2671">2015</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,266.23,65.92)"
+   style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2673"><tspan
+     x="0 6.6757102 13.35142 20.02713"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2671">2015</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,375.4,65.92)"
-         style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2677"><tspan
-           x="0 6.6757102 13.35142 20.02713"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2675">2020</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,375.4,65.92)"
+   style="font-variant:normal;font-weight:normal;font-size:12.00667286px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2677"><tspan
+     x="0 6.6757102 13.35142 20.02713"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2675">2020</tspan></text>
+
+
 </g><g
        id="g2679" /><g
        id="g2681" /><g
@@ -640,25 +658,29 @@
        id="g2685" /><g
        id="g2687" /><g
        id="g2689"
-       transform="translate(-86.62058,29.389125)"><text
-         transform="matrix(1,0,0,-1,213.57,53.42)"
-         style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2693"><tspan
-           x="0 5.7969999 11.913 18.028999"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2691">Year</tspan></text>
+       transform="matrix(0.9,0,0,0.9,3.0971397,22.0922)"><text
+   transform="matrix(1,0,0,-1,213.57,53.42)"
+   style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2693"><tspan
+     x="0 5.7969999 11.913 18.028999"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2691">Year</tspan></text>
+
+
 </g><g
        id="g2695" /><g
        id="g2697"
-       transform="translate(-86.62058,29.389125)"><text
-         transform="matrix(0,1,1,0,13.38,286.76)"
-         style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2701"><tspan
-           x="0 7.9419999 14.058 23.221001 29.337 35.452999 39.116001 42.174 48.290001 51.348 54.405998 60.521999 66.638 72.533997 74.975998 77.417999 82.917999 89.033997 92.092003 94.533997 100.65 106.766"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2699">Number of publications</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-1.2778603,25.37345)"><text
+   transform="matrix(0,1,1,0,13.38,286.76)"
+   style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2701"><tspan
+     x="0 7.9419999 14.058 23.221001 29.337 35.452999 39.116001 42.174 48.290001 51.348 54.405998 60.521999 66.638 72.533997 74.975998 77.417999 82.917999 89.033997 92.092003 94.533997 100.65 106.766"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2699">Number of publications</tspan></text>
+
+
 </g><g
        id="g2703" /><g
        id="g2705" /><g
@@ -682,7 +704,8 @@
        id="g2747" /><g
        id="g2749" /><g
        id="g2759" /><g
-       id="g2761"><g
+       id="g2761"
+       transform="matrix(0.9,0,0,0.9,81.055662,-4.3580123)"><g
          id="g2763"
          clip-path="url(#clipPath2767)"><path
            d="M 454.32,194.57 H 836.2 V 589.96 H 454.32 Z"
@@ -765,54 +788,67 @@
        id="g2821" /><g
        id="g2823" /><g
        id="g2825" /><g
-       id="g2827"><path
+       id="g2827"
+       transform="matrix(0.9,0,0,0.9,81.055662,-4.3580123)"><path
          d="M 454.32,194.57 V 589.96"
          style="fill:none;stroke:#000000;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2829"
          inkscape:connector-curvature="0" /></g><g
        id="g2831" /><g
        id="g2833" /><g
-       id="g2835"><text
-         transform="matrix(1,0,0,-1,444.38,209.31)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2839"><tspan
-           x="0"
-           y="0"
-           id="tspan2837">0</tspan></text>
+       id="g2835"
+       transform="matrix(0.9,0,0,0.9,81.055662,-4.3580123)"><text
+   transform="matrix(1,0,0,-1,444.38,209.31)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2839"><tspan
+     x="0"
+     y="0"
+     id="tspan2837">0</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,444.38,287.45)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2843"><tspan
-           x="0"
-           y="0"
-           id="tspan2841">5</tspan></text>
+   transform="matrix(1,0,0,-1,444.38,287.45)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2843"><tspan
+     x="0"
+     y="0"
+     id="tspan2841">5</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,439.38,365.59)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2847"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2845">10</tspan></text>
+   transform="matrix(1,0,0,-1,439.38,365.59)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2847"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2845">10</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,439.38,443.73)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2851"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2849">15</tspan></text>
+   transform="matrix(1,0,0,-1,439.38,443.73)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2851"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2849">15</tspan></text>
+
+
 <text
-         transform="matrix(1,0,0,-1,439.38,521.87)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2855"><tspan
-           x="0 5.0040002"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2853">20</tspan></text>
+   transform="matrix(1,0,0,-1,439.38,521.87)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2855"><tspan
+     x="0 5.0040002"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2853">20</tspan></text>
+
+
 </g><g
        id="g2857" /><g
-       id="g2859"><path
+       id="g2859"
+       transform="matrix(0.9,0,0,0.9,81.055662,-4.3580123)"><path
          d="m 451.58,212.54 h 2.74"
          style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2861"
@@ -839,14 +875,16 @@
        id="g2877" /><g
        id="g2879" /><g
        id="g2881" /><g
-       id="g2883"><path
+       id="g2883"
+       transform="matrix(0.9,0,0,0.9,81.055662,-4.3580123)"><path
          d="M 454.32,194.57 H 836.2"
          style="fill:none;stroke:#000000;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2885"
          inkscape:connector-curvature="0" /></g><g
        id="g2887" /><g
        id="g2889" /><g
-       id="g2891"><path
+       id="g2891"
+       transform="matrix(0.9,0,0,0.9,81.055662,-4.3580123)"><path
          d="m 468.46,191.83 v 2.74"
          style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path2893"
@@ -912,134 +950,197 @@
          id="path2923"
          inkscape:connector-curvature="0" /></g><g
        id="g2925" /><g
-       id="g2927"><text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,354.59,65.61)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2931"><tspan
-           x="0 7.2189097 12.77807 18.337231 20.556894 23.336475 28.895636 31.675217 34.454796 40.013958 45.013203 50.572361 53.35194 56.681438 62.240601 64.460266 70.019424 72.799004 78.358162 83.917328 86.696907 89.476486 95.035645 97.815224 103.37439 108.93355 114.49271 119.8519 124.85114 127.07081 132.62997 138.18913 141.51863 144.2982 147.07779 152.07703 157.63618 163.19536"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2929">Habitat use related to behaviour types</tspan></text>
+       id="g2927"
+       transform="matrix(1.08,0,0,1.08,-13.242736,-38.990926)"><text
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2931"
+   x="419.66678"
+   y="207.37791"><tspan
+     x="419.66678 426.88571 432.44485 438.00403 440.22369 443.00327 448.56244 451.34201 454.12158 459.68076 464.67999 470.23917"
+     y="207.37791"
+     sodipodi:role="line"
+     id="tspan2929">Habitat use </tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,404.36,91.81)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2935"><tspan
-           x="0 4.9092584 10.468419 18.797161 24.356321 29.915482 33.144993 38.704155 40.92382 43.7034 49.262558 51.482224 56.481468 59.261051 62.740524 64.96019 70.319382 75.87854 78.658119 80.877785 86.436943 91.996109 94.775688 100.33485 105.894 108.67358 111.45316 117.01233 120.59179 126.15095"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2933">Temporal distribution patterns</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,404.36,91.81)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2935"><tspan
+     x="0 4.9092584 10.468419 18.797161 24.356321 29.915482 33.144993 38.704155 40.92382 43.7034 49.262558 51.482224 56.481468 59.261051 62.740524 64.96019 70.319382 75.87854 78.658119 80.877785 86.436943 91.996109 94.775688 100.33485 105.894 108.67358 111.45316 117.01233 120.59179 126.15095"
+     y="0"
+     sodipodi:role="line"
+     id="tspan2933">Temporal distribution patterns</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,456.99,120.87)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2939"><tspan
-           x="0 7.2189097 12.77807 18.337231 23.336475 28.895636 32.525089 37.274372 42.83353 45.61311 47.832775 53.391937 58.951096 61.730675 63.95034 68.949585 73.94883 79.507988 85.067154"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2937">Conservation issues</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2939"
+   x="404.68036"
+   y="233.74438"><tspan
+     x="404.68036 411.89929 417.45844 423.01761 428.01685 433.57602 437.20547 441.95474 447.51392 450.29349 452.51315 458.0723 463.63147 466.41104 468.63071 473.62994 478.62921 484.18835 489.74753"
+     y="233.74438"
+     sodipodi:role="line"
+     id="tspan2937">Conservation issues</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,461.77,102.07)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2943"><tspan
-           x="0 6.6689925 11.668238 16.667482 22.226643 27.225887 32.225132 40.553875 46.113037 51.672195 54.451775 57.231358 62.790516 65.570099 68.349678 73.908836 76.128502 81.127747 83.907326 87.386803 89.606468 94.96566 100.52482 103.3044 105.52406 111.08322"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2941">Assessment of distribution</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2943"
+   x="393.78464"
+   y="249.43587"><tspan
+     x="393.78464 400.45364 405.45288 410.45212 416.01129 421.01053 426.0098 434.33853 439.89767 445.45685 448.23642 451.01602 456.57516 459.35474 462.13434 467.69348 469.91315 474.91238 477.69199 481.17145 483.39111 488.75031 494.30948 497.08905 499.30872 504.86786"
+     y="249.43587"
+     sodipodi:role="line"
+     id="tspan2941">Assessment of distribution</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,518.71,135.44)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2947"><tspan
-           x="0 7.2189097 9.4385748 11.658239 19.98698 25.546143 28.325722 33.884884 36.664463 41.663708 47.222866 52.782028 58.34119 63.900349"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2945">Climate change</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2947"
+   x="454.6972"
+   y="263.15613"><tspan
+     x="454.6972 461.91611 464.13577 466.35544 474.68417 480.24335 483.02292 488.58209 491.36166 496.3609 501.92007 507.47916 513.03821 518.59735"
+     y="263.15613"
+     sodipodi:role="line"
+     id="tspan2945">Climate change</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,537.17,130.33)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2951"><tspan
-           x="0 6.6689925 12.228153 17.787313 20.566895 22.786558 28.345718 30.565384 33.344963 38.904125 42.23362 47.792782 53.35194 55.571606 60.57085 63.350433 65.570099 71.129257"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2949">Spatial prediction</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2951"
+   x="461.19083"
+   y="276.87637"><tspan
+     x="461.19083 467.8598 473.41898 478.97815 481.75772 483.97739 489.53653 491.7562 494.5358 500.09494 503.42441 508.9834 514.54248 516.76215 521.76135 524.54095 526.76062 532.31976"
+     y="276.87637"
+     sodipodi:role="line"
+     id="tspan2949">Spatial prediction</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,555.93,125.51)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2955"><tspan
-           x="0 6.1090775 11.668238 14.997735 20.556894 26.116056 28.895636 33.894882 36.674461 45.003204 50.562363 56.121525 58.34119 61.12077 66.679932 70.159401 72.379066 77.938232"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2953">Threats monitoring</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2955"
+   x="469.69806"
+   y="291.18738"><tspan
+     x="469.69806 475.80716 481.3663 484.6958 490.25497 495.81412 498.59369 503.59296 506.37253 514.70129 520.26044 525.81958 528.03925 530.81885 536.37799 539.85748 542.07715 547.63629"
+     y="291.18738"
+     sodipodi:role="line"
+     id="tspan2953">Threats monitoring</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,538.53,84.54)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2959"><tspan
-           x="0 7.2189097 12.77807 18.617188 24.176348 29.175594 34.174839 39.733997 43.063496 48.622658 54.181816 59.181061 64.740219 67.519806 73.078964 75.858543 78.638123 84.197281 89.756447 93.085938 96.415436 101.9746 104.75418 107.53376 112.533 118.09216 123.65132 128.65057 130.87024 136.4294"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2957">Co−occurence of parrot species</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2959"
+   x="425.38605"
+   y="305.82843"><tspan
+     x="425.38605 432.60495 438.16412 444.00323 449.56241 454.56165 459.56088 465.12006 468.44955 474.0087 479.56787 484.56711 490.12628 492.90585 498.46503 501.2446 504.02417 509.58334 515.14252 518.47198 521.80151 527.36066 530.14026 532.9198 537.91907 543.47821 549.03735 554.03662 556.25629 561.81543"
+     y="305.82843"
+     sodipodi:role="line"
+     id="tspan2957">Co−occurence of parrot species</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,588.32,110.76)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2963"><tspan
-           x="0 6.6689925 11.668238 17.227398 19.447063 25.006224 30.565384 32.785049 37.784294 43.343452 45.563118 48.342697 53.341942 58.901104 67.229843 75.458603 81.017761 86.576927 88.796585 91.576172 93.795837 99.354996"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2961">Ecological communities</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2963"
+   x="477.61414"
+   y="320.97583"><tspan
+     x="477.61414 484.28314 489.28238 494.84152 497.06119 502.62036 508.17953 510.3992 515.39844 520.95758 523.17725 525.95685 530.95605 536.51526 544.84399 553.07275 558.6319 564.19104 566.41071 569.19031 571.40997 576.96912"
+     y="320.97583"
+     sodipodi:role="line"
+     id="tspan2961">Ecological communities</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,641.68,140.55)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2967"><tspan
-           x="0 8.328742 13.887902 18.887148 22.216644 27.775805 33.334965 38.334209 43.893372 46.113037 51.672195 57.231358"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2965">Macroecology</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2967"
+   x="532.35913"
+   y="333.59143"><tspan
+     x="532.35913 540.68787 546.24707 551.24628 554.57581 560.13495 565.69409 570.69336 576.2525 578.47217 584.03131 589.59052"
+     y="333.59143"
+     sodipodi:role="line"
+     id="tspan2965">Macroecology</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,592.52,67.81)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2971"><tspan
-           x="0 7.2189097 12.77807 14.997735 20.556894 23.336475 25.556141 31.115301 36.674461 39.454041 46.672951 48.892616 51.672195 57.231358 60.010937 65.570099 70.929291 75.928535 78.148193 81.477692 87.036858 92.596016 100.92476 106.48392 112.04308 114.82265 120.38182 122.60149 125.38107 130.13034 135.6895 139.16898 141.38864 146.9478 152.30699 154.52666 160.08582"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2969">Relation with environmental variables</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2971"
+   x="501.42612"
+   y="346.51071"><tspan
+     x="501.42612"
+     sodipodi:role="line"
+     id="tspan2969"
+     y="346.51071">Environmental variables</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,660.02,111.74)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2975"><tspan
-           x="0 6.6689925 8.8886576 14.447818 20.006979 25.566139 31.125299 36.68446 39.913971 45.473133 51.032291 56.591454 58.811119 63.810364 66.589943 72.149101 77.70826 80.487846 83.267426 88.826584 92.406044 97.965202"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2973">Biogeographic patterns</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2975"
+   x="520.39844"
+   y="360.34875"><tspan
+     x="520.39844 527.06744 529.28711 534.84625 540.4054 545.9646 551.52374 557.08289 560.31244 565.87158 571.43073 576.98987 579.20953 584.2088 586.9884 592.54755 598.10669 600.88629 603.66589 609.22504 612.8045 618.36365"
+     y="360.34875"
+     sodipodi:role="line"
+     id="tspan2973">Biogeographic patterns</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,711.35,139.5)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2979"><tspan
-           x="0 2.7795801 8.1387711 12.888054 18.447214 23.446459 25.666124 31.225285 36.784443 39.564026 45.123184 47.902763 50.382389 55.941551 60.940796"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2977">Invasion effect</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2979"
+   x="570.75348"
+   y="373.4707"><tspan
+     x="570.75348 573.53308 578.89227 583.64154 589.20068 594.19995 596.41962 601.97876 607.53796 610.3175 615.87671 618.65625 621.13586 626.69507 631.69427"
+     y="373.4707"
+     sodipodi:role="line"
+     id="tspan2977">Invasion effect</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,696.5,101.07)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2983"><tspan
-           x="0 6.6689925 9.9984903 15.557651 21.11681 23.336475 28.33572 31.115301 33.334965 38.894127 44.453285 49.45253 52.232113 57.791271 60.57085 63.350433 65.570099 70.929291 75.678574 81.237732 86.236977 88.456642 94.0158 99.574959 102.35454 105.83401 108.05368 113.05293"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2981">Predictions of invasion risk</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2983"
+   x="533.07886"
+   y="390.14429"><tspan
+     x="533.07886 539.74786 543.07733 548.63647 554.19568 556.41534 561.41455 564.19415 566.41382 571.97296 577.5321 582.53137 585.31097 590.87012 593.64972 596.42926 598.64893 604.00812 608.75745 614.31659 619.3158 621.53546 627.09467 632.65381 635.43341 638.91284 641.13251 646.13177"
+     y="390.14429"
+     sodipodi:role="line"
+     id="tspan2981">Predictions of invasion risk</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,716.81,97.81)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2987"><tspan
-           x="0 6.6689925 12.228153 15.857605 20.606888 25.966078 30.965322 33.744904 42.073647 47.632805 50.412388 55.971546 61.530708 67.089867 72.649025 74.86869 80.427856 85.987015 90.986259 93.765839 99.324997 101.54466 107.10382 112.10307 117.66223"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2985">Survey methodology biases</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2987"
+   x="542.60321"
+   y="403.26624"><tspan
+     x="542.60321 549.27222 554.83136 558.46082 563.21008 568.56927 573.56854 576.34814 584.67688 590.23602 593.01562 598.57477 604.13391 609.69305 615.25226 617.47192 623.03107 628.59021 633.58948 636.36908 641.92822 644.14789 649.70703 654.7063 660.26538"
+     y="403.26624"
+     sodipodi:role="line"
+     id="tspan2985">Survey methodology biases</tspan></text>
+
+
 <text
-         transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,762.01,119.44)"
-         style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text2991"><tspan
-           x="0 2.7795801 11.108322 16.667482 19.996981 25.406162 30.405407 32.625072 38.184235 43.743393 46.522972 52.082134 57.081379 59.860958 62.080624 70.409363 75.968529 78.748108 80.967773 86.526932"
-           y="0"
-           sodipodi:role="line"
-           id="tspan2989">Improving estimation</tspan></text>
+   transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+   style="font-variant:normal;font-weight:normal;font-size:9.99849033px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text2991"
+   x="586.82098"
+   y="416.89453"><tspan
+     x="586.82098 589.60052 597.92926 603.48846 606.81793 612.22711 617.22638 619.44604 625.00519 630.56433 633.34393 638.90308 643.90234 646.68188 648.90155 657.23035 662.78949 665.56909 667.78876 673.3479"
+     y="416.89453"
+     sodipodi:role="line"
+     id="tspan2989">Improving estimation</tspan></text>
+
+
 </g><g
        id="g2993" /><g
        id="g2995" /><g
@@ -1048,14 +1149,17 @@
        id="g3001" /><g
        id="g3003" /><g
        id="g3005" /><g
-       id="g3007"><text
-         transform="matrix(0,1,1,0,434.22,336.13)"
-         style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3011"><tspan
-           x="0 7.9419999 14.058 23.221001 29.337 35.452999 39.116001 42.174 48.290001 51.348 54.405998 60.521999 66.638 72.533997 74.975998 77.417999 82.917999 89.033997 92.092003 94.533997 100.65 106.766"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3009">Number of publications</tspan></text>
+       id="g3007"
+       transform="matrix(0.9,0,0,0.9,71.211912,-7.6392623)"><text
+   transform="matrix(0,1,1,0,434.22,336.13)"
+   style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3011"><tspan
+     x="0 7.9419999 14.058 23.221001 29.337 35.452999 39.116001 42.174 48.290001 51.348 54.405998 60.521999 66.638 72.533997 74.975998 77.417999 82.917999 89.033997 92.092003 94.533997 100.65 106.766"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3009">Number of publications</tspan></text>
+
+
 </g><g
        id="g3013" /><g
        id="g3015" /><g
@@ -1119,7 +1223,7 @@
        id="g3137" /><g
        id="g3139" /><g
        id="g3141"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="M 269.88,0 H 571.81 V 45.52 H 269.88 Z"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3143"
@@ -1128,21 +1232,23 @@
        id="g3147" /><g
        id="g3149" /><g
        id="g3151"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,275.36,18.81)"
-         style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3155"><tspan
-           x="0 5.401 11.517 17.632999 20.075001"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3153">Topic</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,275.36,18.81)"
+   style="font-variant:normal;font-weight:normal;font-size:11px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3155"><tspan
+     x="0 5.401 11.517 17.632999 20.075001"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3153">Topic</tspan></text>
+
+
 </g><g
        id="g3157" /><g
        id="g3159" /><g
        id="g3161" /><g
        id="g3163" /><g
        id="g3165"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="M 307.04,23.47 H 322.9 V 39.33 H 307.04 Z"
          style="fill:#56b4e9;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3167"
@@ -1151,7 +1257,7 @@
        id="g3171" /><g
        id="g3173" /><g
        id="g3175"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="M 307.04,6.19 H 322.9 V 22.05 H 307.04 Z"
          style="fill:#009e73;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3177"
@@ -1160,7 +1266,7 @@
        id="g3181" /><g
        id="g3183" /><g
        id="g3185"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="m 388.53,23.47 h 15.86 v 15.86 h -15.86 z"
          style="fill:#f0e442;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3187"
@@ -1169,7 +1275,7 @@
        id="g3191" /><g
        id="g3193" /><g
        id="g3195"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="m 388.53,6.19 h 15.86 v 15.86 h -15.86 z"
          style="fill:#e69f00;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3197"
@@ -1178,7 +1284,7 @@
        id="g3201" /><g
        id="g3203" /><g
        id="g3205"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="m 454.27,23.47 h 15.86 v 15.86 h -15.86 z"
          style="fill:#d55e00;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3207"
@@ -1187,7 +1293,7 @@
        id="g3211" /><g
        id="g3213" /><g
        id="g3215"
-       transform="translate(-293.89126,6.1871843)"><path
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><path
          d="m 454.27,6.19 h 15.86 v 15.86 h -15.86 z"
          style="fill:#cc79a7;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3217"
@@ -1196,84 +1302,96 @@
        id="g3221" /><g
        id="g3223" /><g
        id="g3225"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,329.1,28.17)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3229"><tspan
-           x="0 6.0029998 11.007 16.011 20.834999 25.334999 27.333 32.337002 37.341"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3227">Behaviour</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,329.1,28.17)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3229"><tspan
+     x="0 6.0029998 11.007 16.011 20.834999 25.334999 27.333 32.337002 37.341"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3227">Behaviour</tspan></text>
+
+
 </g><g
        id="g3231" /><g
        id="g3233" /><g
        id="g3235" /><g
        id="g3237" /><g
        id="g3239"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,329.1,10.89)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3243"><tspan
-           x="0 6.4980001 11.502 16.506001 21.006001 26.01 29.277 33.551998 38.556 41.057999 43.056 48.060001"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3241">Conservation</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,329.1,10.89)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3243"><tspan
+     x="0 6.4980001 11.502 16.506001 21.006001 26.01 29.277 33.551998 38.556 41.057999 43.056 48.060001"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3241">Conservation</tspan></text>
+
+
 </g><g
        id="g3245" /><g
        id="g3247" /><g
        id="g3249" /><g
        id="g3251" /><g
        id="g3253"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,410.58,28.17)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3257"><tspan
-           x="0 6.0029998 10.503 15.507 17.504999 22.509001 27.513"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3255">Ecology</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,410.58,28.17)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3257"><tspan
+     x="0 6.0029998 10.503 15.507 17.504999 22.509001 27.513"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3255">Ecology</tspan></text>
+
+
 </g><g
        id="g3259" /><g
        id="g3261" /><g
        id="g3263" /><g
        id="g3265" /><g
        id="g3267"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,410.58,10.89)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3271"><tspan
-           x="0 6.0029998 10.278 15.282 17.280001 22.284 24.785999 26.784 31.788"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3269">Evolution</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,410.58,10.89)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3271"><tspan
+     x="0 6.0029998 10.278 15.282 17.280001 22.284 24.785999 26.784 31.788"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3269">Evolution</tspan></text>
+
+
 </g><g
        id="g3273" /><g
        id="g3275" /><g
        id="g3277" /><g
        id="g3279" /><g
        id="g3281"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,476.32,28.17)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3285"><tspan
-           x="0 2.5020001 7.3260002 11.601 16.605 21.105 23.103001 28.107 33.111 35.612999 40.617001 45.117001 50.120998 52.118999 57.123001 62.126999"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3283">Invasion ecology</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,476.32,28.17)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3285"><tspan
+     x="0 2.5020001 7.3260002 11.601 16.605 21.105 23.103001 28.107 33.111 35.612999 40.617001 45.117001 50.120998 52.118999 57.123001 62.126999"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3283">Invasion ecology</tspan></text>
+
+
 </g><g
        id="g3287" /><g
        id="g3289" /><g
        id="g3291" /><g
        id="g3293" /><g
        id="g3295"
-       transform="translate(-293.89126,6.1871843)"><text
-         transform="matrix(1,0,0,-1,476.32,10.89)"
-         style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text3299"><tspan
-           x="0 7.4970002 12.501 15.003 20.007 25.011 30.014999 35.019001 37.016998 42.021 47.025002 49.022999 53.522999 58.527 60.525002 63.027 65.025002 69.525002 74.025002 79.028999 84.032997"
-           y="0"
-           sodipodi:role="line"
-           id="tspan3297">Methodological issues</tspan></text>
+       transform="matrix(0.9,0,0,0.9,-183.44647,1.2104537)"><text
+   transform="matrix(1,0,0,-1,476.32,10.89)"
+   style="font-variant:normal;font-weight:normal;font-size:9px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="text3299"><tspan
+     x="0 7.4970002 12.501 15.003 20.007 25.011 30.014999 35.019001 37.016998 42.021 47.025002 49.022999 53.522999 58.527 60.525002 63.027 65.025002 69.525002 74.025002 79.028999 84.032997"
+     y="0"
+     sodipodi:role="line"
+     id="tspan3297">Methodological issues</tspan></text>
+
+
 </g><g
        id="g3301" /><g
        id="g3303" /><g
@@ -1319,7 +1437,7 @@
        xml:space="preserve"
        id="flowRoot3383"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.75000002,0,0,-0.75000002,26.295533,500.64545)"><flowRegion
+       transform="matrix(0.67500002,0,0,-0.67500002,104.72164,446.22289)"><flowRegion
          id="flowRegion3385"><rect
            id="rect3387"
            width="181.49074"
@@ -1327,13 +1445,13 @@
            x="70.121422"
            y="-213.11531" /></flowRegion><flowPara
          id="flowPara3389"
-         style="font-size:26.66666663px">(<flowSpan
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-size:26.66666663px"
+         style="font-size:26.66666603px">(<flowSpan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:26.66666603px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
    id="flowSpan3391">a</flowSpan>)</flowPara></flowRoot><flowRoot
        xml:space="preserve"
        id="flowRoot3383-3"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.75000002,0,0,-0.75000002,552.20663,494.62341)"><flowRegion
+       transform="matrix(0.67500002,0,0,-0.67500002,578.04163,440.80305)"><flowRegion
          id="flowRegion3385-6"><rect
            id="rect3387-7"
            width="181.49074"
@@ -1342,5 +1460,5 @@
            y="-213.11531" /></flowRegion><flowPara
          id="flowPara3389-5"
          style="font-size:26.66666603px">(<flowSpan
-   style="-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
    id="flowSpan3420">b</flowSpan>)</flowPara></flowRoot></g></svg>
