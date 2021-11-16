@@ -1,6 +1,9 @@
 # MacOSX files
 .DS_Store
 
+# useful for testing
+sandbox/
+
 # History files
 .Rhistory
 .Rapp.history
