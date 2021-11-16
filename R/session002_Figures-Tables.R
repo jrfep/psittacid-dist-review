@@ -8,47 +8,8 @@ library(tidyr)
 library(rpostgis)
 library(splitstackshape)
 
-tables <- c("all_refs","distmodel_ref", "species_ref", "country_ref", "my_bibtex", "birdlife_list", "iso_countries", "Index_of_CITES_Species")
-for (tt in tables) {
-  if (!exists(tt)) {
-    incsv <- sprintf("input/%s.csv",tt)
-    assign(tt,read.csv(incsv,sep=",",header=T, dec=".", stringsAsFactors=F))
-  }
-}
-
 
 ## limpiar variables:
-distmodel_ref %<>% # operador para sobreescribir el objeto con el resultado
-  ## quitar corchetes y parentesis
-  mutate(paradigm=gsub("\\{|\\}|\\(|\\)","",paradigm),
-   model_type=gsub("\\{|\\}|\\(|\\)","",model_type),
-   general_application=gsub("\\{|\\}|\\(|\\)","",general_application),
-   species_range=gsub("\\{|\\}|\\(|\\)","",species_range),
-   species_list=gsub("\\{|\\}|\\(|\\)","",species_list),
-   topics=gsub("\\{|\\}|\\(|\\)","",topics),
-   specific_issue=gsub("\\{|\\}|\\(|\\)","",specific_issue)) %>%
-  ## quitar comillas
-  mutate(general_application=gsub("\"","",general_application,fixed=T)) %>%
-  mutate(topics=gsub("\"","",topics,fixed=T))%>%
-  mutate(species_list=gsub("\"","",species_list,fixed=T))%>%
-  mutate(specific_issue=gsub("\"","",specific_issue,fixed=T))
-
-distmodel_ref %<>%
-  ## reclasificar categorias de paradigm
-  mutate(paradigm_type=case_when(
-    paradigm %in% c("RSF,NM","RSF,OM") ~ "RSF",
-    paradigm %in% c("NM","OM","RSF") ~ paradigm,
-    is.na(paradigm) ~ as.character(NA),
-    TRUE~ "other"
-  )) %>%
-  ## convertir en factor
-  mutate(paradigm_type=factor(paradigm_type,levels=c("NM","RSF","OM","other")))
-
-distmodel_ref %<>%
-  ## reclasificar categorias de topics
-  mutate(topics=case_when(
-    topics %in% c("evolution") ~ "Evolution",
-    topics %in% c("Bahavior","Biodiversity","Conservation", "Evolution","Ecology", "Invasion ecology", "Methodological issues") ~ topics))
 
 distmodel_ref %>% select(paradigm, paradigm_type) %>% table(useNA="always")
 
@@ -68,7 +29,7 @@ publication_year_table %>%
 py_table %>%
   group_by(paradigm_type) %>%
   summarise(mean = mean(n_pub))
-    
+
 
 clrs <- brewer.pal(4,"Dark2")
 names(clrs) <- c("OM","RSF","other","NM")
@@ -90,7 +51,7 @@ long_my.app %<>%
   filter(!is.na(general_application), !is.na(topics)) %>%
   mutate(general_application = factor(general_application, levels=c("Threats monitoring","Climate change", "Spatial prediction", "Assessment of distribution", "Conservation issues","Co-occurence of parrot species",
                                                                     "Relation with environmental variables","Macroecology",
-                                                                    "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types", 
+                                                                    "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types",
                                                                   "Biogeographic patterns", "Predictions of invasion risk","Invasion effect", "Improving estimation")))
 
 long_my.app %>%
@@ -105,8 +66,8 @@ ggplot(aes(x = general_application, y=n_pub, fill = topics)) +
 =======
 >>>>>>> 3874ab80b00949a6bd22480771315dc36fe9a057
 
-  
-  
+
+
 
               ## Figure 3
 
@@ -135,7 +96,7 @@ mutate(general_application=case_when(
 long_app_country %<>%
   mutate(general_application = factor(general_application, levels=c("Threats monitoring","Climate change", "Spatial prediction", "Assessment of distribution", "Conservation issues","Co-occurence of parrot species",
                                                                     "Relation with environmental variables","Macroecology",
-                                                                    "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types", 
+                                                                    "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types",
                                                                     "Biogeographic patterns", "Predictions of invasion risk","Invasion effect", "Improving estimation")))
 
 #Just check variables with NAs
@@ -202,7 +163,7 @@ supl.mat1%>%
 species_ref %>%
   inner_join(distmodel_ref,by="ref_id") %>%
   select(ref_id, scientific_name,species_range,general_application,topics) -> table_species_ref
-  
+
 long_spp_list <-  cSplit(table_species_ref, c("topics","general_application", "species_range"), ",", "long")
 
 long_spp_list %>% filter(!is.na(general_application), !is.na(topics), !is.na(species_range)) %>%
@@ -210,7 +171,7 @@ long_spp_list %>% filter(!is.na(general_application), !is.na(topics), !is.na(spe
     transmute(ref_id,topics, scientific_name, general_application, species_range, Genus) %>%
     mutate(general_application = factor(general_application, levels=c("Threats monitoring","Climate change", "Spatial prediction", "Assessment of distribution", "Conservation issues","Co-occurence of parrot species",
                                                                   "Relation with environmental variables","Macroecology",
-                                                                  "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types", 
+                                                                  "Ecological communities", "Temporal distribution patterns","Habitat use related to behaviour types",
                                                                   "Biogeographic patterns", "Predictions of invasion risk","Invasion effect", "Improving estimation"))) -> table_app_spp
 
   table_app_spp %>%
@@ -221,5 +182,3 @@ long_spp_list %>% filter(!is.na(general_application), !is.na(topics), !is.na(spe
     scale_radius(range = c(2, 10),name="Number of documents") +
   theme_bw()+
   theme(axis.text.x = element_text(angle=45, size=9, hjust = 1))
-
-  
