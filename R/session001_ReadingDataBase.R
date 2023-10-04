@@ -133,6 +133,12 @@ distmodel_ref %<>%
     topics %in% c("Behavior","Biodiversity","Conservation", "Evolution","Ecology", "Invasion ecology", "Methodological issues") ~ topics))
 
 
+###
+# Save to Rdata file with all the changes
+####
+
+save(file=sprintf("%s/Rdata/dist-model-Psittacidae.rda",here()),distmodel_ref, species_ref, country_ref, my_bibtex, birdlife_list, iso_countries)
+
 ########################################
 ## END Step 1
 ############################################
